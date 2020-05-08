@@ -1,0 +1,62 @@
+<html>
+<head></head>
+<style>
+    i {
+        background-color: yellow;
+        font-style: normal;
+        font-weight: bold;
+    }
+
+    b {
+        background-color: yellow;
+    }
+</style>
+<body>
+    <h2>Help</h2>
+    <h3>Word boundaries regular expression  - \b</h3>
+    <p>Matches a zero-width boundary between a word-class character and either a non-word class character or an edge.</p>
+    <p>\b matches the empty string at the beginning or end of a word.</p>
+    <p>Examples:</p>
+    <table border="1">
+        <tr>
+            <th>Reg exp</th>
+            <th>Text</th>
+        </tr>
+        <tr>
+            <td>\bis\b</td>
+            <td>This island <b>is</b> beautiful!</td>
+        </tr>
+        <tr>
+            <td>\bis</td>
+            <td>This <b>is</b> one simple example, <b>is</b>n't it?</td>
+        </tr>
+    </table>
+
+    <hr />
+
+    <h3>White space regular expression - \s</h3>
+    <p>
+        Matches a whitespace character,
+which in ASCII are tab, line feed, form feed, carriage return, and space;
+in Unicode, also matches no-break spaces, next line, and the variable-width spaces (amongst others).
+    </p>
+
+    <p>Examples:</p>
+    <table border="1">
+        <tr>
+            <th>Reg exp</th>
+            <th>Text</th>
+        </tr>
+        <tr>
+            <td>\sis</td>
+            <td>This<i> is</i>land<i> is</i> beautiful!</td>
+        </tr>
+        <tr>
+            <td>\s</td>
+            <td>This<i> </i>is<i> </i>one<i> </i>simple<i> </i>example<i>	</i>,isn't<i> </i>it?</td>
+        </tr>
+    </table>
+
+
+</body>
+</html>

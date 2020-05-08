@@ -1,0 +1,258 @@
+﻿<style>
+    html {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI",Arial,sans-serif;
+    }
+
+    u {
+        margin: 0;
+        padding: 0;
+    }
+
+    p {
+        margin: 0;
+        padding: 0;
+        text-indent: 0;
+        text-align: justify;
+    }
+
+    strong {
+        margin: 0;
+        padding: 0;
+    }
+</style>
+
+
+<p data-key="(.)">
+    <strong>(.)</strong> - Any character, alphanumeric or others such as #, -, % and so on, 
+</p>
+<p>(except \n newline)</p>
+
+<p data-key="\w">
+    <strong>\w</strong>
+    – any alphanumeric character
+</p>
+<p>
+    will match any character a-z, upper case A_Z and number 0-9
+</p>
+<p>
+    For example – the regular expression ca\w will match “<strong>car</strong>”, “<strong>cab</strong>”, “<strong>cat</strong>” “<strong>can</strong>”, “    <strong>cap</strong>” and so on.
+</p>
+<p>
+    <u>Comments:</u>
+</p>
+<div>
+    <p>
+        If it was not chosen as a standalone word with word boundaries (i.e., ‘\bca\w\b’), which will make this a 3 latter word only, starting with “ca..”,
+    </p>
+    <p>
+        other strings will be matched like “Ameri<strong>can</strong>”,
+        “theoreti<strong>cal</strong>ly”, “<strong>cat</strong>egories”
+    </p>
+</div>
+
+
+
+<p data-key="\d">
+    <strong>\d</strong> – digit
+</p>
+<p>
+    will capture any digit 0-9
+</p>
+<p>
+    For example – if you want to capture all ages between 10-19 years you may choose 1\d – then followed by years of months with an optional white space. This
+    will capture <strong>10</strong>,<strong>11</strong>,<strong>12</strong>,...<strong>19</strong>
+</p>
+<p>
+    <u>Comments:</u>
+</p>
+<div>
+    <p>
+        If it was not chosen as a standalone word with word boundaries (i.e., ‘\b1\d\b’) which will
+    </p>
+    <p>
+        make this a 2 digit/character “word” only, starting with “1..”, other strings will be matched like “20<strong>15</strong>”, “667445<strong>13</strong>34”….
+    </p>
+</div>
+
+
+
+<p data-key="\s">
+    <strong>\s</strong>
+    will capture any white space. Including space, Tab etc.
+</p>
+<p>
+    For example – if you are trying to capture some demographic features like “Age: 19 years”. If this is part of your EMR template, the words may be separated
+    by a space or by a Tab or a new line. The feature \s will help you capture all those strings. You will write is as <strong>Age:\s19\syears</strong>
+</p>
+<p>
+    <u>Comments:</u>
+</p>
+<div>
+    <p>
+        The words “Age:” “19” and “years” may be separated by more than one space or tab. You may want to consider adding “<strong>+</strong>”
+    </p><p>
+        = which means
+        ‘one or more times’. This way you capture the expression with as many white spaces there are. The expression will then be – <strong>Age\s+19\s+years</strong>
+    </p>
+</div>
+
+
+
+<p data-key="[a-zA-Z]">
+    <strong>Sets – [a-z], [0-9] </strong>
+</p>
+<p>
+    You will use these when you want to capture something within a range. Typically it will not be [0-9] because you may choose to use \d instead. But it can
+    be a shorter range like [0-5]. You may choose [a-z] over \w when you want to capture a <u>letter</u>, but not a number.
+</p>
+<p>
+    For example – if you want to capture patients with hypothermia and a temperature ranging from 30-35, you can use <strong>3[0-5]</strong>. With that you
+    will capture “<strong>30</strong>”..”<strong>31</strong>”…-&gt;..”<strong>35</strong>”
+</p>
+<div>
+    <p>
+        Note the square brackets. They suggest you pick one from the range offered. Had you used <em><u>3(0-5)</u></em> you would match the literal content of
+        the brackets, i.e., “<em><u>30-5”</u></em>
+    </p>
+    <p>
+        _______________________________________________________________
+    </p>
+</div>
+
+
+
+<p data-key="?">
+    <strong>?</strong>
+    – this symbol following a character or a contained string suggests that that character or string is optional, i.e., it can appear “0” or more times.
+</p>
+<p>
+    For example – the dosing using 25mh may appear as “25mg” or using a white space “25 mg”. To capture both I want the white space to appear.. you got it !
+    “0’ or more times, or in other words, be optional
+</p>
+<p>
+    The expression I can use is “<strong>25\s?mg</strong>” which will capture both <strong>25mg</strong> and <strong>25 mg</strong>
+</p>
+<p>
+    <u>Comments:</u>
+</p>
+<p>
+    What happens when I want to use a question mark? In regular expressions there are some characters that we call metacharacters – meaning that while they
+    have a literal meaning (like a question mark), they are used as a symbol in regular expression. For that reason, if you want to override the metacharacter
+    properties, you need to use a “\” sign prior to using the character.
+</p>
+<p>
+    So the expression <strong>PCP\?</strong> Will capture “<strong>PCP?</strong>”
+</p>
+<div>
+    <p>
+        While as the expression <strong>PCP?</strong> – will be using the “?” as a metacharacter suggesting that the last letter “P” is optional, and therefore
+        capture “<strong>PCP”</strong> and “<strong>PC”</strong>
+    </p>
+    <p>
+        _______________________________________________________________
+    </p>
+</div>
+
+
+
+<p data-key="+">
+    <strong>+</strong>
+    - this symbol suggests a repetition as well. Only it refers to having the previous character or contained string appears one time or more.
+</p>
+<p>
+    For example the expression <strong>31+</strong> will capture “<strong>31</strong>… <strong>311</strong>… <strong>3111</strong> …” where the last character
+    ‘1’ can appear 1-∞ times
+</p>
+<p>
+    <u>Comments:</u>
+</p>
+<div>
+    <p>
+        The “+” sign is a metacharacter. If you need to use the + sign in its original literal meaning, you need to use “\” as in <strong>\+</strong>
+    </p>
+    <p>
+        _______________________________________________________________
+    </p>
+</div>
+
+
+
+<p data-key="*">
+    <strong>*</strong>
+</p>
+<p>
+    This symbol is basically a combination of the metacharaters “?’ and “+” suggesting the preceding character or contained string is both optional or can be
+    repeated many times. In other words it can appear 0-∞ time.
+</p>
+<p>
+    For example- the expression <strong>address*</strong> captures <strong>addres</strong>, <strong>address</strong>, <strong>addresss</strong>,    <strong>addressss</strong>….
+</p>
+<p>
+    <u>Comments:</u>
+</p>
+<div>
+    <p>
+        The * sign is a metacharacter, if you need to use it as an asterisk you need to write it with a preceding “\”. As in “<strong>\*</strong>” – so the
+        expression <strong>Address\*</strong> will capture <strong>Address*</strong>
+    </p>
+    <p>
+        ________________________________________________________
+    </p>
+</div>
+
+<p data-key="[0-9]">
+    <strong>[0-9]</strong>
+<p>Any character that is a digit</p>
+
+<p data-key="|">
+    <strong>Either or</strong>
+<p>Can contain arbitrarily complex regex's on either side of the pipe</p>
+<p>For example: (Hello|Hola|Bonjour|Hallo|Ciao)</p>
+
+<p data-key="-">
+    <strong>Range</strong> - Matching Numeric Ranges
+</p>
+<p>The regex [0-9] matches single-digit numbers 0 to 9</p>
+<p>[1-9][0-9] matches double-digit numbers 10 to 99</p>
+<p></p>
+<div>
+    <p>
+        Since regular expressions deal with text rather than with numbers, matching a number in a given range takes a little extra care. You can't just write [0-255] to match a number between 0 and 255. Though a valid regex, it matches something entirely different. [0-255] is a character class with three elements: the character range 0-2, the character 5 and the character 5 (again). This character class matches a single digit 0, 1, 2 or 5, just like [0125].
+    </p>
+    <p>
+        _________________________________________________________
+    </p>
+</div>
+
+<p data-key="\b">
+    <strong>First or last character in word</strong>
+</p>
+<div>
+    <p>
+        \b is a zero-width assertion that matches if there is \w on one side, and either there is \W on the other or the position is beginning or end of string.
+    </p>
+    <p>
+        _________________________________________________________
+    </p>
+
+</div>
+
+<p data-key="\b\b">
+    <strong>Word boundaries</strong>
+</p>
+<div>
+    <p>
+        Allows you to perform a "whole words only" search using a regular expression in the form of \b<font background-color: #C0FFC0;>word</font>\b
+    </p>
+    <p>
+        _________________________________________________________
+    </p>
+
+</div>

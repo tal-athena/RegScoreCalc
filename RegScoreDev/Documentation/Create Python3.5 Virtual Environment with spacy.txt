@@ -1,0 +1,36 @@
+1. Create VirtualEnv with conda (python version = 3.5)
+conda create -n NAME python=3.5 anaconda
+ex:
+conda create -n BinaryClassifier35 python=3.5 anaconda
+
+2. Activate virtualEnv
+activate NAME
+ex:
+activate BinaryClassifier35
+
+3. Install spacy
+- using conda
+conda install -c conda-forge spacy
+- using pip
+pip install -U spacy
+
+4. Download required language library
+- English
+python -m spacy download en
+- French
+python -m spacy download fr
+- German
+python -m spacy download de
+
+5. to use Ipython(Juypter) Notebook on this VirtualEnv
+- install jupyter package
+pip install jupyter
+
+Errors:
+For the following:
+return Packer(**kwargs).pack(o)
+TypeError: init() got an unexpected keyword argument 'encoding'
+This solution helped:
+https://github.com/explosion/spaCy/issues/2810
+Run from the environment:
+pip install "msgpack-numpy<0.4.4.0"

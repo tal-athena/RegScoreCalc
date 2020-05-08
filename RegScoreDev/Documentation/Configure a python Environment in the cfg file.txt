@@ -1,0 +1,21 @@
+
+To use specific anaconda and virtual env, you should configure anaconda path, virtualenv, python version.
+Add or Set this option to cfg file.
+
+- Anaconda Path
+<option name="AnacondaPath">[Anaconda Path]</option>
+- VirtualEnv name
+<option name="PythonEnv">[VirtualEnvName]</option>
+- Python Version
+You can set only python version 2 or 3.
+<option name="PythonVersion">3</option>
+
+-example
+<option name="AnacondaPath">C:\ProgramData\Anaconda3</option>
+<option name="PythonEnv">BinaryClassifier35</option>
+<option name="PythonVersion">3</option>
+
+List environments:
+conda env list
+
+conda info

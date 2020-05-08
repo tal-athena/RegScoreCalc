@@ -1,0 +1,1549 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Binary Classification</title>
+	<link rel="stylesheet" href="bootstrap.css">
+	<link rel="stylesheet" href="index.css">
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="bootstrap.js"></script>
+</head>
+
+<body>
+
+<div id="idOptionsView" class="container panel panel-body">
+
+<div>
+
+<div class="row row-centered">
+
+	<form class="form-horizontal">
+
+		<div class="col-centered col-lg-5 col-md-5 col-sm-5 col-xs-5">
+
+			<div class="panel panel-info">
+
+				<div class="clearfix panel-heading">
+					<h3 id="idNegativeTitle" style="display: inline-block">Negative Categories</h3>
+					<input id="idNegativeColor" type="color" value="#ff0000" onclick="OnSelectColor(event);" class="clearfix pull-right" style="height: 32px; margin-top: 7px" />
+				</div>
+
+				<div class="panel-body">
+					<select id="idNegative" class="form-control" size="7"></select>
+				</div>
+
+			</div>
+
+		</div>
+
+        <div class="col-centered col-lg-2 col-md-2 col-sm-2 col-xs-2 align-top">
+
+            <div class="form-group">
+
+                <label for="idCategoryColumn">Use column</label>
+                <select id="idCategoryColumn" class="full-width"></select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="idNoteTextColumn">Select NOTE_TEXT column</label>
+                <select id="idNoteTextColumn" class="full-width"></select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="idProcessLanguage">Select language</label>
+                <select id="idProcessLanguage" class="full-width">
+                    <option value="en">English</option>
+                    <option value="fr">French</option>
+                    <option value="de">German</option>
+                </select>
+
+            </div>
+
+            <div class="btn-toolbar">
+
+                <button id="idPositiveToNegative" type="button" class="btn btn-default">
+                    <img src="arrow-left.png" alt="Move to Negative" />
+                </button>
+                <button id="idNegativeToPositive" type="button" class="btn btn-default">
+                    <img src="arrow-right.png" alt="Move to Positive" />
+                </button>
+
+            </div>
+
+        </div>
+
+		<div class="col-centered col-lg-5 col-md-5 col-sm-5 col-xs-5">
+
+			<div class="panel panel-info">
+
+				<div class="clearfix panel-heading">
+					<h3 id="idPositiveTitle" style="display: inline-block">Positive Categories</h3>
+					<input id="idPositiveColor" type="color" value="#00ff00" onclick="OnSelectColor(event);" class="clearfix pull-right" style="height: 32px; margin-top: 7px" />
+				</div>
+
+				<div class="panel-body">
+					<select id="idPositive" class="form-control" size="7"></select>
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="col-centered col-sm-2 col-xs-1" style="margin-bottom: 15px">
+		</div>
+
+		<div class="col-centered col-sm-4 col-xs-5" style="margin-bottom: 15px">
+
+			<div class="btn-toolbar">
+
+				<button id="idExcludedToNegative" type="button" class="btn btn-default">
+					<img src="arrow-up.png" alt="Move to Negative" />
+				</button>
+				<button id="idNegativeToExcluded" type="button" class="btn btn-default">
+					<img src="arrow-down.png" alt="Move to Excluded" />
+				</button>
+
+			</div>
+
+		</div>
+
+		<div class="col-centered col-sm-4 col-xs-5" style="margin-bottom: 15px">
+
+			<div class="btn-toolbar">
+
+				<button id="idPositiveToExcluded" type="button" class="btn btn-default">
+					<img src="arrow-down.png" alt="Move to Excluded" />
+				</button>
+				<button id="idExcludedToPositive" type="button" class="btn btn-default">
+					<img src="arrow-up.png" alt="Move to Negative" />
+				</button>
+
+			</div>
+
+		</div>
+
+		<div class="col-centered col-sm-2 col-xs-1" style="margin-bottom: 15px">
+		</div>
+
+		<div class="col-centered col-lg-5 col-md-5 col-sm-5 col-xs-5">
+
+			<div class="panel panel-info">
+
+				<div class="clearfix panel-heading">
+					<h3 id="idExcludedTitle" style="display: inline-block">Excluded Categories</h3>
+					<input id="idExcludedColor" type="color" value="#ffff00" onclick="OnSelectColor(event);" class="clearfix pull-right" style="height: 32px; margin-top: 7px" />
+				</div>
+
+				<div class="panel-body">
+					<select id="idExcluded" class="form-control" size="7"></select>
+				</div>
+
+			</div>
+
+		</div>
+
+	</form>
+
+</div>
+
+<div class="row row-centered text-info">
+
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+		<form class="align-left">
+
+			<hr />
+
+			<div class="form-group">
+				<input name="Operation" type="radio" id="idDivideCategories" checked="checked" />
+				<label for="idDivideCategories">Divide the categorized data into derivation and test</label>
+
+				<div class="form-group">
+
+					<div class="control-group-offset">
+
+						<label for="idValidationPercentage" class="control-label no-bold">Validation</label>
+						<select id="idValidationPercentage" class="form-control" style="margin-left: 5px">
+							<option value="10">10%</option>
+							<option value="20">20%</option>
+							<option value="30">30%</option>
+							<option value="40">40%</option>
+							<option value="50">50%</option>
+							<option value="60">60%</option>
+							<option value="70">70%</option>
+							<option value="80">80%</option>
+							<option value="90">90%</option>
+						</select>
+
+					</div>
+
+					<div class="control-group-offset">
+
+						<label for="idDerivationPercentage" class="control-label no-bold">Derivation</label>
+						<select id="idDerivationPercentage" class="form-control" style="margin-left: 5px">
+							<option value="10">10%</option>
+							<option value="20">20%</option>
+							<option value="30">30%</option>
+							<option value="40">40%</option>
+							<option value="50">50%</option>
+							<option value="60">60%</option>
+							<option value="70">70%</option>
+							<option value="80">80%</option>
+							<option value="90">90%</option>
+						</select>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="form-group">
+				<input name="Operation" type="radio" id="idScoreAll" />
+				<label for="idScoreAll">Score All</label>
+			</div>
+
+			<div class="form-group">
+				<input name="Operation" type="radio" id="idScoreUncategorized" />
+				<label for="idScoreUncategorized">Score Uncategorized</label>
+			</div>
+			
+			<hr />
+
+
+			<div class="form-group">
+
+				<input id="idIncludeBigrams" type="checkbox" />
+				<label for="idIncludeBigrams" class="control-label">Include bigrams</label>
+
+			</div>
+			
+			<div class="form-group">
+				
+				<input id="idIncludeTrigrams" type="checkbox" />
+				<label for="idIncludeTrigrams" class="control-label">Include trigrams</label>
+
+			</div>
+
+			<div class="form-group">
+
+				<label for="idNumberOfDimensions" class="control-label">Number of Dimensions</label>
+				<select id="idNumberOfDimensions" class="form-control" style="width: 80px; display: inline-block; margin-left: 5px">
+					<option value="25">25</option>
+					<option value="50">50</option>
+					<option value="75">75</option>
+					<option value="100">100</option>
+					<option value="150">150</option>
+					<option value="200">200</option>
+					<option value="250" selected="selected">250</option>
+					<option value="300">300</option>
+					<option value="400">400</option>
+					<option value="500">500</option>
+				</select>
+
+			</div>
+
+			<hr />
+
+			<div class="row row-centered">
+
+				<div class="col-centered">
+
+					<div class="form-group">
+
+						<label for="idFolder" class="control-label">Output folder:</label>
+						<input id="idFolder" type="text" style="width: 300px; margin-left: 5px" />
+						<input type="button" value="Select..." onclick="SelectFolder();" />
+
+					</div>
+
+					<div class="form-group margin-bottom">
+
+						<input type="checkbox" id="idLeaveIntermediateFiles" />
+						<label for="idLeaveIntermediateFiles">Leave intermediate files</label>
+						
+						<input type="checkbox" id="idDisplaySettings" class="margin-left" />
+						<label for="idDisplaySettings">Show settings in output</label>
+
+					</div>
+
+					<div class="form-group">
+
+						<input type="button" value="Start" onclick="StartML(true);" style="width: 230px; font-weight: bold" />
+						<input type="button" value="Generate Derivation / Validation" onclick="StartML(false);" style="width: 230px; font-weight: bold" class="margin-left" />
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</form>
+
+	</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div id="idProgressView" class="container full-height panel panel-body" style="display: none">
+
+	<div class="row row-centered" style="height: 100%">
+
+		<div class="panel panel-info" style="margin: 0 15px 15px 15px; height: 100%">
+
+			<div class="panel-heading">
+
+				<img id="idLoading" src="loading.gif" alt="Processing..." style="display: none; margin-top: -11px; margin-right: 10px" />
+				<h3 style="display: inline-block">Output</h3>
+				<input type="button" value="Abort" id="idAbort" class="btn btn-default" style="margin: -7px 0 0 40px; display: none" />
+
+			</div>
+
+			<div class="panel-body" style="height: 100%">
+
+				<div id="idOutputView" class="form-group">
+
+					<div class="form-group" style="height: calc(100% - 60px); overflow: auto">
+						<code id="idOutput" readonly style="font-family: monospace; font-size: 14px; width: 100%; resize: none"></code>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+<script type="text/javascript">
+
+	var _viewData = null;
+	var _sqliteFilePath = null;
+	var _outputFolder = null;
+
+	var _processing = false;
+
+	var _mdbFileName = "input.accdb";
+	var _jsonFileName = "parameters.json";
+	var _csvFileName = "";
+
+	$(document).ready(function()
+	{
+		var btnNegativeToPositive = $("#idNegativeToPositive");
+		btnNegativeToPositive.click(MoveNegativeToPositive);
+
+		var btnPositiveToNegative = $("#idPositiveToNegative");
+		btnPositiveToNegative.click(MovePositiveToNegative);
+
+		var btnNegativeToExcluded = $("#idNegativeToExcluded");
+		btnNegativeToExcluded.click(MoveNegativeToExcluded);
+
+		var btnExcludedToNegative = $("#idExcludedToNegative");
+		btnExcludedToNegative.click(MoveExcludedToNegative);
+
+		var btnPositiveToExcluded = $("#idPositiveToExcluded");
+		btnPositiveToExcluded.click(MovePositiveToExcluded);
+
+		var btnExcludedToPositive = $("#idExcludedToPositive");
+		btnExcludedToPositive.click(MoveExcludedToPositive);
+
+		/////////////////////////////////////////////////////////////////////////////
+
+        $("#idCategoryColumn").change(OnCategoryColumnChange);
+        $("#idNoteTextColumn").change(OnNoteTextColumnChange);
+		$("#idDivideCategories").change(OnDivideCategoriesChange);
+		$("#idScoreAll").change(OnDivideCategoriesChange);
+		$("#idScoreUncategorized").change(OnDivideCategoriesChange);
+		$("#idFolder").change(SetViewData);
+		$("#idLeaveIntermediateFiles").change(SetViewData);
+		$("#idDisplaySettings").change(SetViewData);
+
+		$("#idIncludeBigrams").change(SetViewData);
+		$("#idIncludeTrigrams").change(SetViewData);
+
+		$("#idValidationPercentage").change(OnValidationPercentageChange);
+		$("#idDerivationPercentage").change(OnDerivationPercentageChange);
+
+		$("#idNumberOfDimensions").change(SetViewData);
+
+		$("#idAbort").click(AbortML);
+
+		/////////////////////////////////////////////////////////////////////////////
+
+		InitView();
+	});
+
+	function InitView()
+	{
+		try
+		{
+			var json = Host.GetViewData();
+
+			/////////////////////////////////////////////////////////////////////////////
+
+			if (json)
+			{
+				_viewData = $.parseJSON(json);
+
+				$("#idDivideCategories").prop("checked", _viewData.idDivideCategories);
+				$("#idScoreAll").prop("checked", _viewData.idScoreAll);
+				$("#idScoreUncategorized").prop("checked", _viewData.idScoreUncategorized);
+				$("#idLeaveIntermediateFiles").prop("checked", _viewData.idLeaveIntermediateFiles);
+				$("#idDisplaySettings").prop("checked", _viewData.idDisplaySettings);
+
+				if (!_viewData.negativeColor)
+					_viewData.negativeColor = "#ff0000";
+
+				if (!_viewData.positiveColor)
+					_viewData.positiveColor = "#00ff00";
+
+				if (!_viewData.excludedColor)
+					_viewData.excludedColor = "#ffff00";
+
+				$("#idNegativeColor").val(_viewData.negativeColor);
+				$("#idPositiveColor").val(_viewData.positiveColor);
+				$("#idExcludedColor").val(_viewData.excludedColor);
+
+				$("#idIncludeBigrams").prop("checked", _viewData.idIncludeBigrams);
+				$("#idIncludeTrigrams").prop("checked", _viewData.idIncludeTrigrams);
+
+				if (!_viewData.idNumberOfDimensions)
+					_viewData.idNumberOfDimensions = "250";
+
+				$("#idNumberOfDimensions").val(_viewData.idNumberOfDimensions);
+			}
+			else
+			{
+				_viewData = new Object();
+				_viewData.idDivideCategories = false;
+				_viewData.idScoreAll = false;
+				_viewData.idScoreUncategorized = false;
+				_viewData.idValidationPercentage = 10;
+				_viewData.folder = null;
+				_viewData.idLeaveIntermediateFiles = false;
+				_viewData.idDisplaySettings = false;
+				_viewData.negativeColor = "#ff0000";
+				_viewData.positiveColor = "#00ff00";
+				_viewData.excludedColor = "#ffff00";
+				_viewData.idIncludeBigrams = false;
+				_viewData.idIncludeTrigrams = false;
+				_viewData.idNumberOfDimensions = "250";
+			}
+
+			if (!_viewData.selectedCategory)
+				_viewData.selectedCategory = 0;
+
+			/////////////////////////////////////////////////////////////////////////////
+
+			if (!_viewData.columns)
+				_viewData.columns = [];
+
+			for (var i = 0; i < _viewData.columns.length; i++)
+			{
+				var column = _viewData.columns[i];
+
+				if (column.positiveCategories === undefined)
+					_viewData.positiveCategories = [];
+
+				if (column.excludedCategories === undefined)
+					_viewData.excludedCategories = [];
+
+				if (column.positiveDocumentsCount === undefined)
+					column.positiveDocumentsCount = -1;
+
+				if (column.negativeDocumentsCount === undefined)
+					column.negativeDocumentsCount = -1;
+
+				if (column.excludedDocumentsCount === undefined)
+					column.excludedDocumentsCount = -1;
+			}
+
+			/////////////////////////////////////////////////////////////////////////////
+
+            FillCategoryColumnsList();
+
+            FillNoteTextColumnsList();
+
+			UpdateDocumentsNumber();
+
+			UpdateDivideCategoriesEnabledState();
+
+			UpdatePercentages();
+
+			UpdateFolder();
+
+			/////////////////////////////////////////////////////////////////////////////
+
+			if (!json)
+				RecalculateCategoriesDocumentsCount();
+			else
+				RefreshCategoryLists();
+		}
+		catch (e)
+		{
+			Host.OnException(e.message);
+		}
+	}
+
+	function FillCategoryColumnsList()
+	{
+		var json = Host.ExecuteSQL("SELECT ID, Title FROM DynamicColumns WHERE Type = 0 ORDER BY [Order] ASC");
+		if (!!json)
+		{
+			var columns = $.parseJSON(json);
+
+			var html = '<option value="' + 0 + '"';
+
+			if (_viewData.selectedCategory === 0)
+				html += ' selected="selected"';
+
+			html += '>Category</option>';
+			$("#idCategoryColumn").append(html);
+
+			for (var i = 0; i < Object.keys(columns).length; i++)
+			{
+				var id = columns[i].ID;
+				var title = columns[i].Title;
+
+				html = '<option value="' + id + '"';
+
+				if (_viewData.selectedCategory === id)
+					html += ' selected="selected"';
+
+				html += '>' + title + '</option>';
+				$("#idCategoryColumn").append(html);
+			}
+		}
+    }
+
+    function FillNoteTextColumnsList() {
+        var json = Host.ExecuteSQL("SELECT [DocumentColumn], [Name] FROM DocumentColumnNames WHERE [DocumentColumn] like 'NOTE_TEXT%'");
+
+        if (!!json) {
+
+            var columns = $.parseJSON(json);            
+
+            for (var i = 0; i < Object.keys(columns).length; i++) {
+                var note_text = columns[i].DocumentColumn;
+                var title = columns[i].Name;
+
+                note_text = note_text.replace("NOTE_TEXT", "0");
+                var index = parseInt(note_text);
+
+                html = '<option value="' + index + '"';
+
+                if (index === 0)
+                    html += ' selected="selected"';
+
+                html += '>' + title + '</option>';
+                $("#idNoteTextColumn").append(html);
+            }
+        }
+    }
+
+	function OnCategoryColumnChange()
+	{
+		SetViewData();
+
+		RefreshCategoryLists();
+
+		RecalculateCategoriesDocumentsCount();
+    }
+
+    function OnNoteTextColumnChange() {
+
+    }
+
+	function RefreshCategoryLists()
+	{
+		var categories;
+		var cats = [];
+
+		var documentsCount;
+
+		var positiveList = $("#idPositive");
+		var negativeList = $("#idNegative");
+		var excludedList = $("#idExcluded");
+
+		positiveList.empty();
+		negativeList.empty();
+		excludedList.empty();
+
+		var isStandardCategory = IsStandardCategoryColumn();
+
+		var sql;
+		if (isStandardCategory)
+			sql = "SELECT ID, Category FROM Categories ORDER BY Category ASC";
+		else
+			sql = "SELECT ID, Title FROM DynamicColumnCategories WHERE DynamicColumnID = " + _viewData.selectedCategory + " ORDER BY Title ASC";
+
+		var json = Host.ExecuteSQL(sql);
+		if (json)
+		{
+			categories = $.parseJSON(json);
+
+			for (var i = 0; i < Object.keys(categories).length; i++)
+			{
+				var categoryInfo = {};
+
+				if (isStandardCategory)
+				{
+					categoryInfo.ID = categories[i].ID;
+					categoryInfo.Title = categories[i].Category;
+				}
+				else
+				{
+					categoryInfo.ID = categories[i].ID;
+					categoryInfo.Title = categories[i].Title;
+				}
+
+				cats[0] = categoryInfo;
+
+				documentsCount = GetDocumentsCountInCategoryList(cats);
+				categoryInfo.Title = categoryInfo.Title + " (" + documentsCount + ")";
+
+				/////////////////////////////////////////////////////////////////////////////
+
+				AddCategoryToList(categoryInfo, positiveList, negativeList, excludedList);
+			}
+		}
+	}
+
+	function AddCategoryToList(categoryInfo, positiveList, negativeList, excludedList)
+	{
+		if (ListContainsValue(GetPositiveCategories(), categoryInfo))
+			positiveList.append($("<option></option>")
+				.attr("value", categoryInfo.ID.toString())
+				.text(categoryInfo.Title));
+		else if (ListContainsValue(GetExcludedCategories(), categoryInfo))
+			excludedList.append($("<option></option>")
+				.attr("value", categoryInfo.ID.toString())
+				.text(categoryInfo.Title));
+		else
+			negativeList.append($("<option></option>")
+				.attr("value", categoryInfo.ID.toString())
+				.text(categoryInfo.Title));
+	}
+
+	function GetPositiveCategories()
+	{
+		var columnInfo = GetSelectedColumnInfo();
+		if (!!columnInfo)
+			return columnInfo.positiveCategories;
+
+		throw "Column info is null";
+	}
+
+	function GetExcludedCategories()
+	{
+		var columnInfo = GetSelectedColumnInfo();
+		if (!!columnInfo)
+			return columnInfo.excludedCategories;
+
+		throw "Column info is null";
+	}
+
+	function OnCmd(cmd)
+	{
+		try
+		{
+			if (_processing)
+				return;
+
+			if (cmd === "Show Options")
+			{
+				$("#idProgressView").hide();
+				$("#idOptionsView").show();
+
+				ShowScrollbar(true);
+			}
+			else if (cmd === "Show Log")
+			{
+				$("#idProgressView").show();
+				$("#idOptionsView").hide();
+
+				ShowScrollbar(false);
+			}
+			else if (cmd === "Review")
+			{
+				// Testing
+				if (!_outputFolder)
+					return;
+
+				/////////////////////////////////////////////////////////////////////////////
+
+				var parameters = {
+					PathToCSV: _outputFolder + "\\" + _csvFileName,
+					PositiveCategories: GetCategoryIDs(GetPositiveCategories()),
+					DynamicCategoryColumnID: _viewData.selectedCategory
+				};
+
+				// Testing
+				//parameters.PathToCSV = "D:\\Dynamic.csv";
+				//parameters.PathToCSV = "D:\\Standard.csv";
+
+				parameters = JSON.stringify(parameters);
+
+				Host.OpenView("ReviewML", true, parameters);
+			}
+			else if (cmd === "Recalculate")
+				RecalculateCategoriesDocumentsCount();
+		}
+		catch (e)
+		{
+			Host.OnException(e.message);
+		}
+	}
+
+	function OnBeforeClose()
+	{
+		//alert("Goodbye, C#");
+	}
+
+	function SetViewData()
+	{
+		try
+		{
+			_viewData.selectedCategory = GetSelectedCategoryColumnID();
+			_viewData.idDivideCategories = $("#idDivideCategories").prop("checked");
+			_viewData.idScoreAll = $("#idScoreAll").prop("checked");
+			_viewData.idScoreUncategorized = $("#idScoreUncategorized").prop("checked");
+			_viewData.folder = $("#idFolder").val();
+			_viewData.idLeaveIntermediateFiles = $("#idLeaveIntermediateFiles").prop("checked");
+			_viewData.idDisplaySettings = $("#idDisplaySettings").prop("checked");
+			_viewData.negativeColor = $("#idNegativeColor").val();
+			_viewData.positiveColor = $("#idPositiveColor").val();
+			_viewData.excludedColor = $("#idExcludedColor").val();
+
+			_viewData.idIncludeBigrams = $("#idIncludeBigrams").prop("checked");
+			_viewData.idIncludeTrigrams = $("#idIncludeTrigrams").prop("checked");
+			_viewData.idNumberOfDimensions = $("#idNumberOfDimensions").val();
+
+			/////////////////////////////////////////////////////////////////////////////
+
+			var data = JSON.stringify(_viewData);
+			if (!Host.SetViewData(data))
+				Host.OnException("Failed to save data");
+		}
+		catch (e)
+		{
+			Host.OnException(e.message);
+		}
+	}
+
+	function OnSelectColor(event)
+	{
+		try
+		{
+			event.preventDefault();
+
+			var input = $(event.target);
+
+			var value = input.val();
+			value = Host.PickColor(value);
+			if (value)
+			{
+				input.val(value);
+				SetViewData();
+			}
+		}
+		catch (e)
+		{
+			Host.OnException(e.message);
+		}
+
+		return false;
+	}
+
+	function OnDivideCategoriesChange()
+	{
+		UpdateDivideCategoriesEnabledState();
+
+		SetViewData();
+	}
+
+	function UpdateDivideCategoriesEnabledState()
+	{
+		if ($("#idDivideCategories").is(":checked") === true)
+		{
+			$("#idDerivationPercentage").removeAttr("disabled");
+			$("#idValidationPercentage").removeAttr("disabled");
+		}
+		else
+		{
+			$("#idDerivationPercentage").attr("disabled", "disabled");
+			$("#idValidationPercentage").attr("disabled", "disabled");
+		}
+	}
+
+	function MoveCategory(sourceId, targetId, sourceList, targetList)
+	{
+		var source = $("#" + sourceId);
+		var target = $("#" + targetId);
+
+		var selected = source.find("option:selected");
+		if (selected.length === 1)
+		{
+			selected = $(selected);
+			var categoryID = parseInt(selected.attr("value"));
+			var categoryTitle;
+
+			if (IsStandardCategoryColumn())
+				categoryTitle = Host.ExecuteScalarSQL("SELECT Category FROM Categories WHERE ID = " + categoryID);
+			else
+				categoryTitle = Host.ExecuteScalarSQL("SELECT Title FROM DynamicColumnCategories WHERE ID = " + categoryID);
+
+			var categoryInfo = {
+				ID: categoryID,
+				Title: categoryTitle
+			};
+
+			var count = GetDocumentsCountInCategory(categoryInfo);
+
+			/////////////////////////////////////////////////////////////////////////////
+
+			var index = source.prop("selectedIndex");
+
+			target.append($("<option></option>")
+				.attr("value", categoryID)
+				.attr("selected", "true")
+				.text(categoryTitle + " (" + count + ")"));
+
+			$(selected).remove();
+
+			/////////////////////////////////////////////////////////////////////////////
+
+			var optionsList = source.find("option");
+			if (optionsList.length > 0)
+			{
+				if (index >= optionsList.length)
+					index = optionsList.length - 1;
+
+				selected = optionsList[index];
+				$(selected).attr("selected", "true");
+			}
+
+			/////////////////////////////////////////////////////////////////////////////
+
+			if (sourceList)
+				RemoveFromList(sourceList, categoryInfo);
+
+			if (targetList)
+				targetList.push(categoryInfo);
+
+			/////////////////////////////////////////////////////////////////////////////
+
+			SetViewData();
+
+			return count;
+		}
+
+		return 0;
+	}
+
+	function MovePositiveToNegative()
+	{
+		try
+		{
+			var count = MoveCategory("idPositive", "idNegative", GetPositiveCategories(), null);
+			if (count > 0)
+			{
+				var columnInfo = GetSelectedColumnInfo();
+
+				columnInfo.positiveDocumentsCount -= count;
+				columnInfo.negativeDocumentsCount += count;
+
+				UpdateDocumentsNumber();
+				SetViewData();
+			}
+		}
+		catch (e)
+		{
+			Host.OnException(e.message);
+		}
+	}
+
+	function MoveNegativeToPositive()
+	{
+		try
+		{
+			var count = MoveCategory("idNegative", "idPositive", null, GetPositiveCategories());
+			if (count > 0)
+			{
+				var columnInfo = GetSelectedColumnInfo();
+
+				columnInfo.negativeDocumentsCount -= count;
+				columnInfo.positiveDocumentsCount += count;
+
+				UpdateDocumentsNumber();
+				SetViewData();
+			}
+		}
+		catch (e)
+		{
+			Host.OnException(e.message);
+		}
+	}
+
+	function MoveNegativeToExcluded()
+	{
+		try
+		{
+			var count = MoveCategory("idNegative", "idExcluded", null, GetExcludedCategories());
+			if (count > 0)
+			{
+				var columnInfo = GetSelectedColumnInfo();
+
+				columnInfo.negativeDocumentsCount -= count;
+				columnInfo.excludedDocumentsCount += count;
+
+				UpdateDocumentsNumber();
+				SetViewData();
+			}
+		}
+		catch (e)
+		{
+			Host.OnException(e.message);
+		}
+	}
+
+	function MoveExcludedToNegative()
+	{
+		try
+		{
+			var count = MoveCategory("idExcluded", "idNegative", GetExcludedCategories(), null);
+			if (count > 0)
+			{
+				var columnInfo = GetSelectedColumnInfo();
+
+				columnInfo.excludedDocumentsCount -= count;
+				columnInfo.negativeDocumentsCount += count;
+
+				UpdateDocumentsNumber();
+				SetViewData();
+			}
+		}
+		catch (e)
+		{
+			Host.OnException(e.message);
+		}
+	}
+
+	function MovePositiveToExcluded()
+	{
+		try
+		{
+			var count = MoveCategory("idPositive", "idExcluded", GetPositiveCategories(), GetExcludedCategories());
+			if (count > 0)
+			{
+				var columnInfo = GetSelectedColumnInfo();
+
+				columnInfo.positiveDocumentsCount -= count;
+				columnInfo.excludedDocumentsCount += count;
+
+				UpdateDocumentsNumber();
+				SetViewData();
+			}
+		}
+		catch (e)
+		{
+			Host.OnException(e.message);
+		}
+	}
+
+	function MoveExcludedToPositive()
+	{
+		try
+		{
+			var count = MoveCategory("idExcluded", "idPositive", GetExcludedCategories(), GetPositiveCategories());
+			if (count > 0)
+			{
+				var columnInfo = GetSelectedColumnInfo();
+
+				columnInfo.excludedDocumentsCount -= count;
+				columnInfo.positiveDocumentsCount += count;
+
+				UpdateDocumentsNumber();
+				SetViewData();
+			}
+		}
+		catch (e)
+		{
+			Host.OnException(e.message);
+		}
+	}
+
+	function ListContainsValue(list, categoryInfo)
+	{
+		if (list)
+		{
+			for (var i = 0; i < list.length; i++)
+			{
+				var item = list[i];
+
+				if (item.ID === categoryInfo.ID)
+					return true;
+			}
+		}
+		else
+			throw "Error";
+
+		return false;
+	}
+
+	function RemoveFromList(sourceList, categoryInfo)
+	{
+		if (sourceList)
+		{
+			for (var i = 0; i < sourceList.length; i++)
+			{
+				var item = sourceList[i];
+				if (item.ID === categoryInfo.ID)
+				{
+					sourceList.splice(i, 1);
+					break;
+				}
+			}
+		}
+		else
+			throw "Error";
+	}
+
+	function UpdatePercentages()
+	{
+		if (!_viewData.idValidationPercentage && _viewData.idValidationPercentage !== 0)
+			_viewData.idValidationPercentage = 10;
+
+		var idDerivationPercentage = 100 - _viewData.idValidationPercentage;
+
+		var selected = $("#idValidationPercentage option[value=" + _viewData.idValidationPercentage + "]");
+		selected.attr("selected", "true");
+
+		selected = $("#idDerivationPercentage option[value=" + idDerivationPercentage + "]");
+		selected.attr("selected", "true");
+	}
+
+	function UpdateFolder()
+	{
+		if (!_viewData.folder)
+			_viewData.folder = Host.GetViewFolderPath();
+
+		if (_viewData.folder)
+		{
+			if (Host.IsNetworkPath(_viewData.folder))
+				ShowNetworkPathWarning();
+		}
+
+		$("#idFolder").val(_viewData.folder);
+	}
+
+	function OnValidationPercentageChange()
+	{
+		var selected = $("#idValidationPercentage option:selected");
+		var value = parseInt(selected.attr("value"));
+
+		_viewData.idValidationPercentage = value;
+
+		value = 100 - value;
+
+		selected = $("#idDerivationPercentage option[value=" + value + "]");
+		selected.attr("selected", "true");
+
+		SetViewData();
+	}
+
+	function OnDerivationPercentageChange()
+	{
+		var selected = $("#idDerivationPercentage option:selected");
+		var value = parseInt(selected.attr("value"));
+
+		value = 100 - value;
+
+		_viewData.idValidationPercentage = value;
+
+		selected = $("#idValidationPercentage option[value=" + value + "]");
+		selected.attr("selected", "true");
+
+		SetViewData();
+	}
+
+	function SelectFolder()
+	{
+		try
+		{
+			var folder = Host.SelectFolderDialog(_viewData.folder);
+			if (folder)
+			{
+				_viewData.folder = folder;
+
+				UpdateFolder();
+
+				SetViewData();
+			}
+		}
+		catch (e)
+		{
+			Host.OnException(e.message);
+		}
+	}
+
+	function StartML(runPython)
+	{
+		try
+		{
+			if (!_viewData.folder)
+			{
+				Host.ShowInfoMessage("Please specify output folder");
+				return;
+			}
+
+			_outputFolder = Host.CreateOutputFolder(_viewData.folder);
+			if (!_outputFolder)
+				return;
+
+			var folderCreateTime = new Date();
+
+			var otherTables = [];
+			if (IsStandardCategoryColumn())
+				otherTables.push("Categories");
+			else
+				otherTables.push("DynamicColumnCategories");
+
+			var mdbFilePath = _outputFolder + "\\" + _mdbFileName;
+
+			var categorized;
+
+			if (_viewData.idDivideCategories)
+			{
+				categorized = 0;
+				_csvFileName = "classified_output.csv";
+			}
+			else if (_viewData.idScoreAll)
+			{
+				categorized = 1;
+				_csvFileName = "classified_output_all.csv";
+			}
+			else
+			{
+				categorized = 2;
+				_csvFileName = "classified_output.csv";
+			}
+
+			var result = Host.CopyDocumentsTable(mdbFilePath, categorized, otherTables);
+			if (!result)
+				return;
+
+			var jsonFilePath = _outputFolder + "\\" + _jsonFileName;
+
+			if (!WriteParameters(jsonFilePath, runPython))
+				return;
+
+            var columnIndex = GetNoteTextColumnIndex();
+            var language = GetProcessLanguage();
+
+			if (!Host.StartML(_outputFolder,
+				_mdbFileName,
+				_jsonFileName,
+				_csvFileName,
+				_viewData.idLeaveIntermediateFiles,
+                "OnStateChange",
+                columnIndex,
+                language))
+				return;
+
+			SaveOutputFolder(folderCreateTime);
+
+			_processing = true;
+
+			$("#idOutput").empty();
+
+			$("#idOptionsView").hide();
+			$("#idProgressView").show();
+
+			ShowScrollbar(false);
+
+			$("#idLoading").css("display", "inline-block");
+			$("#idAbort").show();
+		}
+		catch (e)
+		{
+			Host.OnException(e.message);
+		}
+	}
+
+	function AbortML()
+	{
+		try
+		{
+			Host.KillExecutable();
+
+			Host.DeleteOutputFolder(_outputFolder);
+
+			$("input, select, button").prop("disabled", false);
+			$("#idLoading").hide();
+			$("#idAbort").hide();
+
+			Host.ShowInfoMessage("Machine learning aborted");
+
+			_processing = false;
+
+			///////////////////////////////////////////////////////////////////////////
+
+			Host.SetViewArgument(null, null);
+		}
+		catch (e)
+		{
+			Host.OnException(e.message);
+		}
+	}
+
+	function OnStateChange(state, content)
+	{
+		try
+        {            
+			if (state === 0)
+			{
+				$("input, select, button").prop("disabled", false);
+				$("#idLoading").hide();
+				$("#idAbort").hide();
+
+				if (content === "0")
+					Host.ShowInfoMessage("Machine learning finished successfully");
+				else if (content === "111")
+					Host.ShowInfoMessage("Files prepared successfully");
+				else
+					Host.OnException("Machine learning failed with code: " + content);
+
+				_processing = false;
+
+				///////////////////////////////////////////////////////////////////////////
+
+				var parameters = {
+					PathToCSV: _outputFolder + "\\" + _csvFileName,
+					PositiveCategories: GetCategoryIDs(GetPositiveCategories())
+				}
+
+				parameters = JSON.stringify(parameters);
+
+				Host.SetViewArgument(parameters, "RegScoreCalc.ReviewMLParameters");
+
+				return;
+			}
+
+			var output = $("#idOutput");
+			var parent = output.parent();
+
+			var oldMaxScroll = parent[0].scrollHeight - parent[0].clientHeight;
+			var oldScrollTop = parent.scrollTop();
+
+			output.append(content);
+			var newMaxScroll = parent[0].scrollHeight - parent[0].clientHeight;
+
+			var oldHasScrollBar = oldMaxScroll > 0;
+			var newHasScrollBar = newMaxScroll > 0;
+
+			if (oldHasScrollBar !== newHasScrollBar || oldScrollTop >= oldMaxScroll - 30)
+				parent.scrollTop(parent[0].scrollHeight);
+		}
+		catch (e)
+		{
+			Host.OnException(e.message);
+		}
+	}
+
+	function WriteParameters(filePath, runPython)
+	{
+		var isStandardCategoryColumn = IsStandardCategoryColumn();
+
+		var positiveCategories = [];
+		var excludedCategories = [];
+
+		var dynamicPositiveCategories = [];
+		var dynamicExcludedCategories = [];
+
+		if (isStandardCategoryColumn)
+		{
+			positiveCategories = GetCategoryIDs(GetPositiveCategories());
+			excludedCategories = GetCategoryIDs(GetExcludedCategories());
+		}
+		else
+		{
+			dynamicPositiveCategories = GetCategoryTitles(GetPositiveCategories());
+			dynamicExcludedCategories = GetCategoryTitles(GetExcludedCategories());
+		}
+
+		var dynamicColumnTitle = isStandardCategoryColumn ? "" : GetSelectedCategoryColumnTitle();
+
+		var params =
+		{
+			version: 2,
+			runPython: runPython,
+			displaySettings: _viewData.idDisplaySettings,
+			divideCategories: _viewData.idDivideCategories,
+			scoreAll: _viewData.idScoreAll,
+			scoreUncategorized: _viewData.idScoreUncategorized,
+			validationPercentage: _viewData.idValidationPercentage,
+			positiveCategories: positiveCategories,
+			excludedCategories: excludedCategories,
+			dynamicColumnID: isStandardCategoryColumn ? 0 : GetSelectedCategoryColumnID(),
+			dynamicColumnTitle: dynamicColumnTitle,
+			dynamicPositiveCategories: dynamicPositiveCategories,
+			dynamicExcludedCategories: dynamicExcludedCategories,
+			includeBigrams: _viewData.idIncludeBigrams,
+			includeTrigrams: _viewData.idIncludeTrigrams,
+			numberOfDimensions: parseInt(_viewData.idNumberOfDimensions),
+			password: Host.GetDbPassword()
+	};
+
+		var json = JSON.stringify(params);
+
+		return Host.WriteTextFile(filePath, json);
+	}
+
+	function GetTotalCategorizedDocumentsCount()
+	{
+		if (IsStandardCategoryColumn())
+			return Host.ExecuteScalarSQL("SELECT COUNT(*) FROM Documents WHERE (Category IS NOT NULL)");
+
+		var columnTitle = GetSelectedCategoryColumnTitle();
+
+		return Host.ExecuteScalarSQL("SELECT COUNT(*) FROM Documents WHERE ([" + columnTitle + "] IS NOT NULL AND [" + columnTitle + "] <> '')");
+	}
+
+	function RecalculateCategoriesDocumentsCount()
+	{
+		RefreshCategoryLists();
+
+		SetViewData();
+
+		var positiveDocumentsCount = GetDocumentsCountInCategoryList(GetPositiveCategories());
+		if (positiveDocumentsCount || positiveDocumentsCount === 0)
+		{
+			var excludedDocumentsCount = GetDocumentsCountInCategoryList(GetExcludedCategories());
+			if (excludedDocumentsCount || excludedDocumentsCount === 0)
+			{
+				var totalCategorizedDocumentsCount = GetTotalCategorizedDocumentsCount();
+				if (totalCategorizedDocumentsCount || totalCategorizedDocumentsCount === 0)
+				{
+					var columnInfo = GetSelectedColumnInfo();
+
+					columnInfo.positiveDocumentsCount = positiveDocumentsCount;
+					columnInfo.excludedDocumentsCount = excludedDocumentsCount;
+					columnInfo.negativeDocumentsCount = totalCategorizedDocumentsCount - (positiveDocumentsCount + excludedDocumentsCount);
+				}
+			}
+			else
+				throw "Error";
+		}
+		else
+			throw "Error";
+
+		UpdateDocumentsNumber();
+
+		SetViewData();
+	}
+
+	function GetDocumentsCountInCategoryList(list)
+	{
+		if (list.length === 0)
+			return 0;
+
+		var sql = "SELECT COUNT(*) FROM Documents WHERE ";
+		var where = "";
+
+		var isStandardCategoryColumn = IsStandardCategoryColumn();
+		var categoryColumn = GetSelectedCategoryColumnTitle();
+
+		for (var i = 0; i < list.length; i++)
+		{
+			if (where.length > 0)
+				where += " OR ";
+
+			var cat = isStandardCategoryColumn ? list[i].ID : "'" + list[i].Title + "'";
+
+			where += "([" + categoryColumn + "] = " + cat + ") ";
+		}
+
+		var documentsCount = Host.ExecuteScalarSQL(sql + where);
+
+		return documentsCount;
+	}
+
+	function GetDocumentsCountInCategory(categoryInfo)
+	{
+		var categoryColumn = GetSelectedCategoryColumnTitle();
+
+		var category;
+		if (IsStandardCategoryColumn())
+			category = categoryInfo.ID;
+		else
+			category = "'" + categoryInfo.Title + "'";
+
+		var result = Host.ExecuteScalarSQL("SELECT COUNT(*) FROM Documents WHERE [" + categoryColumn + "] = " + category);
+		if (result || result === 0)
+			return result;
+
+		throw "Error";
+	}
+
+	function UpdateDocumentsNumber()
+	{
+		var columnInfo = GetSelectedColumnInfo();
+
+		if (columnInfo.positiveDocumentsCount === -1 ||
+			columnInfo.negativeDocumentsCount === -1 ||
+			columnInfo.excludedDocumentsCount === -1)
+		{
+			var totalCategorizedDocumentsCount = GetTotalCategorizedDocumentsCount();
+			if (totalCategorizedDocumentsCount)
+			{
+				columnInfo.positiveDocumentsCount = 0;
+				columnInfo.excludedDocumentsCount = 0;
+				columnInfo.negativeDocumentsCount = totalCategorizedDocumentsCount;
+			}
+		}
+
+		$("#idNegativeTitle").text("Negative Categories (" + columnInfo.negativeDocumentsCount.toString() + ")");
+		$("#idPositiveTitle").text("Positive Categories (" + columnInfo.positiveDocumentsCount.toString() + ")");
+		$("#idExcludedTitle").text("Excluded Categories (" + columnInfo.excludedDocumentsCount.toString() + ")");
+	}
+
+	function GetSelectedColumnInfo()
+	{
+		var columnID = GetSelectedCategoryColumnID();
+		for (var i = 0; i < _viewData.columns.length; i++)
+		{
+			var column = _viewData.columns[i];
+			if (column.ID === columnID)
+				return column;
+		}
+
+		var newColumn = {
+			ID: columnID,
+			positiveCategories: [],
+			excludedCategories: [],
+			positiveDocumentsCount: 0,
+			negativeDocumentsCount: 0,
+			excludedDocumentsCount: 0
+		};
+
+		_viewData.columns.push(newColumn);
+
+		return newColumn;
+	}
+
+	function IsStandardCategoryColumn()
+	{
+		return _viewData.selectedCategory === 0;
+	}
+
+	function GetSelectedCategoryColumnTitle()
+	{
+		var selectedCategory = $("#idCategoryColumn option:selected");
+		var categoryColumn = selectedCategory.text();
+
+		return categoryColumn;
+    }
+
+    function GetNoteTextColumnIndex() {
+        var selectedColumn = $("#idNoteTextColumn option:selected");
+        var columnIndex = parseInt(selectedColumn.attr("value"));
+
+        return columnIndex;
+    }
+
+    function GetProcessLanguage() {
+        var selectedColumn = $("#idProcessLanguage option:selected");
+        var language = selectedColumn.attr("value");
+
+        return language;
+    }
+
+	function GetSelectedCategoryColumnID()
+	{
+		var selectedCategory = $("#idCategoryColumn option:selected");
+		return parseInt(selectedCategory.attr("value"));
+	}
+
+	function GetCategoryIDs(categories)
+	{
+		var result = [];
+
+		for (var i = 0; i < categories.length; i++) {
+			result.push(categories[i].ID);
+		}
+
+		return result;
+	}
+
+	function GetCategoryTitles(categories)
+	{
+		var result = [];
+
+		for (var i = 0; i < categories.length; i++) {
+			result.push(categories[i].Title);
+		}
+
+		return result;
+	}
+
+	function ShowScrollbar(show)
+	{
+		if (show)
+			$("html").css("overflow", "auto");
+		else
+		{
+			$("html").css("overflow", "hidden");
+			$(document).scrollTop(0);
+		}
+	}
+
+	function ShowNetworkPathWarning()
+	{
+		Host.ShowWarningMessage("Using network drive for Output folder is strongly not recommended");
+	}
+
+	function SaveOutputFolder(folderCreateTime)
+	{
+		if (!_viewData.outputFolders)
+			_viewData.outputFolders = [];
+
+		var index = _viewData.outputFolders.findIndex(function(item)
+		{
+			return item.fullPath === _outputFolder;
+		});
+
+		if (index !== -1)
+		{
+			var item = _viewData.outputFolders.splice(index, 1);
+			_viewData.outputFolders.unshift(item);
+		}
+		else
+		{
+			_viewData.outputFolders.unshift({
+				fullPath: _outputFolder,
+				unixCreatedTime: folderCreateTime.getTime()
+			});
+		}
+
+		if (_viewData.outputFolders.length > 10)
+			_viewData.outputFolders.length = 10;
+
+		SetViewData();
+	}
+
+</script>
+
+</body>
+
+</html>

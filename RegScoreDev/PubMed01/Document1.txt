@@ -1,0 +1,10 @@
+https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/20/conda/
+
+conda create -n pubmed_scrapy_01 python=3.5 anaconda
+
+
+conda install -n pubmed_scrapy_01 -c conda-forge scrapy
+
+
+
+https://stackoverflow.com/questions/49082312/activating-conda-environment-from-c-sharp-code-or-what-is-the-differences-betwe?rq=1

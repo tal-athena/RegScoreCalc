@@ -1,0 +1,5 @@
+CREATE TABLE DBSettings
+(
+    [Key] TEXT(20) PRIMARY KEY,
+    [Value] TEXT(100)
+)

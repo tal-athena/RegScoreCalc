@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{212D9F68-8613-49DD-BCF3-1C236968C9D6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebAppTest</RootNamespace>
+    <AssemblyName>WebAppTest</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>WebAppTest.Code.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>packages\WatiN.2.1.0\lib\net40\Microsoft.mshtml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebDriver">
+      <HintPath>..\packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support">
+      <HintPath>..\packages\Selenium.Support.3.141.0\lib\net45\WebDriver.Support.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Action Code\EditSearchParam.cs" />
+    <Compile Include="Action Code\LoadSearch.cs" />
+    <Compile Include="Action Code\PubMedSearch.cs" />
+    <Compile Include="Action Code\RunScript.cs" />
+    <Compile Include="Action Controls\EditSearchParamControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Action Controls\EditSearchParamControl.Designer.cs">
+      <DependentUpon>EditSearchParamControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Action Controls\LoadSearchControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Action Controls\LoadSearchControl.Designer.cs">
+      <DependentUpon>LoadSearchControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Action Controls\PubMedSearchControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Action Controls\PubMedSearchControl.Designer.cs">
+      <DependentUpon>PubMedSearchControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Action Controls\RunScriptControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Action Controls\RunScriptControl.Designer.cs">
+      <DependentUpon>RunScriptControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Code\Action.cs" />
+    <Compile Include="Action Controls\EditCollectionRecordControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Action Controls\EditCollectionRecordControl.Designer.cs">
+      <DependentUpon>EditCollectionRecordControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Action Controls\EditStoryFieldsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Action Controls\EditStoryFieldsControl.Designer.cs">
+      <DependentUpon>EditStoryFieldsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Action Controls\LoadCollectionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Action Controls\LoadCollectionControl.Designer.cs">
+      <DependentUpon>LoadCollectionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Action Controls\LoadStoryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Action Controls\LoadStoryControl.Designer.cs">
+      <DependentUpon>LoadStoryControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Action Controls\LoginControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Action Controls\LoginControl.Designer.cs">
+      <DependentUpon>LoginControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Action Controls\LogoutControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Action Controls\LogoutControl.Designer.cs">
+      <DependentUpon>LogoutControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Action Code\EditCollectionRecord.cs" />
+    <Compile Include="Action Code\EditStoryFields.cs" />
+    <Compile Include="Action Code\LoadCollection.cs" />
+    <Compile Include="Action Code\LoadStory.cs" />
+    <Compile Include="Code\GlobalSettings.cs" />
+    <Compile Include="Code\ScriptManager.cs" />
+    <Compile Include="Code\Log.cs" />
+    <Compile Include="Action Code\Login.cs" />
+    <Compile Include="Action Code\Logout.cs" />
+    <Compile Include="Exceptions\TestErrorException.cs" />
+    <Compile Include="Forms\FormAddNewAction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAddNewAction.Designer.cs">
+      <DependentUpon>FormAddNewAction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Code\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Code\Test.cs" />
+    <Compile Include="Code\Utils.cs" />
+    <Compile Include="Code\WebDriverEx.cs" />
+    <Compile Include="Selenium\ActionRunner.cs" />
+    <EmbeddedResource Include="Action Controls\EditCollectionRecordControl.resx">
+      <DependentUpon>EditCollectionRecordControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Action Controls\EditStoryFieldsControl.resx">
+      <DependentUpon>EditStoryFieldsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Action Controls\EditSearchParamControl.resx">
+      <DependentUpon>EditSearchParamControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Action Controls\LoadCollectionControl.resx">
+      <DependentUpon>LoadCollectionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Action Controls\LoadStoryControl.resx">
+      <DependentUpon>LoadStoryControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Action Controls\LoadSearchControl.resx">
+      <DependentUpon>LoadSearchControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Action Controls\PubMedSearchControl.resx">
+      <DependentUpon>PubMedSearchControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Action Controls\LoginControl.resx">
+      <DependentUpon>LoginControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Action Controls\RunScriptControl.resx">
+      <DependentUpon>RunScriptControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Action Controls\LogoutControl.resx">
+      <DependentUpon>LogoutControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAddNewAction.resx">
+      <DependentUpon>FormAddNewAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="chromedriver_win32\chromedriver.exe" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Selenium.WebDriver.GeckoDriver.Win64.0.13.0\build\Selenium.WebDriver.GeckoDriver.Win64.targets" Condition="Exists('..\packages\Selenium.WebDriver.GeckoDriver.Win64.0.13.0\build\Selenium.WebDriver.GeckoDriver.Win64.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Selenium.WebDriver.GeckoDriver.Win64.0.13.0\build\Selenium.WebDriver.GeckoDriver.Win64.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.GeckoDriver.Win64.0.13.0\build\Selenium.WebDriver.GeckoDriver.Win64.targets'))" />
+    <Error Condition="!Exists('..\packages\Selenium.WebDriver.GeckoDriver.Win32.0.13.0\build\Selenium.WebDriver.GeckoDriver.Win32.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.GeckoDriver.Win32.0.13.0\build\Selenium.WebDriver.GeckoDriver.Win32.targets'))" />
+    <Error Condition="!Exists('..\packages\Selenium.WebDriver.ChromeDriver.73.0.3683.68\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.ChromeDriver.73.0.3683.68\build\Selenium.WebDriver.ChromeDriver.targets'))" />
+  </Target>
+  <Import Project="..\packages\Selenium.WebDriver.GeckoDriver.Win32.0.13.0\build\Selenium.WebDriver.GeckoDriver.Win32.targets" Condition="Exists('..\packages\Selenium.WebDriver.GeckoDriver.Win32.0.13.0\build\Selenium.WebDriver.GeckoDriver.Win32.targets')" />
+  <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.73.0.3683.68\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.73.0.3683.68\build\Selenium.WebDriver.ChromeDriver.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

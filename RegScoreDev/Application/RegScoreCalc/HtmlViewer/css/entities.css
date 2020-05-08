@@ -1,0 +1,78 @@
+html {
+	height: 97%;
+}
+
+body {
+	background: #bfd8ff;
+	transition: all 0.3s ease;
+	height: 100%;
+	margin: 10px 0 10px 0;
+}
+
+div {
+	transition: all 0.3s ease;
+    font-size: 15px;
+}
+
+.container {
+	margin-bottom: 0;
+	background: green;
+}
+
+.container, .panel {
+	background-color: #fff;
+	border: 2px solid #888;
+	border-radius: 8px;
+	position: relative;
+	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+#idColorView {
+	display: flex;
+	justify-content: space-between;
+}
+
+#idTextView {
+	margin-top: 30px;
+}

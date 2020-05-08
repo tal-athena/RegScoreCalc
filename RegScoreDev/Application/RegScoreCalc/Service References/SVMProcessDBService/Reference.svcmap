@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6fd18aed-2274-40d3-ad4a-e901b8b8a769" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:7281/SVMServiceProcess" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SVMService.wsdl" MetadataType="Wsdl" ID="acc41e4c-169a-47ce-be53-84820940c313" SourceId="1" SourceUrl="http://localhost:7281/SVMServiceProcess?wsdl" />
+    <MetadataFile FileName="SVMServiceProcess.xsd" MetadataType="Schema" ID="9afebff4-cce2-46d7-a938-b7037e6add83" SourceId="1" SourceUrl="http://localhost:7281/SVMServiceProcess?xsd=xsd0" />
+    <MetadataFile FileName="SVMServiceProcess1.xsd" MetadataType="Schema" ID="a95d8f3a-10f6-4140-af0a-23c6a2f14cb0" SourceId="1" SourceUrl="http://localhost:7281/SVMServiceProcess?xsd=xsd1" />
+    <MetadataFile FileName="SVMServiceProcess.disco" MetadataType="Disco" ID="cddb4565-afde-466e-90ba-582c46a29139" SourceId="1" SourceUrl="http://localhost:7281/SVMServiceProcess?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

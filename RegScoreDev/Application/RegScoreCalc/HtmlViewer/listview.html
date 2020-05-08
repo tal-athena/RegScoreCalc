@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Html Viewer</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/entities.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+</head>
+
+<body>
+   
+    <div id="idListView" class="container panel panel-body">
+        
+    </div>
+
+
+<script type="text/javascript">
+
+	var _viewData = null;
+
+	$(document).ready(function()
+    {
+        /*
+        window.boundAsync.div(16, 2).then(function (res) {
+            alert(res);
+            var end = "Result: " + res + "(" + Date() + ")";
+            writeAsyncResult(call, end);
+        });
+        */
+        
+
+		InitView();
+	});
+
+	function InitView()
+	{
+		try
+        {
+            window.boundAsync.getSentences().then(function (res) {
+
+                var arrString = $.parseJSON(res);
+
+                var html = "";
+                for (var i = 0; i < arrString.length; i++) {
+                    if (arrString[i] != "")
+                        html += "<div class = \"row panel\">" + arrString[i] + "</div>";
+                }
+
+                $("#idListView").html(html);
+
+            });
+
+		}
+		catch (e)
+		{
+            window.boundAsync.error(e.message);
+		}
+	}
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8c66ef25-d8ec-46f4-8825-956688634de7}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>scrapy_debug.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId>CondaEnv|CondaEnv|pubmed_scrapy_01</InterpreterId>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="Document1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="pubmed\items.py" />
+    <Compile Include="pubmed\middlewares.py" />
+    <Compile Include="pubmed\pipelines.py" />
+    <Compile Include="pubmed\settings.py" />
+    <Compile Include="pubmed\spiders\quotes_spider.py" />
+    <Compile Include="pubmed\spiders\__init__.py" />
+    <Compile Include="pubmed\__init__.py" />
+    <Compile Include="scrapy_debug.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="pubmed" />
+    <Folder Include="pubmed\spiders" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="CondaEnv|CondaEnv|pubmed_scrapy_01" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>

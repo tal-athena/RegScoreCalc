@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Html Viewer</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/entities.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+</head>
+
+<body>
+   
+
+    <div class="container panel panel-body">
+        <div class="row">
+            <div id="idColorView" class="col-md-12">                
+            </div>
+            <div id="idTextView" class="col-md-12">
+                
+            </div>
+        </div>
+    </div>
+
+
+<script type="text/javascript">
+
+    var AnnotationColor = {
+            Drug: '#FF00FF',
+            Strength: '#00FFFF',
+            Duration: '#FFFF00',
+            Route: '#9840FB',
+            Form : '#FC363B',
+            Ade : '#3DCB9A',
+            Dosage: '#2B9EEB',
+            Reason: '#555555',
+            Frequency: '#2B9EEB'};
+    var _viewData = null;
+
+    $(document).ready(function()
+    {
+        InitView();
+        $('[data-toggle="tooltip"]').tooltip();    
+    });
+
+    function InitView()
+    {
+        try
+        {
+            /*
+            let res = '{"Item1":{"T1":["Dosage",274,276,"50"],"T2":["Drug",992,995,"Tex"],"T3":["Strength",995,1008,". for 200,000"],"T4":["Drug",1170,1172,"iz"],"T5":["Drug",1174,1177,"ion"]},"Item2":" \
+COMPUTER TERMINAL SYSTEMS <CPML> COMPLETES SALE     COMMACK, N.Y., Feb 26 - Computer Terminal Systems Inc said \
+ it has completed the sale of 200,000 shares of its common\
+stock, and warrants to acquire an additional one mln shares, to\
+<Sedio N.V.> of Lugano, Switzerland for 50,000 dlrs.\
+    The company said the warrants are exercisable for five\
+years at a purchase price of .125 dlrs per share.\
+    Computer Terminal said Sedio also has the right to buy\
+additional shares and increase its total holdings up to 40 pct\
+of the Computer Terminal\'s outstanding common stock under\
+certain circumstances involving change of control at the\
+company.\
+    The company said if the conditions occur the warrants would\
+be exercisable at a price equal to 75 pct of its common stock\'s\
+market price at the time, not to exceed 1.50 dlrs per share.\
+    Computer Terminal also said it sold the technolgy rights to\
+its Dot Matrix impact technology, including any future\
+improvements, to <Woodco Inc> of Houston, Tex. for 200,000\
+dlrs. But, it said it would continue to be the exclusive\
+worldwide licensee of the technology for Woodco.\
+    The company said the moves were part of its reorganization\
+plan and would help pay current operation costs and ensure\
+product delivery.\
+    Computer Terminal makes computer generated labels, forms,\
+tags and ticket printers and terminals.\
+ Reuter"}' */
+            
+            var colorHtml = "";
+            var colors = Object.keys(AnnotationColor);
+            for (var i = 0; i < colors.length; i ++) {
+                colorHtml += '<button class="btn" style = " background-color:' + AnnotationColor[colors[i]] + '" ><b>' + colors[i] + '</b></button>';
+            }
+            $('#idColorView').html(colorHtml);
+            window.boundAsync.getEntities().then(function (res) {
+
+                
+                var entityObject = $.parseJSON(res);
+
+                var noteText = entityObject.Item2;
+
+                var textHtml = "";
+                var annos = Object.values(entityObject.Item1);
+
+                var i = 0;
+                while (i < noteText.length) {
+
+                    if (noteText[i] == '<') {
+                        textHtml += '&lt;';
+                        i ++;
+                        continue;
+                    } 
+                    if (noteText[i] == '>') {
+                        textHtml += '&gt';
+                        i ++;
+                        continue;
+                    }
+
+                    for (var j = 0; j < annos.length; j ++) {
+                        if (i == annos[j][1]) {
+                            textHtml += '<span data-toogle = "tooltip" title = "' + annos[j][0] + '" style = "background-color:' + AnnotationColor[annos[j][0]] + '">';
+                            for (; i < annos[j][2]; i ++)
+                                textHtml += noteText[i];
+                            textHtml += '</span>';
+                            break;
+                        }
+                    }
+                    if (j == annos.length) {
+                        textHtml += noteText[i];
+                        i ++;
+                    }
+                }
+                $('#idTextView').html(textHtml);
+                //$('#idTextView').html(res);
+
+            });
+
+        }
+        catch (e)
+        {
+            //alert(e.message);
+            window.boundAsync.error(e.message);
+        }
+    }
+
+</script>
+
+</body>
+
+</html>

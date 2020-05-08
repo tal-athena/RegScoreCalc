@@ -1,0 +1,1639 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\CefSharp.WinForms.63.0.2\build\CefSharp.WinForms.props" Condition="Exists('..\..\packages\CefSharp.WinForms.63.0.2\build\CefSharp.WinForms.props')" />
+  <Import Project="..\..\packages\CefSharp.Common.63.0.2\build\CefSharp.Common.props" Condition="Exists('..\..\packages\CefSharp.Common.63.0.2\build\CefSharp.Common.props')" />
+  <Import Project="..\..\packages\cef.redist.x86.3.3239.1723\build\cef.redist.x86.props" Condition="Exists('..\..\packages\cef.redist.x86.3.3239.1723\build\cef.redist.x86.props')" />
+  <Import Project="..\..\packages\cef.redist.x64.3.3239.1723\build\cef.redist.x64.props" Condition="Exists('..\..\packages\cef.redist.x64.3.3239.1723\build\cef.redist.x64.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{19DE16B3-8D67-4A78-97DB-ED804881FB30}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RegScoreCalc</RootNamespace>
+    <AssemblyName>RegScoreCalc</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>6</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Images\Application.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>RegScoreCalc.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CefSharp, Version=63.0.0.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <!--<HintPath>..\..\packages\CefSharp.Common.63.0.2\CefSharp\x64\CefSharp.dll</HintPath>-->
+    </Reference>
+    <Reference Include="CefSharp.Core, Version=63.0.0.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <!--<HintPath>..\..\packages\CefSharp.Common.63.0.2\CefSharp\x64\CefSharp.Core.dll</HintPath>-->
+    </Reference>
+    <Reference Include="CefSharp.WinForms, Version=63.0.0.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <!--<HintPath>..\..\packages\CefSharp.WinForms.63.0.2\CefSharp\x64\CefSharp.WinForms.dll</HintPath>-->
+    </Reference>
+    <Reference Include="FastColoredTextBox, Version=2.16.18.0, Culture=neutral, PublicKeyToken=fb8aa12b994ef61b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\FastColoredTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\Dependencies\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Code\CellRenderer.cs" />
+    <Compile Include="Code\ColumnSizeContextMenuWrapper.cs" />
+    <Compile Include="Code\ColumnsViewModel.cs" />
+    <Compile Include="Code\Controls\CustomTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Code\Controls\HintTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Code\CustomOleDbDataAdapter.cs" />
+    <Compile Include="Code\DocumentsFilter.cs" />
+    <Compile Include="Code\DRTLicenseProvider.cs" />
+    <Compile Include="Code\CategoryFilterViewModel.cs" />
+    <Compile Include="Code\ExternalEntitiesToolWrapper.cs" />
+    <Compile Include="Code\ExternalSortWrapper.cs" />
+    <Compile Include="Code\HTML Views\BrowserManager.cs" />
+    <Compile Include="Code\ExternalRegExpToolWrapper.cs" />
+    <Compile Include="Code\Controls\CustomTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Code\Controls\HotkeyControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Code\Controls\RibbonStyleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Code\Controls\ImageButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Code\Controls\MatchColumn.cs" />
+    <Compile Include="Code\Controls\MatchEditingControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Code\Controls\MatchEditingControl.designer.cs">
+      <DependentUpon>MatchEditingControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Code\Controls\NumericTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Code\Controls\ToolboxCtrl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Code\HTML Views\LifespanHandler.cs" />
+    <Compile Include="Code\HTML Views\PythonNotebookServer.cs" />
+    <Compile Include="Code\NotebooksWatcher.cs" />
+    <Compile Include="Code\SvmColumnService.cs" />
+    <Compile Include="Code\Views\PaneDataBase.cs" />
+    <Compile Include="Code\Views\ViewDataBase.cs" />
+    <Compile Include="Data\BillingDataSet.cs">
+      <DependentUpon>BillingDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\BillingDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BillingDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\MainDataSet.cs">
+      <DependentUpon>MainDataSet.xsd</DependentUpon>
+      <CustomToolNamespace>RegScoreCalc</CustomToolNamespace>
+    </Compile>
+    <Compile Include="Data\MainDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ExternalSortOptionsCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ExternalSortOptionsCtrl.Designer.cs">
+      <DependentUpon>ExternalSortOptionsCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormEntitySettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEntitySettings.Designer.cs">
+      <DependentUpon>FormEntitySettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormRegExpSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormRegExpSettings.Designer.cs">
+      <DependentUpon>FormRegExpSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAddViewTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAddViewTab.Designer.cs">
+      <DependentUpon>FormAddViewTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAddBrowserTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAddBrowserTab.Designer.cs">
+      <DependentUpon>FormAddBrowserTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormEntityStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEntityStatistics.Designer.cs">
+      <DependentUpon>FormEntityStatistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormScriptHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormScriptHelp.Designer.cs">
+      <DependentUpon>FormScriptHelp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormSimilar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormSimilar.Designer.cs">
+      <DependentUpon>FormSimilar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCategorizedRecordsCount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCategorizedRecordsCount.Designer.cs">
+      <DependentUpon>FormCategorizedRecordsCount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormPythonSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormPythonSettings.Designer.cs">
+      <DependentUpon>FormPythonSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormTabs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormTabs.Designer.cs">
+      <DependentUpon>FormTabs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormDatabasePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormDatabasePassword.Designer.cs">
+      <DependentUpon>FormDatabasePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormExternalSort.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormExternalSort.Designer.cs">
+      <DependentUpon>FormExternalSort.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddCategory.Designer.cs">
+      <DependentUpon>AddCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddCategoryToFilterExclude.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddCategoryToFilterExclude.Designer.cs">
+      <DependentUpon>AddCategoryToFilterExclude.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAddGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAddGroup.Designer.cs">
+      <DependentUpon>FormAddGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddNewFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddNewFilter.Designer.cs">
+      <DependentUpon>AddNewFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddNewGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddNewGroup.Designer.cs">
+      <DependentUpon>AddNewGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddNewICD9Item.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddNewICD9Item.Designer.cs">
+      <DependentUpon>AddNewICD9Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddRegExpStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddRegExpStatistics.Designer.cs">
+      <DependentUpon>AddRegExpStatistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddTreeViewItemToGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddTreeViewItemToGroup.Designer.cs">
+      <DependentUpon>AddTreeViewItemToGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddCategoryBilling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddCategoryBilling.Designer.cs">
+      <DependentUpon>AddCategoryBilling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAssignRegExpToGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAssignRegExpToGroup.Designer.cs">
+      <DependentUpon>FormAssignRegExpToGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAssignCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAssignCategory.Designer.cs">
+      <DependentUpon>FormAssignCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormColumnPropsFreeText.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormColumnPropsFreeText.Designer.cs">
+      <DependentUpon>FormColumnPropsFreeText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormColumnPropsDateTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormColumnPropsDateTime.Designer.cs">
+      <DependentUpon>FormColumnPropsDateTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormColumnPropsNumeric.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormColumnPropsNumeric.Designer.cs">
+      <DependentUpon>FormColumnPropsNumeric.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormColumnPropsCategories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormColumnPropsCategories.Designer.cs">
+      <DependentUpon>FormColumnPropsCategories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormColumnHighlight.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormColumnHighlight.Designer.cs">
+      <DependentUpon>FormColumnHighlight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormConvertToDynamic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormConvertToDynamic.Designer.cs">
+      <DependentUpon>FormConvertToDynamic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormOutputFolders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormOutputFolders.Designer.cs">
+      <DependentUpon>FormOutputFolders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormEditColumnDateTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEditColumnDateTime.Designer.cs">
+      <DependentUpon>FormEditColumnDateTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormEditColumnNumeric.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEditColumnNumeric.Designer.cs">
+      <DependentUpon>FormEditColumnNumeric.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormEditColumnFreeText.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEditColumnFreeText.Designer.cs">
+      <DependentUpon>FormEditColumnFreeText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormEditColumnCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEditColumnCategory.Designer.cs">
+      <DependentUpon>FormEditColumnCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DialogRegExpStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DialogRegExpStatistics.Designer.cs">
+      <DependentUpon>DialogRegExpStatistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormDynamicColumns.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormDynamicColumns.Designer.cs">
+      <DependentUpon>FormDynamicColumns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormEditDynamicColumn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEditDynamicColumn.Designer.cs">
+      <DependentUpon>FormEditDynamicColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormEditDescription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEditDescription.Designer.cs">
+      <DependentUpon>FormEditDescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormEditLookaround.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEditLookaround.Designer.cs">
+      <DependentUpon>FormEditLookaround.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormExtractColRegExp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormExtractColRegExp.Designer.cs">
+      <DependentUpon>FormExtractColRegExp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormHotkeys.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormHotkeys.Designer.cs">
+      <DependentUpon>FormHotkeys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormLoadingProgressy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormLoadingProgressy.Designer.cs">
+      <DependentUpon>FormLoadingProgressy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormManualEditRegExp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormManualEditRegExp.Designer.cs">
+      <DependentUpon>FormManualEditRegExp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormFilterByCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormFilterByCategory.Designer.cs">
+      <DependentUpon>FormFilterByCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormColumns.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormColumns.Designer.cs">
+      <DependentUpon>FormColumns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCopyNotebook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCopyNotebook.Designer.cs">
+      <DependentUpon>FormCopyNotebook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormSplitNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormSplitNotes.Designer.cs">
+      <DependentUpon>FormSplitNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormRecentDatasets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormRecentDatasets.Designer.cs">
+      <DependentUpon>FormRecentDatasets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormSelectCategoryBilling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormSelectCategoryBilling.Designer.cs">
+      <DependentUpon>FormSelectCategoryBilling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DialogGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DialogGroup.Designer.cs">
+      <DependentUpon>DialogGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DialogFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DialogFilter.Designer.cs">
+      <DependentUpon>DialogFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAbort.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAbort.Designer.cs">
+      <DependentUpon>FormAbort.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormEditPrefixSuffix.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEditPrefixSuffix.Designer.cs">
+      <DependentUpon>FormEditPrefixSuffix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormColors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormColors.Designer.cs">
+      <DependentUpon>FormColors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormEditRegExp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEditRegExp.Designer.cs">
+      <DependentUpon>FormEditRegExp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormGenerateSVMProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormGenerateSVMProgress.Designer.cs">
+      <DependentUpon>FormGenerateSVMProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormGenericProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormGenericProgress.Designer.cs">
+      <DependentUpon>FormGenericProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormHelp.Designer.cs">
+      <DependentUpon>FormHelp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormNotes.Designer.cs">
+      <DependentUpon>FormNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormProgress.Designer.cs">
+      <DependentUpon>FormProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormSelectCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormSelectCategory.Designer.cs">
+      <DependentUpon>FormSelectCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormSelectDynamicColumnCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormSelectDynamicColumnCategory.Designer.cs">
+      <DependentUpon>FormSelectDynamicColumnCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormSplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormSplashScreen.Designer.cs">
+      <DependentUpon>FormSplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormSynergies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormSynergies.Designer.cs">
+      <DependentUpon>FormSynergies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormTableInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormTableInfo.Designer.cs">
+      <DependentUpon>FormTableInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Code\Controls\IndProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Code\Program.cs" />
+    <Compile Include="Code\Views\Pane.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Code\Views\PaneCommands.cs" />
+    <Compile Include="Forms\ExportModifiedNotesPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExportModifiedNotesPopUp.Designer.cs">
+      <DependentUpon>ExportModifiedNotesPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ModifiedNotesPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ModifiedNotesPopUp.Designer.cs">
+      <DependentUpon>ModifiedNotesPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Performance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Performance.Designer.cs">
+      <DependentUpon>Performance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PopUpStatisticsNewTableName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PopUpStatisticsNewTableName.Designer.cs">
+      <DependentUpon>PopUpStatisticsNewTableName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormRegularExpressionEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormRegularExpressionEditor.Designer.cs">
+      <DependentUpon>FormRegularExpressionEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\CalculateFilter.cs" />
+    <Compile Include="Helpers\CategoryListItem.cs" />
+    <Compile Include="Helpers\Count95ConfidenceInterval.cs" />
+    <Compile Include="Helpers\StreamWithProgress.cs" />
+    <Compile Include="Panes\PaneBrowser\PaneBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panes\PaneBrowser\PaneBrowser.Designer.cs">
+      <DependentUpon>PaneBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panes\PaneCodesList\PaneCodesList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panes\PaneCodesList\PaneCodesList.Designer.cs">
+      <DependentUpon>PaneCodesList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panes\PaneDocumentsReviewML\PaneDocumentsReviewML.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panes\PaneDocumentsReviewML\PaneDocumentsReviewML.Designer.cs">
+      <DependentUpon>PaneDocumentsReviewML.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panes\PaneDocumentsReviewMLOld\PaneDocumentsReviewMLOld.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panes\PaneDocumentsReviewMLOld\PaneDocumentsReviewMLOld.Designer.cs">
+      <DependentUpon>PaneDocumentsReviewMLOld.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Code\Controls\CustomToolStripRenderer.cs" />
+    <Compile Include="Panes\PaneFilterStats\PaneFilterStats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panes\PaneFilterStats\PaneFilterStats.Designer.cs">
+      <DependentUpon>PaneFilterStats.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panes\PaneDocumentsBilling\PaneNotesCommandsBilling.cs" />
+    <Compile Include="Panes\PaneColumnNotes\PaneColumnNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panes\PaneColumnNotes\PaneColumnNotes.Designer.cs">
+      <DependentUpon>PaneColumnNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Code\HTML Views\PaneHtmlBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panes\PaneNoteHtmlView\PaneNoteHtmlView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panes\PaneNoteHtmlView\PaneNoteHtmlView.Designer.cs">
+      <DependentUpon>PaneNoteHtmlView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panes\PaneNotesBilling\PaneNotesBilling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panes\PaneNotesBilling\PaneNotesBilling.Designer.cs">
+      <DependentUpon>PaneNotesBilling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panes\PaneDocumentsBilling\PaneDocumentsBilling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panes\PaneDocumentsBilling\PaneDocumentsBilling.Designer.cs">
+      <DependentUpon>PaneDocumentsBilling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panes\PaneColumnsRegEx\PaneColumnsRegEx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panes\PaneColumnsRegEx\PaneColumnsRegEx.Designer.cs">
+      <DependentUpon>PaneColumnsRegEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panes\PaneNotes\PaneNotesCommands.cs" />
+    <Compile Include="Panes\PaneReviewStatistics\PaneReviewStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panes\PaneReviewStatistics\PaneReviewStatistics.Designer.cs">
+      <DependentUpon>PaneReviewStatistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panes\PaneStatistics\PaneStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panes\PaneStatistics\PaneStatistics.Designer.cs">
+      <DependentUpon>PaneStatistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panes\PaneAdvNotes\PaneAdvNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panes\PaneAdvNotes\PaneAdvNotes.Designer.cs">
+      <DependentUpon>PaneAdvNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panes\PaneAdvRegExp\PaneAdvRegExp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panes\PaneAdvRegExp\PaneAdvRegExp.Designer.cs">
+      <DependentUpon>PaneAdvRegExp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panes\PaneCodes\PaneCodes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panes\PaneCodes\PaneCodes.Designer.cs">
+      <DependentUpon>PaneCodes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panes\PaneDocuments\PaneDocuments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panes\PaneDocuments\PaneDocuments.Designer.cs">
+      <DependentUpon>PaneDocuments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panes\PaneNotes\PaneNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panes\PaneNotes\PaneNotes.Designer.cs">
+      <DependentUpon>PaneNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panes\PaneNotes\PaneNotesCommandsFast.cs" />
+    <Compile Include="Panes\PaneRegExp\PaneRegExp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panes\PaneRegExp\PaneRegExp.Designer.cs">
+      <DependentUpon>PaneRegExp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panes\PaneSVM\PaneSVM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panes\PaneSVM\PaneSVM.Designer.cs">
+      <DependentUpon>PaneSVM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panes\PaneTemplate\PaneCommandsTemplate.cs" />
+    <Compile Include="Panes\PaneTemplate\PaneTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panes\PaneTemplate\PaneTemplate.Designer.cs">
+      <DependentUpon>PaneTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panes\PanRegTabNotes\PaneRegTabNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panes\PanRegTabNotes\PaneRegTabNotes.Designer.cs">
+      <DependentUpon>PaneRegTabNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panes\PanRegTabNotes\PaneRegTabNotesCommandsFast.cs" />
+    <Compile Include="Panes\PanTabNotes\PaneTabNotesCommandsFast.cs" />
+    <Compile Include="Panes\PanTabNotes\PaneTabNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panes\PanTabNotes\PaneTabNotes.Designer.cs">
+      <DependentUpon>PaneTabNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SVMProcessDBService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\UploadFileToServer\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SVMClient\SVMClientCallback.cs" />
+    <Compile Include="Views\Models\BinaryClassificationViewModel.cs" />
+    <Compile Include="Views\Models\BinaryClassificationOldViewModel.cs" />
+    <Compile Include="Views\Models\ColorConverter.cs" />
+    <Compile Include="Views\Models\MLScore.cs" />
+    <Compile Include="Views\Models\ReviewMLParameters.cs" />
+    <Compile Include="Views\ViewBILLING_1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\ViewColumnsRegEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\ViewExport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Code\HTML Views\ViewHtmlBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\ViewReviewML.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\ViewTemplate.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\ViewStatistics.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\ViewSVM.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\ViewReviewMLOld.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\ViewAdvanced.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\ViewDefault.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Code\Views\View.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Code\Views\ViewsManager.cs" />
+    <EmbeddedResource Include="Code\Views\Pane.resx">
+      <DependentUpon>Pane.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExternalSortOptionsCtrl.resx">
+      <DependentUpon>ExternalSortOptionsCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEntitySettings.resx">
+      <DependentUpon>FormEntitySettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormRegExpSettings.resx">
+      <DependentUpon>FormRegExpSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAddViewTab.resx">
+      <DependentUpon>FormAddViewTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAddBrowserTab.resx">
+      <DependentUpon>FormAddBrowserTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEntityStatistics.resx">
+      <DependentUpon>FormEntityStatistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormScriptHelp.resx">
+      <DependentUpon>FormScriptHelp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormSimilar.resx">
+      <DependentUpon>FormSimilar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCategorizedRecordsCount.resx">
+      <DependentUpon>FormCategorizedRecordsCount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormPythonSettings.resx">
+      <DependentUpon>FormPythonSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormTabs.resx">
+      <DependentUpon>FormTabs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormDatabasePassword.resx">
+      <DependentUpon>FormDatabasePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormExternalSort.resx">
+      <DependentUpon>FormExternalSort.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddCategory.resx">
+      <DependentUpon>AddCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddCategoryToFilterExclude.resx">
+      <DependentUpon>AddCategoryToFilterExclude.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAddGroup.resx">
+      <DependentUpon>FormAddGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddNewFilter.resx">
+      <DependentUpon>AddNewFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddNewGroup.resx">
+      <DependentUpon>AddNewGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddNewICD9Item.resx">
+      <DependentUpon>AddNewICD9Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddRegExpStatistics.resx">
+      <DependentUpon>AddRegExpStatistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddTreeViewItemToGroup.resx">
+      <DependentUpon>AddTreeViewItemToGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddCategoryBilling.resx">
+      <DependentUpon>AddCategoryBilling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAssignRegExpToGroup.resx">
+      <DependentUpon>FormAssignRegExpToGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAssignCategory.resx">
+      <DependentUpon>FormAssignCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormColumnPropsFreeText.resx">
+      <DependentUpon>FormColumnPropsFreeText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormColumnPropsDateTime.resx">
+      <DependentUpon>FormColumnPropsDateTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormColumnPropsNumeric.resx">
+      <DependentUpon>FormColumnPropsNumeric.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormColumnPropsCategories.resx">
+      <DependentUpon>FormColumnPropsCategories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormColumnHighlight.resx">
+      <DependentUpon>FormColumnHighlight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormConvertToDynamic.resx">
+      <DependentUpon>FormConvertToDynamic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormOutputFolders.resx">
+      <DependentUpon>FormOutputFolders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEditColumnDateTime.resx">
+      <DependentUpon>FormEditColumnDateTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEditColumnNumeric.resx">
+      <DependentUpon>FormEditColumnNumeric.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEditColumnFreeText.resx">
+      <DependentUpon>FormEditColumnFreeText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEditColumnCategory.resx">
+      <DependentUpon>FormEditColumnCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DialogRegExpStatistics.resx">
+      <DependentUpon>DialogRegExpStatistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormDynamicColumns.resx">
+      <DependentUpon>FormDynamicColumns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEditDynamicColumn.resx">
+      <DependentUpon>FormEditDynamicColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEditDescription.resx">
+      <DependentUpon>FormEditDescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEditLookaround.resx">
+      <DependentUpon>FormEditLookaround.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormExtractColRegExp.resx">
+      <DependentUpon>FormExtractColRegExp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormHotkeys.resx">
+      <DependentUpon>FormHotkeys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormLoadingProgressy.resx">
+      <DependentUpon>FormLoadingProgressy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormManualEditRegExp.resx">
+      <DependentUpon>FormManualEditRegExp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormFilterByCategory.resx">
+      <DependentUpon>FormFilterByCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormColumns.resx">
+      <DependentUpon>FormColumns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCopyNotebook.resx">
+      <DependentUpon>FormCopyNotebook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormSplitNotes.resx">
+      <DependentUpon>FormSplitNotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormRecentDatasets.resx">
+      <DependentUpon>FormRecentDatasets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormSelectCategoryBilling.resx">
+      <DependentUpon>FormSelectCategoryBilling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DialogGroup.resx">
+      <DependentUpon>DialogGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DialogFilter.resx">
+      <DependentUpon>DialogFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAbort.resx">
+      <DependentUpon>FormAbort.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEditPrefixSuffix.resx">
+      <DependentUpon>FormEditPrefixSuffix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormColors.resx">
+      <DependentUpon>FormColors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEditRegExp.resx">
+      <DependentUpon>FormEditRegExp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormGenerateSVMProgress.resx">
+      <DependentUpon>FormGenerateSVMProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormGenericProgress.resx">
+      <DependentUpon>FormGenericProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormHelp.resx">
+      <DependentUpon>FormHelp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormNotes.resx">
+      <DependentUpon>FormNotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormProgress.resx">
+      <DependentUpon>FormProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormSelectCategory.resx">
+      <DependentUpon>FormSelectCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormSelectDynamicColumnCategory.resx">
+      <DependentUpon>FormSelectDynamicColumnCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormSplashScreen.resx">
+      <DependentUpon>FormSplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormSynergies.resx">
+      <DependentUpon>FormSynergies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormTableInfo.resx">
+      <DependentUpon>FormTableInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExportModifiedNotesPopUp.resx">
+      <DependentUpon>ExportModifiedNotesPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ModifiedNotesPopUp.resx">
+      <DependentUpon>ModifiedNotesPopUp.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Performance.resx">
+      <DependentUpon>Performance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PopUpStatisticsNewTableName.resx">
+      <DependentUpon>PopUpStatisticsNewTableName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormRegularExpressionEditor.resx">
+      <DependentUpon>FormRegularExpressionEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panes\PaneBrowser\PaneBrowser.resx">
+      <DependentUpon>PaneBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panes\PaneCodesList\PaneCodesList.resx">
+      <DependentUpon>PaneCodesList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panes\PaneDocumentsReviewML\PaneDocumentsReviewML.resx">
+      <DependentUpon>PaneDocumentsReviewML.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panes\PaneDocumentsReviewMLOld\PaneDocumentsReviewMLOld.resx">
+      <DependentUpon>PaneDocumentsReviewMLOld.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panes\PaneFilterStats\PaneFilterStats.resx">
+      <DependentUpon>PaneFilterStats.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panes\PaneColumnNotes\PaneColumnNotes.resx">
+      <DependentUpon>PaneColumnNotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Code\HTML Views\PaneHtmlBase.resx">
+      <DependentUpon>PaneHtmlBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panes\PaneNoteHtmlView\PaneNoteHtmlView.resx">
+      <DependentUpon>PaneNoteHtmlView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panes\PaneNotesBilling\PaneNotesBilling.resx">
+      <DependentUpon>PaneNotesBilling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panes\PaneDocumentsBilling\PaneDocumentsBilling.resx">
+      <DependentUpon>PaneDocumentsBilling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panes\PaneColumnsRegEx\PaneColumnsRegEx.resx">
+      <DependentUpon>PaneColumnsRegEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panes\PaneReviewStatistics\PaneReviewStatistics.resx">
+      <DependentUpon>PaneReviewStatistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panes\PaneStatistics\PaneStatistics.resx">
+      <DependentUpon>PaneStatistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panes\PaneAdvNotes\PaneAdvNotes.resx">
+      <DependentUpon>PaneAdvNotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panes\PaneAdvRegExp\PaneAdvRegExp.resx">
+      <DependentUpon>PaneAdvRegExp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panes\PaneCodes\PaneCodes.resx">
+      <DependentUpon>PaneCodes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panes\PaneDocuments\PaneDocuments.resx">
+      <DependentUpon>PaneDocuments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panes\PaneNotes\PaneNotes.resx">
+      <DependentUpon>PaneNotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panes\PaneRegExp\PaneRegExp.resx">
+      <DependentUpon>PaneRegExp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panes\PaneSVM\PaneSVM.resx">
+      <DependentUpon>PaneSVM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panes\PaneTemplate\PaneTemplate.resx">
+      <DependentUpon>PaneTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panes\PanRegTabNotes\PaneRegTabNotes.resx">
+      <DependentUpon>PaneRegTabNotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panes\PanTabNotes\PaneTabNotes.resx">
+      <DependentUpon>PaneTabNotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="ClassDiagram.cd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Data\BillingDataSet.xsc">
+      <DependentUpon>BillingDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\BillingDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BillingDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Data\BillingDataSet.xss">
+      <DependentUpon>BillingDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\MainDataSet.xsc">
+      <DependentUpon>MainDataSet.xsd</DependentUpon>
+      <CustomToolNamespace>RegScoreCalc</CustomToolNamespace>
+    </None>
+    <None Include="Data\MainDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <CustomToolNamespace>RegScoreCalc</CustomToolNamespace>
+      <LastGenOutput>MainDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Data\MainDataSet.xss">
+      <DependentUpon>MainDataSet.xsd</DependentUpon>
+      <CustomToolNamespace>RegScoreCalc</CustomToolNamespace>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Data\RegScoreCalc.cfg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\trainTemplateDataSet.xsc">
+      <DependentUpon>trainTemplateDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\trainTemplateDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\trainTemplateDataSet.xss">
+      <DependentUpon>trainTemplateDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Service References\SVMProcessDBService\SVMService.wsdl" />
+    <None Include="Service References\SVMProcessDBService\SVMServiceProcess.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SVMProcessDBService\SVMServiceProcess1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UploadFileToServer\FileTransferService.wsdl" />
+    <None Include="Service References\UploadFileToServer\SVMServiceUploadFile.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UploadFileToServer\SVMServiceUploadFile1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UploadFileToServer\SVMServiceUploadFile2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Views\Notebooks\index.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Views\Binary Classification\index.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Views\Binary Classification Old\index.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="application.ico" />
+    <None Include="HtmlViewer\css\bootstrap.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="HtmlViewer\js\bootstrap.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="HtmlViewer\css\listview.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="HtmlViewer\listview.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="HtmlViewer\loading.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="Data\Empty.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="help.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="HtmlViewer\calenderview.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="HtmlViewer\css\calenderview.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="HtmlViewer\css\entities.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="HtmlViewer\css\fullcalendar.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="HtmlViewer\spacy_entities.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="HtmlViewer\entities.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="HtmlViewer\js\fullcalendar.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="HtmlViewer\js\jquery.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="HtmlViewer\js\moment.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="HtmlViewer\js\popper.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\add-icon.png" />
+    <None Include="Images\edit_description.png" />
+    <None Include="Images\add_small.png" />
+    <Content Include="Images\add_large.png" />
+    <None Include="Images\ScrollToLastMatch.png" />
+    <None Include="Images\hotkeys.png" />
+    <None Include="Images\editable.png" />
+    <None Include="Images\FilterByCategory.png" />
+    <None Include="Images\help.png" />
+    <None Include="Images\Loading_small.gif" />
+    <None Include="Images\clear_history.png" />
+    <None Include="Images\explore_notebooks.png" />
+    <None Include="Images\copy.png" />
+    <None Include="Images\clipboard.png" />
+    <Content Include="Images\lock.png" />
+    <None Include="Images\orb_notebooks.png" />
+    <None Include="Images\orb_open_view.png" />
+    <None Include="Images\orb_save_all.png" />
+    <None Include="Images\orb_empty.png" />
+    <None Include="Images\refresh.png" />
+    <None Include="Images\python.png" />
+    <None Include="Images\notes_down.png" />
+    <None Include="Images\python1.png" />
+    <Content Include="Images\ScrollToFirstMatch.png" />
+    <None Include="Images\search.png" />
+    <None Include="Images\statistics.png" />
+    <None Include="Views\Binary Classification\arrow-down.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Views\Binary Classification\arrow-left.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Views\Binary Classification\arrow-right.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Views\Binary Classification\arrow-up.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Views\Binary Classification\bootstrap.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Views\Binary Classification\bootstrap.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Views\Binary Classification\index.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Views\Binary Classification\index.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Views\Binary Classification\jquery.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Views\Binary Classification\loading.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Views\Binary Classification\recalculate.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Views\Binary Classification\review.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Views\Binary Classification\showLog.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Views\Binary Classification\showOptions.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\python_32.bmp" />
+    <None Include="Resources\python.png" />
+    <Content Include="Views\Binary Classification Old\arrow-down.png" />
+    <Content Include="Views\Binary Classification Old\arrow-up.png" />
+    <None Include="Images\apply.png" />
+    <Content Include="Images\ExportToExcel.png" />
+    <Content Include="Images\Loading.gif" />
+    <Content Include="Images\Reload.png" />
+    <None Include="Images\remove.png" />
+    <Content Include="Images\ShowDevTools.png" />
+    <Content Include="Images\RegularExpressionEditor.ico" />
+    <None Include="Views\Binary Classification Old\review.png" />
+    <None Include="Views\Binary Classification Old\showLog.png" />
+    <None Include="Views\Binary Classification Old\arrow-left.png" />
+    <None Include="Views\Binary Classification Old\arrow-right.png" />
+    <None Include="Views\Binary Classification Old\bootstrap.css" />
+    <None Include="Views\Binary Classification Old\bootstrap.js" />
+    <None Include="Views\Binary Classification Old\index.css" />
+    <None Include="Views\Binary Classification Old\index.html" />
+    <None Include="Views\Binary Classification Old\jquery.js" />
+    <None Include="Views\Binary Classification Old\loading.gif" />
+    <None Include="Views\Binary Classification Old\recalculate.png" />
+    <None Include="Views\Binary Classification Old\showOptions.png" />
+    <None Include="Images\ShowExamples.png" />
+    <None Include="Images\ShowToolbox.png" />
+    <Content Include="New icon 16x16.ico" />
+    <None Include="Images\CategoryClasses.png" />
+    <Content Include="Images\delete-remove-icon.png" />
+    <Content Include="Images\down-icon.png" />
+    <Content Include="Images\NotesSeparateWindow.png" />
+    <None Include="Images\Splash screen.jpg" />
+    <Content Include="Images\up-icon.png" />
+    <Content Include="Images\update-icon.png" />
+    <None Include="Service References\SVMProcessDBService\SVMServiceProcess.disco" />
+    <Content Include="Test_data_Billing.mdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\ReviewMLHelpHtml.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\rightArrow.png" />
+    <None Include="Resources\leftArrow.png" />
+    <None Include="Resources\RunSVMStrong.png" />
+    <None Include="Resources\RunSVM.png" />
+    <None Include="Resources\reconnectStrong.png" />
+    <None Include="Resources\reconnect.png" />
+    <None Include="Resources\GenerateTrainingSrong.png" />
+    <None Include="Resources\GenerateTraining_.png" />
+    <None Include="Service References\SVMProcessDBService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\SVMProcessDBService\configuration.svcinfo" />
+    <None Include="Service References\SVMProcessDBService\configuration91.svcinfo" />
+    <None Include="Service References\UploadFileToServer\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\UploadFileToServer\configuration.svcinfo" />
+    <None Include="Service References\UploadFileToServer\configuration91.svcinfo" />
+    <None Include="Service References\UploadFileToServer\SVMServiceUploadFile.disco" />
+    <None Include="Resources\trainTemplate.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <EmbeddedResource Include="Resources\HelpHtml.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Include="Resources\HelpIcon.png" />
+    <None Include="Resources\help.png" />
+    <None Include="Resources\Help.bmp" />
+    <None Include="Images\AutoSort.png" />
+    <None Include="Images\Cells\right_pressed u arrow.png" />
+    <None Include="Images\Cells\right_normal u arrow.png" />
+    <None Include="Images\Cells\right_m_over u arrow.png" />
+    <None Include="Images\Cells\left_pressed u arrow.png" />
+    <None Include="Images\Cells\left_m_over u arrow.png" />
+    <None Include="Images\Cells\left normal u arrow.png" />
+    <None Include="Images\Error.png" />
+    <None Include="Images\Cells\right_pressed.png" />
+    <None Include="Images\Cells\right_normal.png" />
+    <None Include="Images\Cells\right_m_over.png" />
+    <None Include="Images\Cells\left_pressed.png" />
+    <None Include="Images\Cells\left_normal.png" />
+    <None Include="Images\Cells\left_m_over.png" />
+    <None Include="Images\Cells\edit_pressed_new.png" />
+    <None Include="Images\Cells\edit_normal_new.png" />
+    <None Include="Images\Cells\edit_m_over_new.png" />
+    <None Include="Images\Cells\double_right_pressed.png" />
+    <None Include="Images\Cells\double_right_normal.png" />
+    <None Include="Images\Cells\double_right_m_over.png" />
+    <None Include="Images\Cells\double_left_pressed.png" />
+    <None Include="Images\Cells\double_left_normal.png" />
+    <None Include="Images\Cells\double_left_m_over.png" />
+    <None Include="Images\DeselectAll.png" />
+    <None Include="Images\SelectAll.png" />
+    <None Include="Images\Export.png" />
+    <None Include="Images\Checked.PNG" />
+    <None Include="Images\Unchecked.PNG" />
+    <None Include="Images\Word.ico" />
+    <None Include="Images\Drive.ico" />
+    <None Include="Images\Folder.ico" />
+    <None Include="Images\Database.ico" />
+    <None Include="Images\GoLevelUp.png" />
+    <None Include="Images\RemoveStatistics.png" />
+    <None Include="Images\RemoveDatabase.png" />
+    <None Include="Images\AddRegExps.png" />
+    <None Include="Images\AddDatabase.png" />
+    <None Include="Images\AddRegExpsMedium.png" />
+    <None Include="Images\AddAllRegExpsMedium.png" />
+    <Content Include="Images\Application.ico" />
+    <Content Include="Data\Test_data.mdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Images\SaveAll.png" />
+    <None Include="Images\AddCategory.png" />
+    <None Include="Images\SelectNotesFont.png" />
+    <None Include="Images\ResetView.png" />
+    <None Include="Images\MaximizeNotes.png" />
+    <None Include="Images\CloseView.png" />
+    <None Include="Images\CalcScores.png" />
+    <None Include="Images\WriteNotes.png" />
+    <None Include="Images\Exit.png" />
+    <None Include="Images\Orb.png" />
+    <None Include="Images\View.png" />
+    <None Include="Images\SaveAs.png" />
+    <None Include="Images\Save.png" />
+    <None Include="Images\Open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DocumentsServices\DocumentsServiceInterfaceLib\DocumentsServiceInterfaceLib.csproj">
+      <Project>{d5a1dc62-d729-4926-9c05-b60e80d49f55}</Project>
+      <Name>DocumentsServiceInterfaceLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DocumentsServices\LocalDocumentsServiceLib\LocalDocumentsServiceLib.csproj">
+      <Project>{c37507b2-07be-4e8e-a4f9-88a344cb31ce}</Project>
+      <Name>LocalDocumentsServiceLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DocumentsServices\LocalDocumentsServiceTypes\LocalDocumentsServiceTypes.csproj">
+      <Project>{3CD07F1D-39CA-4351-818C-09D237CF667E}</Project>
+      <Name>LocalDocumentsServiceTypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Helpers\Helpers.csproj">
+      <Project>{1422aa80-6b4b-409a-ba3f-fda695625bff}</Project>
+      <Name>Helpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MediTermBrowser\MediTermBrowser.csproj">
+      <Project>{62109176-cce6-4718-932d-b9674caf4d64}</Project>
+      <Name>MediTermBrowser</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CustomTreeView\CustomTreeView.csproj">
+      <Project>{42841d9a-a1b6-478d-ae91-444cbb339bb4}</Project>
+      <Name>CustomTreeView</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RegExpLib\RegExpLib.csproj">
+      <Project>{9db19225-b645-4cbb-ac98-5faee58db517}</Project>
+      <Name>RegExpLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ribbon\System.Windows.Forms.Ribbon.csproj">
+      <Project>{46a18a55-5ae8-49ce-91cd-c7421b642e7e}</Project>
+      <Name>System.Windows.Forms.Ribbon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ScriptFunctions\ScriptFunctionLibrary.csproj">
+      <Project>{b89f8840-8f78-456c-90e9-7ae6f95d9958}</Project>
+      <Name>ScriptFunctionLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\System.Drawing.Html\System.Drawing.Html.csproj">
+      <Project>{1b058920-24b4-4140-8ae7-c8c6c38ca52d}</Project>
+      <Name>System.Drawing.Html</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\SVMProcessDBService\" />
+    <WCFMetadataStorage Include="Service References\UploadFileToServer\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>echo.
+echo.
+echo.
+echo -------------------------------------------------------------------------------------------------------------------------------
+echo EXECUTING post-build event FOR RegScoreCalc
+echo.
+echo.
+
+If Not Exist "$(TargetDir)\cef.pak" (
+    echo COMMAND copy "$(SolutionDir)CefSharp\$(PlatformName)\*.*" "$(TargetDir)\*.*" /Y
+    copy "$(SolutionDir)CefSharp\$(PlatformName)\*.*" "$(TargetDir)\*.*" /Y
+    echo.
+)
+
+echo COMMAND xcopy "$(SolutionDir)ML\BinaryClassifier\*.py" "$(TargetDir)\BinaryClassifier\*.*" /d /y
+xcopy "$(SolutionDir)ML\BinaryClassifier\*.py" "$(TargetDir)\BinaryClassifier\*.*" /d /y
+echo.
+
+echo COMMAND xcopy "$(SolutionDir)ML\BinaryClassifier\active-learning\bin" "$(TargetDir)\BinaryClassifier\active-learning\bin\*.*" /d /y
+xcopy "$(SolutionDir)ML\BinaryClassifier\active-learning\bin" "$(TargetDir)\BinaryClassifier\active-learning\bin\*.*" /d /y
+echo.
+
+echo COMMAND xcopy "$(SolutionDir)ML\BinaryClassifier\mrmr\mrmr_win32.exe" "$(TargetDir)\BinaryClassifier\mrmr\*.*" /d /y
+xcopy "$(SolutionDir)ML\BinaryClassifier\mrmr\mrmr_win32.exe" "$(TargetDir)\BinaryClassifier\mrmr\*.*" /d /y
+echo.
+
+echo COMMAND xcopy "$(SolutionDir)ML\BinaryClassifier\svmlight\*.*" "$(TargetDir)\BinaryClassifier\svmlight\*.*" /d /y
+xcopy "$(SolutionDir)ML\BinaryClassifier\svmlight\*.*" "$(TargetDir)\BinaryClassifier\svmlight\*.*" /d /y
+echo.
+
+echo COMMAND xcopy "$(SolutionDir)ML\BinaryClassifier35\*.py" "$(TargetDir)\BinaryClassifier35\*.*" /d /y
+xcopy "$(SolutionDir)ML\BinaryClassifier35\*.py" "$(TargetDir)\BinaryClassifier35\*.*" /d /y
+echo.
+
+echo COMMAND xcopy "$(SolutionDir)ML\BinaryClassifier35\active-learning\bin" "$(TargetDir)\BinaryClassifier35\active-learning\bin\*.*" /d /y
+xcopy "$(SolutionDir)ML\BinaryClassifier35\active-learning\bin" "$(TargetDir)\BinaryClassifier35\active-learning\bin\*.*" /d /y
+echo.
+
+echo COMMAND xcopy "$(SolutionDir)ML\BinaryClassifier35\mrmr\mrmr_win32.exe" "$(TargetDir)\BinaryClassifier35\mrmr\*.*" /d /y
+xcopy "$(SolutionDir)ML\BinaryClassifier35\mrmr\mrmr_win32.exe" "$(TargetDir)\BinaryClassifier35\mrmr\*.*" /d /y
+echo.
+
+echo COMMAND xcopy "$(SolutionDir)ML\BinaryClassifier35\svmlight\*.*" "$(TargetDir)\BinaryClassifier35\svmlight\*.*" /d /y
+xcopy "$(SolutionDir)ML\BinaryClassifier35\svmlight\*.*" "$(TargetDir)\BinaryClassifier35\svmlight\*.*" /d /y
+echo.
+
+echo COMMAND xcopy "$(SolutionDir)ML\Entites\*.py" "$(TargetDir)\Entities\*.*" /d /y
+xcopy "$(SolutionDir)ML\Entites\*.py" "$(TargetDir)\Entities\*.*" /d /y
+echo.
+
+echo COMMAND xcopy "$(SolutionDir)ML\spaCyEntities\*.py" "$(TargetDir)\spaCyEntities\*.*" /d /y
+xcopy "$(SolutionDir)ML\spaCyEntities\*.py" "$(TargetDir)\spaCyEntities\*.*" /d /y
+echo.
+
+echo COMMAND xcopy "$(SolutionDir)ML\Notebooks\*.ipynb" "$(TargetDir)\Notebooks\*.*" /d /y
+xcopy "$(SolutionDir)ML\Notebooks\*.ipynb" "$(TargetDir)\Notebooks\*.*" /d /y
+echo.
+
+echo COMMAND copy "$(SolutionDir)Application\Dependencies\Microsoft.Office.Interop.Excel.dll" "$(TargetDir)\*.*" /y
+copy "$(SolutionDir)Application\Dependencies\Microsoft.Office.Interop.Excel.dll" "$(TargetDir)\*.*" /y
+echo.
+
+echo.
+echo FINISHED post-build event FOR RegScoreCalc
+echo -------------------------------------------------------------------------------------------------------------------------------
+echo.
+echo.
+echo.</PostBuildEvent>
+  </PropertyGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\cef.redist.x64.3.3239.1723\build\cef.redist.x64.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\cef.redist.x64.3.3239.1723\build\cef.redist.x64.props'))" />
+    <Error Condition="!Exists('..\..\packages\cef.redist.x86.3.3239.1723\build\cef.redist.x86.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\cef.redist.x86.3.3239.1723\build\cef.redist.x86.props'))" />
+    <Error Condition="!Exists('..\..\packages\CefSharp.Common.63.0.2\build\CefSharp.Common.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\CefSharp.Common.63.0.2\build\CefSharp.Common.props'))" />
+    <Error Condition="!Exists('..\..\packages\CefSharp.Common.63.0.2\build\CefSharp.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\CefSharp.Common.63.0.2\build\CefSharp.Common.targets'))" />
+    <Error Condition="!Exists('..\..\packages\CefSharp.WinForms.63.0.2\build\CefSharp.WinForms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\CefSharp.WinForms.63.0.2\build\CefSharp.WinForms.props'))" />
+    <Error Condition="!Exists('..\..\packages\CefSharp.WinForms.63.0.2\build\CefSharp.WinForms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\CefSharp.WinForms.63.0.2\build\CefSharp.WinForms.targets'))" />
+  </Target>
+  <Import Project="..\..\packages\CefSharp.Common.63.0.2\build\CefSharp.Common.targets" Condition="Exists('..\..\packages\CefSharp.Common.63.0.2\build\CefSharp.Common.targets')" />
+  <Import Project="..\..\packages\CefSharp.WinForms.63.0.2\build\CefSharp.WinForms.targets" Condition="Exists('..\..\packages\CefSharp.WinForms.63.0.2\build\CefSharp.WinForms.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

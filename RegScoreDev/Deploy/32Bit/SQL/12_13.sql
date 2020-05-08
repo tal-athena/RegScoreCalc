@@ -1,0 +1,6 @@
+﻿CREATE TABLE ColScript
+(
+    [ID] AUTOINCREMENT PRIMARY KEY,
+	[ColumnID] INTEGER,
+	[Data] MEMO
+);

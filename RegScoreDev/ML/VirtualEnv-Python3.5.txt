@@ -1,0 +1,29 @@
+List all envs
+conda info --envs
+
+
+
+1. Create VirtualEnv with conda
+conda create -n BinaryClassifier35 python=3.5 anaconda
+
+2. Activate virtualEnv
+activate BinaryClassifier35
+
+3. Install spacy
+- with conda
+conda install -c conda-forge spacy
+- with pip
+pip install -U spacy
+
+4. Download required language library
+- English
+python -m spacy download en
+- French
+python -m spacy download fr
+- German
+python -m spacy download de
+
+(*
+-To use Ipython(Jupyter) on python 3.5, install jupyter
+pip install jupyter
+*)

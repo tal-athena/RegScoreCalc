@@ -1,0 +1,1339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="MainDataSet" targetNamespace="http://tempuri.org/MainDataSet.xsd" xmlns:mstns="http://tempuri.org/MainDataSet.xsd" xmlns="http://tempuri.org/MainDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="10" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="Test_dataConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Test_dataConnectionString (Settings)" PropertyReference="ApplicationSettings.RegScoreCalc.Properties.Settings.GlobalReference.Default.Test_dataConnectionString" Provider="System.Data.OleDb" />
+          <Connection ConnectionStringObject="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=&quot;C:\Users\Nemanja Popovic\Desktop\Database_bill _LARGE.accdb&quot;" IsAppSettingsProperty="false" Modifier="Assembly" Name="Database_bill _LARGE.accdb" Provider="System.Data.OleDb" />
+          <Connection ConnectionStringObject="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\[PROJECTS]\REG_SCORE_CALC\Testing\Reprod.accdb" IsAppSettingsProperty="false" Modifier="Assembly" Name="Reprod.accdb" Provider="System.Data.OleDb" />
+          <Connection ConnectionStringObject="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=&quot;D:\[PROJECTS]\REG_SCORE_CALC\Testing\Dynamic columns\Original.accdb&quot;" IsAppSettingsProperty="false" Modifier="Assembly" Name="Original.accdb" Provider="System.Data.OleDb" />
+          <Connection ConnectionStringObject="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=&quot;D:\[PROJECTS]\REG_SCORE_CALC\Testing\Dynamic columns\ML.accdb&quot;" IsAppSettingsProperty="false" Modifier="Assembly" Name="ML.accdb" Provider="System.Data.OleDb" />
+          <Connection ConnectionStringObject="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=&quot;D:\[PROJECTS]\REG_SCORE_CALC\Testing\Dynamic columns\Working copy 2.accdb&quot;" IsAppSettingsProperty="false" Modifier="Assembly" Name="Working copy 2.accdb" Provider="System.Data.OleDb" />
+          <Connection ConnectionStringObject="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=&quot;D:\[PROJECTS]\REG_SCORE_CALC\QA\Working copies\20_11_2016\20_11_2016___Columns_order.accdb&quot;" IsAppSettingsProperty="false" Modifier="Assembly" Name="20_11_2016___Columns_order.accdb" Provider="System.Data.OleDb" />
+          <Connection ConnectionStringObject="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=&quot;D:\[PROJECTS]\REG_SCORE_CALC\QA\Working copies\15_12_2016\20_11_2016___Columns_order.accdb&quot;" IsAppSettingsProperty="false" Modifier="Assembly" Name="20_11_2016___Columns_order.accdb1" Provider="System.Data.OleDb" />
+          <Connection ConnectionStringObject="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=&quot;D:\[PROJECTS]\REG_SCORE_CALC\QA\Working copies\26_05_2017___Upgrade_issue.accdb&quot;" IsAppSettingsProperty="false" Modifier="Assembly" Name="26_05_2017___Upgrade_issue.accdb" Provider="System.Data.OleDb" />
+          <Connection ConnectionStringObject="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=&quot;D:\[PROJECTS]\REG_SCORE_CALC\QA\Working copies\27_06_2017___Extract_values_huge_db_size - Copy - Copy - Copy.accdb&quot;" IsAppSettingsProperty="false" Modifier="Assembly" Name="27_06_2017___Extract_values_huge_db_size - Copy - Copy - Copy.accdb" Provider="System.Data.OleDb" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="Test_data_BillingConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Test_data_BillingConnectionString (Settings)" PropertyReference="ApplicationSettings.RegScoreCalc.Properties.Settings.GlobalReference.Default.Test_data_BillingConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ColorCodesTableAdapter" GeneratorDataComponentClassName="ColorCodesTableAdapter" Name="ColorCodes" UserDataComponentName="ColorCodesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Test_dataConnectionString (Settings)" DbObjectName="ColorCodes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `ColorCodes` WHERE ((`ID` = ?) AND ((? = 1 AND `Description` IS NULL) OR (`Description` = ?)) AND ((? = 1 AND `Color` IS NULL) OR (`Color` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Description" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_Description" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Color" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Color" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Color" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Color" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `ColorCodes` (`Description`, `Color`) VALUES (?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Description" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Color" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Color" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT ID, Description, Color FROM ColorCodes</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `ColorCodes` SET `Description` = ?, `Color` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `Description` IS NULL) OR (`Description` = ?)) AND ((? = 1 AND `Color` IS NULL) OR (`Color` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Description" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Color" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Color" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Description" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_Description" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Color" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Color" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Color" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Color" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="Color" DataSetColumn="Color" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DocumentsTableAdapter" GeneratorDataComponentClassName="DocumentsTableAdapter" Name="Documents" UserDataComponentName="DocumentsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Test_dataConnectionString (Settings)" DbObjectName="Documents" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `Documents` WHERE ((`ED_ENC_NUM` = ?) AND ((? = 1 AND `Category` IS NULL) OR (`Category` = ?)) AND ((? = 1 AND `Score` IS NULL) OR (`Score` = ?)) AND ((? = 1 AND `Rank` IS NULL) OR (`Rank` = ?)) AND ((? = 1 AND `Proc1SVM` IS NULL) OR (`Proc1SVM` = ?)) AND ((? = 1 AND `Proc3SVM` IS NULL) OR (`Proc3SVM` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="Original_ED_ENC_NUM" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="ED_ENC_NUM" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Category" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Category" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Category" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Category" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Score" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Score" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Score" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Score" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Rank" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Rank" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Rank" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Rank" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Proc1SVM" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Proc1SVM" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Proc1SVM" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Proc1SVM" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Proc3SVM" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Proc3SVM" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Proc3SVM" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Proc3SVM" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `Documents` (`ED_ENC_NUM`, `Category`, `Score`, `Rank`, `Proc1SVM`, `Proc3SVM`, `DISC_TEXT`) VALUES (?, ?, ?, ?, ?, ?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="ED_ENC_NUM" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="ED_ENC_NUM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Category" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Category" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Score" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Score" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Rank" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Rank" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Proc1SVM" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Proc1SVM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Proc3SVM" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Proc3SVM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="DISC_TEXT" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="DISC_TEXT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT ED_ENC_NUM, Category, Score, Rank, Proc1SVM, Proc3SVM, DISC_TEXT FROM Documents</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `Documents` SET `ED_ENC_NUM` = ?, `NOTE_TEXT` = ?, `Category` = ?, `Score` = ?, `Rank` = ?, `Proc1SVM` = ?, `Proc3SVM` = ?, `DISC_TEXT` = ? WHERE ((`ED_ENC_NUM` = ?) AND ((? = 1 AND `Category` IS NULL) OR (`Category` = ?)) AND ((? = 1 AND `Score` IS NULL) OR (`Score` = ?)) AND ((? = 1 AND `Rank` IS NULL) OR (`Rank` = ?)) AND ((? = 1 AND `Proc1SVM` IS NULL) OR (`Proc1SVM` = ?)) AND ((? = 1 AND `Proc3SVM` IS NULL) OR (`Proc3SVM` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="ED_ENC_NUM" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="ED_ENC_NUM" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="NOTE_TEXT" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="NOTE_TEXT" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Category" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Category" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Score" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Score" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Rank" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Rank" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Proc1SVM" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Proc1SVM" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Proc3SVM" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Proc3SVM" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="DISC_TEXT" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="DISC_TEXT" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="Original_ED_ENC_NUM" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="ED_ENC_NUM" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Category" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Category" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Category" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Category" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Score" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Score" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Score" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Score" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Rank" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Rank" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Rank" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Rank" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Proc1SVM" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Proc1SVM" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Proc1SVM" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Proc1SVM" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Proc3SVM" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Proc3SVM" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Proc3SVM" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Proc3SVM" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ED_ENC_NUM" DataSetColumn="ED_ENC_NUM" />
+              <Mapping SourceColumn="Category" DataSetColumn="Category" />
+              <Mapping SourceColumn="Score" DataSetColumn="Score" />
+              <Mapping SourceColumn="Rank" DataSetColumn="Rank" />
+              <Mapping SourceColumn="Proc1SVM" DataSetColumn="Proc1SVM" />
+              <Mapping SourceColumn="Proc3SVM" DataSetColumn="Proc3SVM" />
+              <Mapping SourceColumn="DISC_TEXT" DataSetColumn="DISC_TEXT" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ReviewMLDocumentsTableAdapter" GeneratorDataComponentClassName="ReviewMLDocumentsTableAdapter" Name="ReviewMLDocuments" UserDataComponentName="ReviewMLDocumentsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Test_dataConnectionString (Settings)" DbObjectName="Documents" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `Documents` WHERE (((? = 1 AND `Proc3SVM` IS NULL) OR (`Proc3SVM` = ?)) AND ((? = 1 AND `Proc1SVM` IS NULL) OR (`Proc1SVM` = ?)) AND ((? = 1 AND `Rank` IS NULL) OR (`Rank` = ?)) AND ((? = 1 AND `Category` IS NULL) OR (`Category` = ?)) AND (`ED_ENC_NUM` = ?) AND ((? = 1 AND `Score` IS NULL) OR (`Score` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Proc3SVM" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Proc3SVM" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Proc3SVM" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Proc3SVM" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Proc1SVM" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Proc1SVM" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Proc1SVM" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Proc1SVM" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Rank" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Rank" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Rank" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Rank" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Category" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Category" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Category" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Category" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="Original_ED_ENC_NUM" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="ED_ENC_NUM" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Score" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Score" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Score" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Score" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `Documents` (`Proc3SVM`, `Proc1SVM`, `Rank`, `Category`, `ED_ENC_NUM`, `Score`) VALUES (?, ?, ?, ?, ?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Proc3SVM" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Proc3SVM" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Proc1SVM" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Proc1SVM" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Rank" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Rank" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Category" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Category" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="ED_ENC_NUM" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="ED_ENC_NUM" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Score" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Score" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Proc3SVM, Proc1SVM, Rank, Category, ED_ENC_NUM, Score
+FROM            Documents</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `Documents` SET `Proc3SVM` = ?, `Proc1SVM` = ?, `Rank` = ?, `Category` = ?, `ED_ENC_NUM` = ?, `Score` = ? WHERE (((? = 1 AND `Proc3SVM` IS NULL) OR (`Proc3SVM` = ?)) AND ((? = 1 AND `Proc1SVM` IS NULL) OR (`Proc1SVM` = ?)) AND ((? = 1 AND `Rank` IS NULL) OR (`Rank` = ?)) AND ((? = 1 AND `Category` IS NULL) OR (`Category` = ?)) AND (`ED_ENC_NUM` = ?) AND ((? = 1 AND `Score` IS NULL) OR (`Score` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Proc3SVM" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Proc3SVM" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Proc1SVM" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Proc1SVM" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Rank" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Rank" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Category" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Category" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="ED_ENC_NUM" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="ED_ENC_NUM" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Score" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Score" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Proc3SVM" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Proc3SVM" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Proc3SVM" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Proc3SVM" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Proc1SVM" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Proc1SVM" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Proc1SVM" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Proc1SVM" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Rank" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Rank" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Rank" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Rank" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Category" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Category" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Category" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Category" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="Original_ED_ENC_NUM" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="ED_ENC_NUM" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Score" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Score" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Score" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Score" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Proc3SVM" DataSetColumn="Proc3SVM" />
+              <Mapping SourceColumn="Proc1SVM" DataSetColumn="Proc1SVM" />
+              <Mapping SourceColumn="Rank" DataSetColumn="Rank" />
+              <Mapping SourceColumn="Category" DataSetColumn="Category" />
+              <Mapping SourceColumn="ED_ENC_NUM" DataSetColumn="ED_ENC_NUM" />
+              <Mapping SourceColumn="Score" DataSetColumn="Score" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ColRegExpTableAdapter" GeneratorDataComponentClassName="ColRegExpTableAdapter" Name="ColRegExp" UserDataComponentName="ColRegExpTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Reprod.accdb" DbObjectName="ColRegExp" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `ColRegExp` WHERE ((`ID` = ?) AND ((? = 1 AND `GUID` IS NULL) OR (`GUID` = ?)) AND ((? = 1 AND `RegExpColor` IS NULL) OR (`RegExpColor` = ?)) AND ((? = 1 AND `ColumnID` IS NULL) OR (`ColumnID` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_GUID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="GUID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_GUID" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GUID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_RegExpColor" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RegExpColor" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_RegExpColor" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RegExpColor" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ColumnID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ColumnID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ColumnID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ColumnID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `ColRegExp` (`GUID`, `RegExp`, `Extract`, `Match`, `RegExpColor`, `lookbehind`, `neg lookbehind`, `lookahead`, `neg lookahead`, `Exceptions`, `ColumnID`, `Description`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="GUID" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GUID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="RegExp" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="RegExp" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Extract" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="Extract" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Match" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="Match" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="RegExpColor" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RegExpColor" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="lookbehind" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="lookbehind" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="neg_lookbehind" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="neg lookbehind" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="lookahead" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="lookahead" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="neg_lookahead" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="neg lookahead" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Exceptions" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="Exceptions" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="ColumnID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ColumnID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Description" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ColRegExp.*
+FROM            ColRegExp</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `ColRegExp` SET `GUID` = ?, `RegExp` = ?, `Extract` = ?, `Match` = ?, `RegExpColor` = ?, `lookbehind` = ?, `neg lookbehind` = ?, `lookahead` = ?, `neg lookahead` = ?, `Exceptions` = ?, `ColumnID` = ?, `Description` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `GUID` IS NULL) OR (`GUID` = ?)) AND ((? = 1 AND `RegExpColor` IS NULL) OR (`RegExpColor` = ?)) AND ((? = 1 AND `ColumnID` IS NULL) OR (`ColumnID` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="GUID" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GUID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="RegExp" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="RegExp" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Extract" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="Extract" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Match" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="Match" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="RegExpColor" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RegExpColor" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="lookbehind" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="lookbehind" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="neg_lookbehind" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="neg lookbehind" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="lookahead" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="lookahead" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="neg_lookahead" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="neg lookahead" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Exceptions" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="Exceptions" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="ColumnID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ColumnID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Description" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_GUID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="GUID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_GUID" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GUID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_RegExpColor" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RegExpColor" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_RegExpColor" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RegExpColor" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ColumnID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ColumnID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ColumnID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ColumnID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="GUID" DataSetColumn="GUID" />
+              <Mapping SourceColumn="RegExp" DataSetColumn="RegExp" />
+              <Mapping SourceColumn="Extract" DataSetColumn="Extract" />
+              <Mapping SourceColumn="Match" DataSetColumn="Match" />
+              <Mapping SourceColumn="RegExpColor" DataSetColumn="RegExpColor" />
+              <Mapping SourceColumn="lookbehind" DataSetColumn="lookbehind" />
+              <Mapping SourceColumn="neg lookbehind" DataSetColumn="neg lookbehind" />
+              <Mapping SourceColumn="lookahead" DataSetColumn="lookahead" />
+              <Mapping SourceColumn="neg lookahead" DataSetColumn="neg lookahead" />
+              <Mapping SourceColumn="Exceptions" DataSetColumn="Exceptions" />
+              <Mapping SourceColumn="ColumnID" DataSetColumn="ColumnID" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RelationsTableAdapter" GeneratorDataComponentClassName="RelationsTableAdapter" Name="Relations" UserDataComponentName="RelationsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Reprod.accdb" DbObjectName="Relations" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `Relations` WHERE ((`ID` = ?) AND ((? = 1 AND `RegExpID` IS NULL) OR (`RegExpID` = ?)) AND ((? = 1 AND `ColorCodeID` IS NULL) OR (`ColorCodeID` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_RegExpID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RegExpID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_RegExpID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RegExpID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ColorCodeID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ColorCodeID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ColorCodeID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ColorCodeID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `Relations` (`RegExpID`, `ColorCodeID`) VALUES (?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="RegExpID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RegExpID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="ColorCodeID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ColorCodeID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Relations.*
+FROM            Relations</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `Relations` SET `RegExpID` = ?, `ColorCodeID` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `RegExpID` IS NULL) OR (`RegExpID` = ?)) AND ((? = 1 AND `ColorCodeID` IS NULL) OR (`ColorCodeID` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="RegExpID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RegExpID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="ColorCodeID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ColorCodeID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_RegExpID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RegExpID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_RegExpID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RegExpID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ColorCodeID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ColorCodeID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ColorCodeID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ColorCodeID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="RegExpID" DataSetColumn="RegExpID" />
+              <Mapping SourceColumn="ColorCodeID" DataSetColumn="ColorCodeID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RegExpTableAdapter" GeneratorDataComponentClassName="RegExpTableAdapter" Name="RegExp" UserDataComponentName="RegExpTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Reprod.accdb" DbObjectName="RegExp" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `RegExp` WHERE (((? = 1 AND `score` IS NULL) OR (`score` = ?)) AND ((? = 1 AND `Arithmetic factor` IS NULL) OR (`Arithmetic factor` = ?)) AND ((? = 1 AND `prefix match` IS NULL) OR (`prefix match` = ?)) AND ((? = 1 AND `RegExpColor` IS NULL) OR (`RegExpColor` = ?)) AND ((? = 1 AND `suffix match` IS NULL) OR (`suffix match` = ?)) AND ((? = 1 AND `Exceptions` IS NULL) OR (`Exceptions` = ?)) AND (`ID` = ?) AND ((? = 1 AND `GUID` IS NULL) OR (`GUID` = ?)) AND ((? = 1 AND `CategoryID` IS NULL) OR (`CategoryID` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_score" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="score" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_score" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="score" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Arithmetic_factor" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Arithmetic factor" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Arithmetic_factor" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Arithmetic factor" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_prefix_match" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="prefix match" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_prefix_match" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="prefix match" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_RegExpColor" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RegExpColor" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_RegExpColor" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="RegExpColor" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_suffix_match" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="suffix match" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_suffix_match" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="suffix match" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Exceptions" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Exceptions" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_Exceptions" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Exceptions" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_GUID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="GUID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_GUID" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GUID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_CategoryID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="CategoryID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_CategoryID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="CategoryID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `RegExp` (`RegExp`, `score`, `Arithmetic factor`, `prefix match`, `RegExpColor`, `suffix match`, `lookbehind`, `neg lookbehind`, `lookahead`, `neg lookahead`, `Exceptions`, `GUID`, `Description`, `CategoryID`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="RegExp" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="RegExp" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="score" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="score" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Arithmetic_factor" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Arithmetic factor" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="prefix_match" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="prefix match" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="RegExpColor" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="RegExpColor" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="suffix_match" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="suffix match" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="lookbehind" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="lookbehind" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="neg_lookbehind" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="neg lookbehind" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="lookahead" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="lookahead" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="neg_lookahead" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="neg lookahead" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Exceptions" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Exceptions" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="GUID" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GUID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Description" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="CategoryID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="CategoryID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        RegExp.*
+FROM            RegExp</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `RegExp` SET `RegExp` = ?, `score` = ?, `Arithmetic factor` = ?, `prefix match` = ?, `RegExpColor` = ?, `suffix match` = ?, `lookbehind` = ?, `neg lookbehind` = ?, `lookahead` = ?, `neg lookahead` = ?, `Exceptions` = ?, `GUID` = ?, `Description` = ?, `CategoryID` = ? WHERE (((? = 1 AND `score` IS NULL) OR (`score` = ?)) AND ((? = 1 AND `Arithmetic factor` IS NULL) OR (`Arithmetic factor` = ?)) AND ((? = 1 AND `prefix match` IS NULL) OR (`prefix match` = ?)) AND ((? = 1 AND `RegExpColor` IS NULL) OR (`RegExpColor` = ?)) AND ((? = 1 AND `suffix match` IS NULL) OR (`suffix match` = ?)) AND ((? = 1 AND `Exceptions` IS NULL) OR (`Exceptions` = ?)) AND (`ID` = ?) AND ((? = 1 AND `GUID` IS NULL) OR (`GUID` = ?)) AND ((? = 1 AND `CategoryID` IS NULL) OR (`CategoryID` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="RegExp" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="RegExp" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="score" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="score" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Arithmetic_factor" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Arithmetic factor" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="prefix_match" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="prefix match" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="RegExpColor" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="RegExpColor" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="suffix_match" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="suffix match" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="lookbehind" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="lookbehind" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="neg_lookbehind" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="neg lookbehind" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="lookahead" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="lookahead" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="neg_lookahead" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="neg lookahead" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Exceptions" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Exceptions" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="GUID" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GUID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Description" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="CategoryID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="CategoryID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_score" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="score" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_score" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="score" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Arithmetic_factor" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Arithmetic factor" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Arithmetic_factor" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Arithmetic factor" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_prefix_match" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="prefix match" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_prefix_match" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="prefix match" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_RegExpColor" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RegExpColor" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_RegExpColor" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="RegExpColor" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_suffix_match" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="suffix match" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_suffix_match" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="suffix match" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Exceptions" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Exceptions" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_Exceptions" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Exceptions" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_GUID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="GUID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_GUID" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GUID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_CategoryID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="CategoryID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_CategoryID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="CategoryID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="RegExp" DataSetColumn="RegExp" />
+              <Mapping SourceColumn="score" DataSetColumn="score" />
+              <Mapping SourceColumn="Arithmetic factor" DataSetColumn="Arithmetic factor" />
+              <Mapping SourceColumn="prefix match" DataSetColumn="prefix match" />
+              <Mapping SourceColumn="RegExpColor" DataSetColumn="RegExpColor" />
+              <Mapping SourceColumn="suffix match" DataSetColumn="suffix match" />
+              <Mapping SourceColumn="lookbehind" DataSetColumn="lookbehind" />
+              <Mapping SourceColumn="neg lookbehind" DataSetColumn="neg lookbehind" />
+              <Mapping SourceColumn="lookahead" DataSetColumn="lookahead" />
+              <Mapping SourceColumn="neg lookahead" DataSetColumn="neg lookahead" />
+              <Mapping SourceColumn="Exceptions" DataSetColumn="Exceptions" />
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="GUID" DataSetColumn="GUID" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="CategoryID" DataSetColumn="CategoryID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DynamicColumnsTableAdapter" GeneratorDataComponentClassName="DynamicColumnsTableAdapter" Name="DynamicColumns" UserDataComponentName="DynamicColumnsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Original.accdb" DbObjectName="DynamicColumns" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `DynamicColumns` WHERE ((`ID` = ?) AND ((? = 1 AND `Title` IS NULL) OR (`Title` = ?)) AND ((? = 1 AND `Type` IS NULL) OR (`Type` = ?)) AND ((? = 1 AND `Order` IS NULL) OR (`Order` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Title" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Title" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_Title" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Title" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Type" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Type" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Type" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Type" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Order" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Order" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Order" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Order" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `DynamicColumns` (`Title`, `Type`, `Order`, `Properties`) VALUES (?, ?, ?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Title" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Title" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Type" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Type" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Order" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Order" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Properties" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="Properties" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        DynamicColumns.*
+FROM            DynamicColumns</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `DynamicColumns` SET `Title` = ?, `Type` = ?, `Order` = ?, `Properties` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `Title` IS NULL) OR (`Title` = ?)) AND ((? = 1 AND `Type` IS NULL) OR (`Type` = ?)) AND ((? = 1 AND `Order` IS NULL) OR (`Order` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Title" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Title" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Type" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Type" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Order" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Order" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Properties" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="Properties" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Title" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Title" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_Title" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Title" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Type" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Type" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Type" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Type" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Order" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Order" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Order" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Order" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="Title" DataSetColumn="Title" />
+              <Mapping SourceColumn="Type" DataSetColumn="Type" />
+              <Mapping SourceColumn="Order" DataSetColumn="Order" />
+              <Mapping SourceColumn="Properties" DataSetColumn="Properties" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ColScriptTableAdapter" GeneratorDataComponentClassName="ColScriptTableAdapter" Name="ColScript" UserDataComponentName="ColScriptTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Original.accdb" DbObjectName="ColScript" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `ColScript` WHERE ((`ID` = ?) AND ((? = 1 AND `ColumnID` IS NULL) OR (`ColumnID` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ColumnID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ColumnID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ColumnID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ColumnID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `ColScript` (`ColumnID`, `Data`) VALUES (?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="ColumnID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ColumnID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Data" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="Data" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ColScript.*
+FROM            ColScript</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `ColScript` SET `ColumnID` = ?, `Data` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `ColumnID` IS NULL) OR (`ColumnID` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="ColumnID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ColumnID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Data" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="Data" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ColumnID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ColumnID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ColumnID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ColumnID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="ColumnID" DataSetColumn="ColumnID" />
+              <Mapping SourceColumn="Data" DataSetColumn="Data" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ColumnsTableAdapter" GeneratorDataComponentClassName="ColumnsTableAdapter" Name="Columns" UserDataComponentName="ColumnsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="26_05_2017___Upgrade_issue.accdb" DbObjectName="Columns" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `Columns` WHERE ((`ID` = ?) AND ((? = 1 AND `Order` IS NULL) OR (`Order` = ?)) AND ((? = 1 AND `IsVisible` IS NULL) OR (`IsVisible` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Order" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Order" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Order" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Order" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_IsVisible" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="IsVisible" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="Original_IsVisible" Precision="0" ProviderType="Boolean" Scale="0" Size="0" SourceColumn="IsVisible" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `Columns` (`Name`, `Order`, `IsVisible`) VALUES (?, ?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Name" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="Name" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Order" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Order" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="IsVisible" Precision="0" ProviderType="Boolean" Scale="0" Size="0" SourceColumn="IsVisible" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Columns.*
+FROM            Columns</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `Columns` SET `Name` = ?, `Order` = ?, `IsVisible` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `Order` IS NULL) OR (`Order` = ?)) AND ((? = 1 AND `IsVisible` IS NULL) OR (`IsVisible` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Name" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="Name" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Order" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Order" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="IsVisible" Precision="0" ProviderType="Boolean" Scale="0" Size="0" SourceColumn="IsVisible" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Order" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Order" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Order" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Order" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_IsVisible" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="IsVisible" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="Original_IsVisible" Precision="0" ProviderType="Boolean" Scale="0" Size="0" SourceColumn="IsVisible" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="Order" DataSetColumn="Order" />
+              <Mapping SourceColumn="IsVisible" DataSetColumn="IsVisible" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CategoriesTableAdapter" GeneratorDataComponentClassName="CategoriesTableAdapter" Name="Categories" UserDataComponentName="CategoriesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="26_05_2017___Upgrade_issue.accdb" DbObjectName="Categories" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `Categories` WHERE ((`ID` = ?) AND ((? = 1 AND `Category` IS NULL) OR (`Category` = ?)) AND ((? = 1 AND `IsSelected` IS NULL) OR (`IsSelected` = ?)) AND ((? = 1 AND `Color` IS NULL) OR (`Color` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Category" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Category" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_Category" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Category" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_IsSelected" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="IsSelected" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="Original_IsSelected" Precision="0" ProviderType="Boolean" Scale="0" Size="0" SourceColumn="IsSelected" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Color" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Color" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Color" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Color" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `Categories` (`ID`, `Category`, `IsSelected`, `Color`) VALUES (?, ?, ?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Category" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Category" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="IsSelected" Precision="0" ProviderType="Boolean" Scale="0" Size="0" SourceColumn="IsSelected" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Color" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Color" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Categories.*
+FROM            Categories</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `Categories` SET `ID` = ?, `Category` = ?, `IsSelected` = ?, `Color` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `Category` IS NULL) OR (`Category` = ?)) AND ((? = 1 AND `IsSelected` IS NULL) OR (`IsSelected` = ?)) AND ((? = 1 AND `Color` IS NULL) OR (`Color` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Category" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Category" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="IsSelected" Precision="0" ProviderType="Boolean" Scale="0" Size="0" SourceColumn="IsSelected" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Color" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Color" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Category" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Category" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_Category" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Category" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_IsSelected" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="IsSelected" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="Original_IsSelected" Precision="0" ProviderType="Boolean" Scale="0" Size="0" SourceColumn="IsSelected" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Color" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Color" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Color" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Color" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="Category" DataSetColumn="Category" />
+              <Mapping SourceColumn="IsSelected" DataSetColumn="IsSelected" />
+              <Mapping SourceColumn="Color" DataSetColumn="Color" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DynamicColumnCategoriesTableAdapter" GeneratorDataComponentClassName="DynamicColumnCategoriesTableAdapter" Name="DynamicColumnCategories" UserDataComponentName="DynamicColumnCategoriesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="27_06_2017___Extract_values_huge_db_size - Copy - Copy - Copy.accdb" DbObjectName="DynamicColumnCategories" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `DynamicColumnCategories` WHERE ((`ID` = ?) AND ((? = 1 AND `DynamicColumnID` IS NULL) OR (`DynamicColumnID` = ?)) AND ((? = 1 AND `Title` IS NULL) OR (`Title` = ?)) AND ((? = 1 AND `Number` IS NULL) OR (`Number` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_DynamicColumnID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="DynamicColumnID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_DynamicColumnID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="DynamicColumnID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Title" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Title" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_Title" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Title" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Number" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Number" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Number" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Number" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `DynamicColumnCategories` (`DynamicColumnID`, `Title`, `Number`, `Properties`) VALUES (?, ?, ?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="DynamicColumnID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="DynamicColumnID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Title" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Title" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Number" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Number" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Properties" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="Properties" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        DynamicColumnCategories.*
+FROM            DynamicColumnCategories</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `DynamicColumnCategories` SET `DynamicColumnID` = ?, `Title` = ?, `Number` = ?, `Properties` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `DynamicColumnID` IS NULL) OR (`DynamicColumnID` = ?)) AND ((? = 1 AND `Title` IS NULL) OR (`Title` = ?)) AND ((? = 1 AND `Number` IS NULL) OR (`Number` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="DynamicColumnID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="DynamicColumnID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Title" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Title" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Number" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Number" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Properties" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="Properties" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_DynamicColumnID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="DynamicColumnID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_DynamicColumnID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="DynamicColumnID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Title" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Title" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_Title" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Title" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Number" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Number" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Number" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Number" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="DynamicColumnID" DataSetColumn="DynamicColumnID" />
+              <Mapping SourceColumn="Title" DataSetColumn="Title" />
+              <Mapping SourceColumn="Number" DataSetColumn="Number" />
+              <Mapping SourceColumn="Properties" DataSetColumn="Properties" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ColPythonTableAdapter" GeneratorDataComponentClassName="ColPythonTableAdapter" Name="ColPython" UserDataComponentName="ColPythonTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Original.accdb" DbObjectName="ColScript" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `ColScript` WHERE ((`ID` = ?) AND ((? = 1 AND `ColumnID` IS NULL) OR (`ColumnID` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ColumnID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ColumnID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ColumnID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ColumnID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `ColScript` (`ColumnID`, `Data`) VALUES (?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="ColumnID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ColumnID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Data" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="Data" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        ColScript.*
+FROM            ColScript</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `ColScript` SET `ColumnID` = ?, `Data` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `ColumnID` IS NULL) OR (`ColumnID` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="ColumnID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ColumnID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Data" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="Data" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ColumnID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ColumnID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ColumnID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ColumnID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="ColumnID" DataSetColumn="ColumnID" />
+              <Mapping SourceColumn="Data" DataSetColumn="Data" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EntitiesTableAdapter" GeneratorDataComponentClassName="EntitiesTableAdapter" Name="Entities" UserDataComponentName="EntitiesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Test_data_BillingConnectionString (Settings)" DbObjectName="Entities" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `Entities` WHERE ((`ID` = ?) AND ((? = 1 AND `EntityColor` IS NULL) OR (`EntityColor` = ?)) AND ((? = 1 AND `TotalMatches` IS NULL) OR (`TotalMatches` = ?)) AND ((? = 1 AND `TotalDocuments` IS NULL) OR (`TotalDocuments` = ?)) AND ((? = 1 AND `TotalRecords` IS NULL) OR (`TotalRecords` = ?)) AND ((? = 1 AND `TotalCategorized` IS NULL) OR (`TotalCategorized` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_EntityColor" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="EntityColor" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_EntityColor" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="EntityColor" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TotalMatches" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TotalMatches" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_TotalMatches" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TotalMatches" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TotalDocuments" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TotalDocuments" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_TotalDocuments" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TotalDocuments" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TotalRecords" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TotalRecords" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_TotalRecords" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TotalRecords" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TotalCategorized" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TotalCategorized" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_TotalCategorized" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TotalCategorized" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `Entities` (`Entity`, `EntityColor`, `Description`, `TotalMatches`, `TotalDocuments`, `TotalRecords`, `TotalCategorized`) VALUES (?, ?, ?, ?, ?, ?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Entity" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="Entity" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="EntityColor" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="EntityColor" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Description" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="TotalMatches" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TotalMatches" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="TotalDocuments" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TotalDocuments" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="TotalRecords" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TotalRecords" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="TotalCategorized" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TotalCategorized" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Entity, ID, EntityColor, Description, TotalMatches, TotalDocuments, TotalRecords, TotalCategorized
+FROM            Entities</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `Entities` SET `Entity` = ?, `EntityColor` = ?, `Description` = ?, `TotalMatches` = ?, `TotalDocuments` = ?, `TotalRecords` = ?, `TotalCategorized` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `EntityColor` IS NULL) OR (`EntityColor` = ?)) AND ((? = 1 AND `TotalMatches` IS NULL) OR (`TotalMatches` = ?)) AND ((? = 1 AND `TotalDocuments` IS NULL) OR (`TotalDocuments` = ?)) AND ((? = 1 AND `TotalRecords` IS NULL) OR (`TotalRecords` = ?)) AND ((? = 1 AND `TotalCategorized` IS NULL) OR (`TotalCategorized` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Entity" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="Entity" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="EntityColor" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="EntityColor" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Description" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="TotalMatches" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TotalMatches" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="TotalDocuments" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TotalDocuments" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="TotalRecords" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TotalRecords" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="TotalCategorized" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TotalCategorized" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_EntityColor" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="EntityColor" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_EntityColor" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="EntityColor" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TotalMatches" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TotalMatches" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_TotalMatches" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TotalMatches" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TotalDocuments" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TotalDocuments" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_TotalDocuments" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TotalDocuments" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TotalRecords" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TotalRecords" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_TotalRecords" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TotalRecords" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TotalCategorized" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TotalCategorized" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_TotalCategorized" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TotalCategorized" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Entity" DataSetColumn="Entity" />
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="EntityColor" DataSetColumn="EntityColor" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="TotalMatches" DataSetColumn="TotalMatches" />
+              <Mapping SourceColumn="TotalDocuments" DataSetColumn="TotalDocuments" />
+              <Mapping SourceColumn="TotalRecords" DataSetColumn="TotalRecords" />
+              <Mapping SourceColumn="TotalCategorized" DataSetColumn="TotalCategorized" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="MainDataSet" msdata:IsDataSet="true" msdata:Locale="en-US" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="MainDataSet" msprop:Generator_UserDSName="MainDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ColorCodes" msprop:Generator_TableClassName="ColorCodesDataTable" msprop:Generator_TableVarName="tableColorCodes" msprop:Generator_RowChangedName="ColorCodesRowChanged" msprop:Generator_TablePropName="ColorCodes" msprop:Generator_RowDeletingName="ColorCodesRowDeleting" msprop:Generator_RowChangingName="ColorCodesRowChanging" msprop:Generator_RowEvHandlerName="ColorCodesRowChangeEventHandler" msprop:Generator_RowDeletedName="ColorCodesRowDeleted" msprop:Generator_RowClassName="ColorCodesRow" msprop:Generator_UserTableName="ColorCodes" msprop:Generator_RowEvArgName="ColorCodesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="Description" msprop:nullValue="_null" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Color" msprop:Generator_ColumnVarNameInTable="columnColor" msprop:Generator_ColumnPropNameInRow="Color" msprop:Generator_ColumnPropNameInTable="ColorColumn" msprop:Generator_UserColumnName="Color" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Documents" msprop:Generator_TableClassName="DocumentsDataTable" msprop:Generator_TableVarName="tableDocuments" msprop:Generator_RowChangedName="DocumentsRowChanged" msprop:Generator_TablePropName="Documents" msprop:Generator_RowDeletingName="DocumentsRowDeleting" msprop:Generator_RowChangingName="DocumentsRowChanging" msprop:Generator_RowEvHandlerName="DocumentsRowChangeEventHandler" msprop:Generator_RowDeletedName="DocumentsRowDeleted" msprop:Generator_RowClassName="DocumentsRow" msprop:Generator_UserTableName="Documents" msprop:Generator_RowEvArgName="DocumentsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ED_ENC_NUM" msprop:Generator_ColumnVarNameInTable="columnED_ENC_NUM" msprop:Generator_ColumnPropNameInRow="ED_ENC_NUM" msprop:Generator_ColumnPropNameInTable="ED_ENC_NUMColumn" msprop:Generator_UserColumnName="ED_ENC_NUM" type="xs:double" />
+              <xs:element name="Category" msprop:Generator_ColumnVarNameInTable="columnCategory" msprop:Generator_ColumnPropNameInRow="Category" msprop:Generator_ColumnPropNameInTable="CategoryColumn" msprop:Generator_UserColumnName="Category" type="xs:int" minOccurs="0" />
+              <xs:element name="Score" msprop:Generator_ColumnVarNameInTable="columnScore" msprop:Generator_ColumnPropNameInRow="Score" msprop:Generator_ColumnPropNameInTable="ScoreColumn" msprop:Generator_UserColumnName="Score" type="xs:int" minOccurs="0" />
+              <xs:element name="Rank" msprop:Generator_ColumnVarNameInTable="columnRank" msprop:Generator_ColumnPropNameInRow="Rank" msprop:Generator_ColumnPropNameInTable="RankColumn" msprop:Generator_UserColumnName="Rank" type="xs:int" minOccurs="0" />
+              <xs:element name="Proc1SVM" msprop:Generator_ColumnVarNameInTable="columnProc1SVM" msprop:Generator_ColumnPropNameInRow="Proc1SVM" msprop:Generator_ColumnPropNameInTable="Proc1SVMColumn" msprop:Generator_UserColumnName="Proc1SVM" type="xs:int" minOccurs="0" />
+              <xs:element name="Proc3SVM" msprop:Generator_ColumnVarNameInTable="columnProc3SVM" msprop:Generator_ColumnPropNameInRow="Proc3SVM" msprop:Generator_ColumnPropNameInTable="Proc3SVMColumn" msprop:Generator_UserColumnName="Proc3SVM" type="xs:int" minOccurs="0" />
+              <xs:element name="DISC_TEXT" msprop:Generator_ColumnVarNameInTable="columnDISC_TEXT" msprop:Generator_ColumnPropNameInRow="DISC_TEXT" msprop:Generator_ColumnPropNameInTable="DISC_TEXTColumn" msprop:Generator_UserColumnName="DISC_TEXT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ReviewMLDocuments" msprop:Generator_TableClassName="ReviewMLDocumentsDataTable" msprop:Generator_TableVarName="tableReviewMLDocuments" msprop:Generator_TablePropName="ReviewMLDocuments" msprop:Generator_RowDeletingName="ReviewMLDocumentsRowDeleting" msprop:Generator_RowChangingName="ReviewMLDocumentsRowChanging" msprop:Generator_RowEvHandlerName="ReviewMLDocumentsRowChangeEventHandler" msprop:Generator_RowDeletedName="ReviewMLDocumentsRowDeleted" msprop:Generator_UserTableName="ReviewMLDocuments" msprop:Generator_RowChangedName="ReviewMLDocumentsRowChanged" msprop:Generator_RowEvArgName="ReviewMLDocumentsRowChangeEvent" msprop:Generator_RowClassName="ReviewMLDocumentsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Proc3SVM" msprop:Generator_ColumnVarNameInTable="columnProc3SVM" msprop:Generator_ColumnPropNameInRow="Proc3SVM" msprop:Generator_ColumnPropNameInTable="Proc3SVMColumn" msprop:Generator_UserColumnName="Proc3SVM" type="xs:int" minOccurs="0" />
+              <xs:element name="Proc1SVM" msprop:Generator_ColumnVarNameInTable="columnProc1SVM" msprop:Generator_ColumnPropNameInRow="Proc1SVM" msprop:Generator_ColumnPropNameInTable="Proc1SVMColumn" msprop:Generator_UserColumnName="Proc1SVM" type="xs:int" minOccurs="0" />
+              <xs:element name="Rank" msprop:Generator_ColumnVarNameInTable="columnRank" msprop:Generator_ColumnPropNameInRow="Rank" msprop:Generator_ColumnPropNameInTable="RankColumn" msprop:Generator_UserColumnName="Rank" type="xs:int" minOccurs="0" />
+              <xs:element name="Category" msprop:Generator_ColumnVarNameInTable="columnCategory" msprop:Generator_ColumnPropNameInRow="Category" msprop:Generator_ColumnPropNameInTable="CategoryColumn" msprop:Generator_UserColumnName="Category" type="xs:int" minOccurs="0" />
+              <xs:element name="ED_ENC_NUM" msprop:Generator_ColumnVarNameInTable="columnED_ENC_NUM" msprop:Generator_ColumnPropNameInRow="ED_ENC_NUM" msprop:Generator_ColumnPropNameInTable="ED_ENC_NUMColumn" msprop:Generator_UserColumnName="ED_ENC_NUM" type="xs:double" />
+              <xs:element name="Score" msprop:Generator_ColumnVarNameInTable="columnScore" msprop:Generator_ColumnPropNameInRow="Score" msprop:Generator_ColumnPropNameInTable="ScoreColumn" msprop:Generator_UserColumnName="Score" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ColRegExp" msprop:Generator_TableClassName="ColRegExpDataTable" msprop:Generator_TableVarName="tableColRegExp" msprop:Generator_RowChangedName="ColRegExpRowChanged" msprop:Generator_TablePropName="ColRegExp" msprop:Generator_RowDeletingName="ColRegExpRowDeleting" msprop:Generator_RowChangingName="ColRegExpRowChanging" msprop:Generator_RowEvHandlerName="ColRegExpRowChangeEventHandler" msprop:Generator_RowDeletedName="ColRegExpRowDeleted" msprop:Generator_RowClassName="ColRegExpRow" msprop:Generator_UserTableName="ColRegExp" msprop:Generator_RowEvArgName="ColRegExpRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="GUID" msprop:Generator_ColumnVarNameInTable="columnGUID" msprop:Generator_ColumnPropNameInRow="GUID" msprop:Generator_ColumnPropNameInTable="GUIDColumn" msprop:Generator_UserColumnName="GUID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RegExp" msprop:Generator_ColumnVarNameInTable="columnRegExp" msprop:Generator_ColumnPropNameInRow="RegExp" msprop:Generator_ColumnPropNameInTable="RegExpColumn" msprop:Generator_UserColumnName="RegExp" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Extract" msprop:Generator_ColumnVarNameInTable="columnExtract" msprop:Generator_ColumnPropNameInRow="Extract" msprop:Generator_ColumnPropNameInTable="ExtractColumn" msprop:Generator_UserColumnName="Extract" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Match" msprop:Generator_ColumnVarNameInTable="columnMatch" msprop:Generator_ColumnPropNameInRow="Match" msprop:Generator_ColumnPropNameInTable="MatchColumn" msprop:Generator_UserColumnName="Match" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RegExpColor" msprop:Generator_ColumnVarNameInTable="columnRegExpColor" msprop:Generator_ColumnPropNameInRow="RegExpColor" msprop:Generator_ColumnPropNameInTable="RegExpColorColumn" msprop:Generator_UserColumnName="RegExpColor" type="xs:int" minOccurs="0" />
+              <xs:element name="lookbehind" msprop:Generator_ColumnVarNameInTable="columnlookbehind" msprop:Generator_ColumnPropNameInRow="lookbehind" msprop:Generator_ColumnPropNameInTable="lookbehindColumn" msprop:Generator_UserColumnName="lookbehind" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="neg_x0020_lookbehind" msprop:Generator_ColumnVarNameInTable="columnneg_lookbehind" msprop:Generator_ColumnPropNameInRow="neg_lookbehind" msprop:Generator_ColumnPropNameInTable="neg_lookbehindColumn" msprop:Generator_UserColumnName="neg lookbehind" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="lookahead" msprop:Generator_ColumnVarNameInTable="columnlookahead" msprop:Generator_ColumnPropNameInRow="lookahead" msprop:Generator_ColumnPropNameInTable="lookaheadColumn" msprop:Generator_UserColumnName="lookahead" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="neg_x0020_lookahead" msprop:Generator_ColumnVarNameInTable="columnneg_lookahead" msprop:Generator_ColumnPropNameInRow="neg_lookahead" msprop:Generator_ColumnPropNameInTable="neg_lookaheadColumn" msprop:Generator_UserColumnName="neg lookahead" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Exceptions" msprop:Generator_ColumnVarNameInTable="columnExceptions" msprop:Generator_ColumnPropNameInRow="Exceptions" msprop:Generator_ColumnPropNameInTable="ExceptionsColumn" msprop:Generator_UserColumnName="Exceptions" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ColumnID" msprop:Generator_ColumnVarNameInTable="columnColumnID" msprop:Generator_ColumnPropNameInRow="ColumnID" msprop:Generator_ColumnPropNameInTable="ColumnIDColumn" msprop:Generator_UserColumnName="ColumnID" type="xs:int" minOccurs="0" />
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Relations" msprop:Generator_TableClassName="RelationsDataTable" msprop:Generator_TableVarName="tableRelations" msprop:Generator_TablePropName="_Relations" msprop:Generator_RowDeletingName="RelationsRowDeleting" msprop:Generator_RowChangingName="RelationsRowChanging" msprop:Generator_RowEvHandlerName="RelationsRowChangeEventHandler" msprop:Generator_RowDeletedName="RelationsRowDeleted" msprop:Generator_UserTableName="Relations" msprop:Generator_RowChangedName="RelationsRowChanged" msprop:Generator_RowEvArgName="RelationsRowChangeEvent" msprop:Generator_RowClassName="RelationsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="RegExpID" msprop:Generator_ColumnVarNameInTable="columnRegExpID" msprop:Generator_ColumnPropNameInRow="RegExpID" msprop:Generator_ColumnPropNameInTable="RegExpIDColumn" msprop:Generator_UserColumnName="RegExpID" type="xs:int" minOccurs="0" />
+              <xs:element name="ColorCodeID" msprop:Generator_ColumnVarNameInTable="columnColorCodeID" msprop:Generator_ColumnPropNameInRow="ColorCodeID" msprop:Generator_ColumnPropNameInTable="ColorCodeIDColumn" msprop:Generator_UserColumnName="ColorCodeID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RegExp" msprop:Generator_TableClassName="RegExpDataTable" msprop:Generator_TableVarName="tableRegExp" msprop:Generator_TablePropName="RegExp" msprop:Generator_RowDeletingName="RegExpRowDeleting" msprop:Generator_RowChangingName="RegExpRowChanging" msprop:Generator_RowEvHandlerName="RegExpRowChangeEventHandler" msprop:Generator_RowDeletedName="RegExpRowDeleted" msprop:Generator_UserTableName="RegExp" msprop:Generator_RowChangedName="RegExpRowChanged" msprop:Generator_RowEvArgName="RegExpRowChangeEvent" msprop:Generator_RowClassName="RegExpRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RegExp" msprop:Generator_ColumnVarNameInTable="columnRegExp" msprop:Generator_ColumnPropNameInRow="RegExp" msprop:Generator_ColumnPropNameInTable="RegExpColumn" msprop:Generator_UserColumnName="RegExp" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="score" msprop:Generator_ColumnVarNameInTable="columnscore" msprop:Generator_ColumnPropNameInRow="score" msprop:Generator_ColumnPropNameInTable="scoreColumn" msprop:Generator_UserColumnName="score" type="xs:int" minOccurs="0" />
+              <xs:element name="Arithmetic_x0020_factor" msprop:Generator_ColumnVarNameInTable="columnArithmetic_factor" msprop:Generator_ColumnPropNameInRow="Arithmetic_factor" msprop:Generator_ColumnPropNameInTable="Arithmetic_factorColumn" msprop:Generator_UserColumnName="Arithmetic factor" type="xs:int" minOccurs="0" />
+              <xs:element name="prefix_x0020_match" msprop:Generator_ColumnVarNameInTable="columnprefix_match" msprop:Generator_ColumnPropNameInRow="prefix_match" msprop:Generator_ColumnPropNameInTable="prefix_matchColumn" msprop:Generator_UserColumnName="prefix match" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RegExpColor" msprop:Generator_ColumnVarNameInTable="columnRegExpColor" msprop:Generator_ColumnPropNameInRow="RegExpColor" msprop:Generator_ColumnPropNameInTable="RegExpColorColumn" msprop:Generator_UserColumnName="RegExpColor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="suffix_x0020_match" msprop:Generator_ColumnVarNameInTable="columnsuffix_match" msprop:Generator_ColumnPropNameInRow="suffix_match" msprop:Generator_ColumnPropNameInTable="suffix_matchColumn" msprop:Generator_UserColumnName="suffix match" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="lookbehind" msprop:Generator_ColumnVarNameInTable="columnlookbehind" msprop:Generator_ColumnPropNameInRow="lookbehind" msprop:Generator_ColumnPropNameInTable="lookbehindColumn" msprop:Generator_UserColumnName="lookbehind" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="neg_x0020_lookbehind" msprop:Generator_ColumnVarNameInTable="columnneg_lookbehind" msprop:Generator_ColumnPropNameInRow="neg_lookbehind" msprop:Generator_ColumnPropNameInTable="neg_lookbehindColumn" msprop:Generator_UserColumnName="neg lookbehind" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="lookahead" msprop:Generator_ColumnVarNameInTable="columnlookahead" msprop:Generator_ColumnPropNameInRow="lookahead" msprop:Generator_ColumnPropNameInTable="lookaheadColumn" msprop:Generator_UserColumnName="lookahead" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="neg_x0020_lookahead" msprop:Generator_ColumnVarNameInTable="columnneg_lookahead" msprop:Generator_ColumnPropNameInRow="neg_lookahead" msprop:Generator_ColumnPropNameInTable="neg_lookaheadColumn" msprop:Generator_UserColumnName="neg lookahead" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Exceptions" msprop:Generator_ColumnVarNameInTable="columnExceptions" msprop:Generator_ColumnPropNameInRow="Exceptions" msprop:Generator_ColumnPropNameInTable="ExceptionsColumn" msprop:Generator_UserColumnName="Exceptions" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="GUID" msprop:Generator_ColumnVarNameInTable="columnGUID" msprop:Generator_ColumnPropNameInRow="GUID" msprop:Generator_ColumnPropNameInTable="GUIDColumn" msprop:Generator_UserColumnName="GUID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CategoryID" msprop:Generator_ColumnVarNameInTable="columnCategoryID" msprop:Generator_ColumnPropNameInRow="CategoryID" msprop:Generator_ColumnPropNameInTable="CategoryIDColumn" msprop:Generator_UserColumnName="CategoryID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DynamicColumns" msprop:Generator_TableClassName="DynamicColumnsDataTable" msprop:Generator_TableVarName="tableDynamicColumns" msprop:Generator_RowChangedName="DynamicColumnsRowChanged" msprop:Generator_TablePropName="DynamicColumns" msprop:Generator_RowDeletingName="DynamicColumnsRowDeleting" msprop:Generator_RowChangingName="DynamicColumnsRowChanging" msprop:Generator_RowEvHandlerName="DynamicColumnsRowChangeEventHandler" msprop:Generator_RowDeletedName="DynamicColumnsRowDeleted" msprop:Generator_RowClassName="DynamicColumnsRow" msprop:Generator_UserTableName="DynamicColumns" msprop:Generator_RowEvArgName="DynamicColumnsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="Title" msprop:Generator_ColumnVarNameInTable="columnTitle" msprop:Generator_ColumnPropNameInRow="Title" msprop:Generator_ColumnPropNameInTable="TitleColumn" msprop:Generator_UserColumnName="Title" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Type" msprop:Generator_ColumnVarNameInTable="columnType" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_ColumnPropNameInTable="TypeColumn" msprop:Generator_UserColumnName="Type" type="xs:int" minOccurs="0" />
+              <xs:element name="Order" msprop:Generator_ColumnVarNameInTable="columnOrder" msprop:Generator_ColumnPropNameInRow="Order" msprop:Generator_ColumnPropNameInTable="OrderColumn" msprop:Generator_UserColumnName="Order" type="xs:int" minOccurs="0" />
+              <xs:element name="Properties" msprop:Generator_ColumnVarNameInTable="columnProperties" msprop:Generator_ColumnPropNameInRow="Properties" msprop:Generator_ColumnPropNameInTable="PropertiesColumn" msprop:Generator_UserColumnName="Properties" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ColScript" msprop:Generator_TableClassName="ColScriptDataTable" msprop:Generator_TableVarName="tableColScript" msprop:Generator_TablePropName="ColScript" msprop:Generator_RowDeletingName="ColScriptRowDeleting" msprop:Generator_RowChangingName="ColScriptRowChanging" msprop:Generator_RowEvHandlerName="ColScriptRowChangeEventHandler" msprop:Generator_RowDeletedName="ColScriptRowDeleted" msprop:Generator_UserTableName="ColScript" msprop:Generator_RowChangedName="ColScriptRowChanged" msprop:Generator_RowEvArgName="ColScriptRowChangeEvent" msprop:Generator_RowClassName="ColScriptRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="ColumnID" msprop:Generator_ColumnVarNameInTable="columnColumnID" msprop:Generator_ColumnPropNameInRow="ColumnID" msprop:Generator_ColumnPropNameInTable="ColumnIDColumn" msprop:Generator_UserColumnName="ColumnID" type="xs:int" minOccurs="0" />
+              <xs:element name="Data" msprop:Generator_ColumnVarNameInTable="columnData" msprop:Generator_ColumnPropNameInRow="Data" msprop:Generator_ColumnPropNameInTable="DataColumn" msprop:Generator_UserColumnName="Data" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Columns" msprop:Generator_TableClassName="ColumnsDataTable" msprop:Generator_TableVarName="tableColumns" msprop:Generator_TablePropName="Columns" msprop:Generator_RowDeletingName="ColumnsRowDeleting" msprop:Generator_RowChangingName="ColumnsRowChanging" msprop:Generator_RowEvHandlerName="ColumnsRowChangeEventHandler" msprop:Generator_RowDeletedName="ColumnsRowDeleted" msprop:Generator_UserTableName="Columns" msprop:Generator_RowChangedName="ColumnsRowChanged" msprop:Generator_RowEvArgName="ColumnsRowChangeEvent" msprop:Generator_RowClassName="ColumnsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Order" msprop:Generator_ColumnVarNameInTable="columnOrder" msprop:Generator_ColumnPropNameInRow="Order" msprop:Generator_ColumnPropNameInTable="OrderColumn" msprop:Generator_UserColumnName="Order" type="xs:int" minOccurs="0" />
+              <xs:element name="IsVisible" msprop:Generator_ColumnVarNameInTable="columnIsVisible" msprop:Generator_ColumnPropNameInRow="IsVisible" msprop:Generator_ColumnPropNameInTable="IsVisibleColumn" msprop:Generator_UserColumnName="IsVisible" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Categories" msprop:Generator_TableClassName="CategoriesDataTable" msprop:Generator_TableVarName="tableCategories" msprop:Generator_RowChangedName="CategoriesRowChanged" msprop:Generator_TablePropName="Categories" msprop:Generator_RowDeletingName="CategoriesRowDeleting" msprop:Generator_RowChangingName="CategoriesRowChanging" msprop:Generator_RowEvHandlerName="CategoriesRowChangeEventHandler" msprop:Generator_RowDeletedName="CategoriesRowDeleted" msprop:Generator_RowClassName="CategoriesRow" msprop:Generator_UserTableName="Categories" msprop:Generator_RowEvArgName="CategoriesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="Category" msprop:Generator_ColumnVarNameInTable="columnCategory" msprop:Generator_ColumnPropNameInRow="Category" msprop:Generator_ColumnPropNameInTable="CategoryColumn" msprop:Generator_UserColumnName="Category" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IsSelected" msprop:Generator_ColumnVarNameInTable="columnIsSelected" msprop:Generator_ColumnPropNameInRow="IsSelected" msprop:Generator_ColumnPropNameInTable="IsSelectedColumn" msprop:Generator_UserColumnName="IsSelected" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Color" msprop:Generator_ColumnVarNameInTable="columnColor" msprop:Generator_ColumnPropNameInRow="Color" msprop:Generator_ColumnPropNameInTable="ColorColumn" msprop:Generator_UserColumnName="Color" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DynamicColumnCategories" msprop:Generator_TableClassName="DynamicColumnCategoriesDataTable" msprop:Generator_TableVarName="tableDynamicColumnCategories" msprop:Generator_RowChangedName="DynamicColumnCategoriesRowChanged" msprop:Generator_TablePropName="DynamicColumnCategories" msprop:Generator_RowDeletingName="DynamicColumnCategoriesRowDeleting" msprop:Generator_RowChangingName="DynamicColumnCategoriesRowChanging" msprop:Generator_RowEvHandlerName="DynamicColumnCategoriesRowChangeEventHandler" msprop:Generator_RowDeletedName="DynamicColumnCategoriesRowDeleted" msprop:Generator_RowClassName="DynamicColumnCategoriesRow" msprop:Generator_UserTableName="DynamicColumnCategories" msprop:Generator_RowEvArgName="DynamicColumnCategoriesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="DynamicColumnID" msprop:Generator_ColumnVarNameInTable="columnDynamicColumnID" msprop:Generator_ColumnPropNameInRow="DynamicColumnID" msprop:Generator_ColumnPropNameInTable="DynamicColumnIDColumn" msprop:Generator_UserColumnName="DynamicColumnID" type="xs:int" minOccurs="0" />
+              <xs:element name="Title" msprop:Generator_ColumnVarNameInTable="columnTitle" msprop:Generator_ColumnPropNameInRow="Title" msprop:Generator_ColumnPropNameInTable="TitleColumn" msprop:Generator_UserColumnName="Title" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Number" msprop:Generator_ColumnVarNameInTable="columnNumber" msprop:Generator_ColumnPropNameInRow="Number" msprop:Generator_ColumnPropNameInTable="NumberColumn" msprop:Generator_UserColumnName="Number" type="xs:int" minOccurs="0" />
+              <xs:element name="Properties" msprop:Generator_ColumnVarNameInTable="columnProperties" msprop:Generator_ColumnPropNameInRow="Properties" msprop:Generator_ColumnPropNameInTable="PropertiesColumn" msprop:Generator_UserColumnName="Properties" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ColPython" msprop:Generator_TableClassName="ColPythonDataTable" msprop:Generator_TableVarName="tableColPython" msprop:Generator_TablePropName="ColPython" msprop:Generator_RowDeletingName="ColPythonRowDeleting" msprop:Generator_RowChangingName="ColPythonRowChanging" msprop:Generator_RowEvHandlerName="ColPythonRowChangeEventHandler" msprop:Generator_RowDeletedName="ColPythonRowDeleted" msprop:Generator_UserTableName="ColPython" msprop:Generator_RowChangedName="ColPythonRowChanged" msprop:Generator_RowEvArgName="ColPythonRowChangeEvent" msprop:Generator_RowClassName="ColPythonRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="ColumnID" msprop:Generator_ColumnVarNameInTable="columnColumnID" msprop:Generator_ColumnPropNameInRow="ColumnID" msprop:Generator_ColumnPropNameInTable="ColumnIDColumn" msprop:Generator_UserColumnName="ColumnID" type="xs:int" minOccurs="0" />
+              <xs:element name="Data" msprop:Generator_ColumnVarNameInTable="columnData" msprop:Generator_ColumnPropNameInRow="Data" msprop:Generator_ColumnPropNameInTable="DataColumn" msprop:Generator_UserColumnName="Data" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Entities" msprop:Generator_TableClassName="EntitiesDataTable" msprop:Generator_TableVarName="tableEntities" msprop:Generator_RowChangedName="EntitiesRowChanged" msprop:Generator_TablePropName="Entities" msprop:Generator_RowDeletingName="EntitiesRowDeleting" msprop:Generator_RowChangingName="EntitiesRowChanging" msprop:Generator_RowEvHandlerName="EntitiesRowChangeEventHandler" msprop:Generator_RowDeletedName="EntitiesRowDeleted" msprop:Generator_RowClassName="EntitiesRow" msprop:Generator_UserTableName="Entities" msprop:Generator_RowEvArgName="EntitiesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Entity" msprop:Generator_ColumnVarNameInTable="columnEntity" msprop:Generator_ColumnPropNameInRow="Entity" msprop:Generator_ColumnPropNameInTable="EntityColumn" msprop:Generator_UserColumnName="Entity" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="EntityColor" msprop:Generator_ColumnVarNameInTable="columnEntityColor" msprop:Generator_ColumnPropNameInRow="EntityColor" msprop:Generator_ColumnPropNameInTable="EntityColorColumn" msprop:Generator_UserColumnName="EntityColor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TotalMatches" msprop:Generator_ColumnVarNameInTable="columnTotalMatches" msprop:Generator_ColumnPropNameInRow="TotalMatches" msprop:Generator_ColumnPropNameInTable="TotalMatchesColumn" msprop:Generator_UserColumnName="TotalMatches" type="xs:int" minOccurs="0" />
+              <xs:element name="TotalDocuments" msprop:Generator_ColumnVarNameInTable="columnTotalDocuments" msprop:Generator_ColumnPropNameInRow="TotalDocuments" msprop:Generator_ColumnPropNameInTable="TotalDocumentsColumn" msprop:Generator_UserColumnName="TotalDocuments" type="xs:int" minOccurs="0" />
+              <xs:element name="TotalRecords" msprop:Generator_ColumnVarNameInTable="columnTotalRecords" msprop:Generator_ColumnPropNameInRow="TotalRecords" msprop:Generator_ColumnPropNameInTable="TotalRecordsColumn" msprop:Generator_UserColumnName="TotalRecords" type="xs:int" minOccurs="0" />
+              <xs:element name="TotalCategorized" msprop:Generator_ColumnVarNameInTable="columnTotalCategorized" msprop:Generator_ColumnPropNameInRow="TotalCategorized" msprop:Generator_ColumnPropNameInTable="TotalCategorizedColumn" msprop:Generator_UserColumnName="TotalCategorized" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ColorCodes" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="Documents_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Documents" />
+      <xs:field xpath="mstns:ED_ENC_NUM" />
+    </xs:unique>
+    <xs:unique name="ReviewMLDocuments_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ReviewMLDocuments" />
+      <xs:field xpath="mstns:ED_ENC_NUM" />
+    </xs:unique>
+    <xs:unique name="ColRegExp_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ColRegExp" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="Relations_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Relations" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="RegExp_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:RegExp" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="DynamicColumns_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DynamicColumns" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="ColScript_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ColScript" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="Columns_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Columns" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="Categories_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Categories" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="DynamicColumnCategories_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DynamicColumnCategories" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="ColPython_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ColPython" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="Entities_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Entities" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

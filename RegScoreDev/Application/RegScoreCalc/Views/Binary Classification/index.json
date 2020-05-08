@@ -1,0 +1,35 @@
+{
+	"Name": "Binary Classification",
+	"ButtonGroups": [
+		{
+			"Title": "General",
+			"Buttons": [
+				{
+					"Text": "Show Options",
+					"Icon": "showOptions.png",
+					"TooltipText": "Show options"
+				},
+				{
+					"Text": "Review",
+					"Icon": "review.png",
+					"TooltipText": "Review machine learning result"
+				},
+				{
+					"Text": "Show Log",
+					"Icon": "showLog.png",
+					"TooltipText": "Show machine learning log"
+				}
+			]
+		},
+		{
+			"Title": "Categories",
+			"Buttons": [
+				{
+					"Text": "Recalculate",
+					"Icon": "recalculate.png",
+					"TooltipText": "Recalculate number of categorized documents"
+				}
+			]
+		}
+	]
+}

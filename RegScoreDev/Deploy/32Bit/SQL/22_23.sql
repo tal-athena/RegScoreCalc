@@ -1,0 +1,6 @@
+CREATE TABLE ColPython
+(
+    [ID] AUTOINCREMENT PRIMARY KEY,
+	[ColumnID] INTEGER,
+	[Data] MEMO
+);

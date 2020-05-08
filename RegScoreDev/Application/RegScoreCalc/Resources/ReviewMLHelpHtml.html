@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>Cutoff calculations </title>
+    <style>
+        .border{
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h2>Help</h2>
+    <h3>Example table</h3>
+    <table>
+        <tr>
+            <td></td>
+            <td>TRUE</td>
+            <td>FALSE</td>
+        </tr>
+        <tr>
+            <td>POS</td>
+            <td class="border">A</td>
+            <td class="border">B</td>
+        </tr>
+        <tr>
+            <td>NEG</td>
+            <td class="border">C</td>
+            <td class="border">D</td>
+        </tr>
+    </table>
+    <h3>Formulas</h3>
+    <ul>
+        <li>Neg pre value = D/(C+D)</li>
+        <li>Pos pred value = A/(A+B)</li>
+        <li>Prevalence = (A+C)/(A+B+C+D)</li>
+        <li>Sensitivity = A/(A+C)</li>
+        <li>Specificity = D/(B+D)</li>
+    </ul>
+</body>
+</html>

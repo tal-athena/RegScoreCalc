@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Binary Classification</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/calenderview.css">
+    <link rel="stylesheet" href="css/fullcalendar.css" />
+
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/moment.min.js"></script>
+    <script type="text/javascript" src="js/fullcalendar.js"></script>
+</head>
+
+<body>
+    
+    <div id="idCalenderView" class="container panel panel-body">
+        <div id="idCalendar">
+
+        </div>
+    </div>
+
+    <script type="text/javascript">
+
+        var _viewData;
+        
+
+        $(document).ready(function () {
+           
+            InitView();
+        });
+
+        function InitView() {
+
+            try {
+
+                $('#idCalendar').fullCalendar({
+                    header: {
+                        left: 'prev,next today',
+                        center: 'title',
+                        right: 'month,basicWeek,basicDay'
+                    },
+                    navLinks: true,
+                    //defaultDate: '2019-03-12',
+                    //editable: true,
+                    eventLimit: true, // allow "more" link when too many events   
+                    eventRender: function(eventObj, $el) {
+                        $el.popover({
+                          title: eventObj.title,
+                          content: eventObj.description,
+                          trigger: 'hover',
+                          placement: 'top',
+                          container: 'body'
+                        });
+                    },                    
+                });
+            
+                window.boundAsync.getCalenderEvents().then(function (res) {    
+                    
+                    _viewData = $.parseJSON(res);
+                    
+                    $("#idCalendar").fullCalendar('addEventSource', _viewData);
+                    $('#idCalendar').fullCalendar('gotoDate', _viewData[0]['start']);
+                }); 
+            }
+            catch (e) {
+                window.boundAsync.error(e.message);
+            }   
+        }
+
+    </script>
+    <style>
+       
+    </style>
+</body>
+
+</html>

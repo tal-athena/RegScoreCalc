@@ -1,0 +1,65 @@
+1. install docker
+(https://hub.docker.com/editions/community/docker-ce-desktop-windows)
+
+2. Create ubuntu repository
+- create ubuntu repository from dockterhub.
+docker pull ubuntu
+- get image list
+docker images
+- run container
+docker run -i -t ubuntu:latest /bin/bash
+
+3. install unbuntu features
+(Reference : http://www.science.smith.edu/dftwiki/index.php/Tutorial:_Docker_Anaconda_Python_--_4)
+apt-get update && yes|apt-get upgrade
+apt-get install -y emacs
+apt-get install -y wget bzip2
+
+4. Install Anaconda
+wget https://repo.continuum.io/archive/Anaconda3-2019.03-Linux-x86_64.sh
+bash Anaconda3-2019.03-Linux-x86_64.sh -b
+rm Anaconda3-2019.03-Linux-x86_64.sh
+
+5. Install git-core
+apt-get install git-core
+
+6. Install gcc
+apt install g++
+
+7. Set Environment Varaible
+export PATH=$PATH:/root/anaconda3/bin
+
+8. Install medaCy packages
+pip install git+https://github.com/NLPatVCU/medaCy.git
+pip install git+https://github.com/NLPatVCU/medaCy_model_clinical_notes.git
+
+9. Test
+export PATH=$PATH:/root/anaconda3/bin
+python
+>>>from medacy.ner.model import Model
+
+>>>model = Model.load_external('medacy_model_clinical_notes')
+>>>annotation = model.predict("The patient was prescribed 1 capsule of Advil for 5 days.")
+>>>print(annotation)
+
+9. Commit docker container to image
+use 'exit' command to escape from docker container
+before exit, please remember the container ID
+
+ex:
+root@41ff6c5de9de:/#
+container ID : 41ff6c5de9de
+
+-commit
+docker container commit 41ff6c5de9de ubuntu/medacy:version1
+
+10. Check created docker image
+docker image ls
+
+Docker configuration completed.
+
+******************************************
+Useage (In code)
+
+docker run -i -t --rm -v C:\Users\Vision\AppData\Local\Temp\[tempfolder]:/temp ubuntu/medacy:version1 /bin/bash -c "/temp/execute.sh"
+

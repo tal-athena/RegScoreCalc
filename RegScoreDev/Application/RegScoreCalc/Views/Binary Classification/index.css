@@ -1,0 +1,213 @@
+html {
+	height: 97%;
+}
+
+body {
+	background: #bfd8ff;
+	transition: all 0.3s ease;
+	height: 100%;
+	margin: 10px 0 10px 0;
+}
+
+div {
+	transition: all 0.3s ease;
+}
+
+.container {
+	margin-bottom: 0;
+	background: green;
+}
+
+.container, .panel {
+	background-color: #fff;
+	border: 2px solid #888;
+	border-radius: 8px;
+	position: relative;
+	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+	.container:before, .container:after, .panel:before, .panel:after {
+		content: "";
+		position: absolute;
+		z-index: -1;
+		-webkit-box-shadow: 0 0 20px rgba(0,0,0,0.8);
+		-moz-box-shadow: 0 0 20px rgba(0,0,0,0.8);
+		box-shadow: 0 0 20px rgba(0,0,0,0.8);
+		top: 10px;
+		bottom: 10px;
+		left: 0;
+		right: 0;
+		-moz-border-radius: 100px / 10px;
+		border-radius: 100px / 10px;
+	}
+
+	.container:after, .panel:after {
+		right: 10px;
+		left: auto;
+		-webkit-transform: skew(8deg) rotate(3deg);
+		-moz-transform: skew(8deg) rotate(3deg);
+		-ms-transform: skew(8deg) rotate(3deg);
+		-o-transform: skew(8deg) rotate(3deg);
+		transform: skew(8deg) rotate(3deg);
+	}
+
+.form-group {
+	margin-bottom: 5px !important;
+}
+
+.full-width {
+	width: 100%;
+}
+
+.full-height {
+	height: 100%;
+}
+
+#idCategoryColumn {
+	margin-bottom: 70px;
+}
+
+#idOutputView {
+	height: 100%;
+}
+
+#idProgressView {
+	height: 100%;
+}
+
+#idOutput {
+	margin: 0;
+	padding: 0;
+}
+
+p {
+	text-align: left;
+	color: black;
+	margin-left: 25px;
+}
+
+.section {
+	margin: 0 0 20px 0;
+	font-size: 18px;
+	font-weight: bold;
+	color: blue;
+}
+
+.error {
+	margin: 20px 0 20px 0;
+	font-size: 18px;
+	font-weight: bold;
+	color: red;
+}
+
+.heartbeat {
+	text-align: center;
+	color: green;
+}
+
+.row-centered {
+	text-align: center;
+}
+
+.col-centered {
+	display: inline-block;
+	vertical-align: middle;
+	float: none;
+	margin-right: -4px;
+}
+
+.align-top {
+	vertical-align: top;
+}
+
+.panel-info {
+	border-color: #bfd8ff;
+}
+
+	.panel-info .panel-heading {
+		background: #bfd8ff;
+	}
+
+.align-left {
+	display: inline-block;
+	text-align: left;
+	margin: auto;
+}
+
+#idPositive, #idNegative, #idExcluded {
+	overflow: auto;
+	height: 200px;
+}
+
+	#idPositive option, #idNegative option, #idExcluded option {
+		font-size: 20px;
+	}
+
+select {
+	font-size: 15px;
+}
+
+	select option {
+		font-size: 15px;
+	}
+
+#idValidationPercentage, #idDerivationPercentage {
+	display: inline-block;
+	width: auto;
+	height: auto;
+}
+
+.control-group-offset {
+	display: inline-block;
+	padding-left: 30px;
+	margin-top: 10px;
+	font-style: italic;
+}
+
+.no-bold {
+	font-weight: normal;
+}
+
+hr {
+	border-top: 1px dashed #bbb;
+	margin-left: -20px;
+	margin-right: -20px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+#idOutput hr {
+	border-top: 1px dashed black;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.margin-left {
+	margin-left: 10px !important;
+}
+
+.margin-top {
+	margin-top: 10px !important;
+}
+
+.margin-right {
+	margin-right: 10px !important;
+}
+
+.margin-bottom {
+	margin-bottom: 10px !important;
+}
+
+table
+{
+	color: #000;
+}
+
+table td, table th
+{
+	border: 1px solid #aaa;
+	text-align: left;
+	padding: 3px 10px 3px 3px;
+}

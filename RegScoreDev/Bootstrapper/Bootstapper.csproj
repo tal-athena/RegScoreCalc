@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D17C86CB-5F1E-40BD-A935-AF7C8D8D5EEF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Bootstrapper</RootNamespace>
+    <AssemblyName>Bootstrapper</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Images\Application.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <HintPath>C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Code\Logger.cs" />
+    <Compile Include="Code\RegistryHelper.cs" />
+    <Compile Include="Code\WinAPI.cs" />
+    <Compile Include="Forms\FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Code\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.manifest" />
+    <None Include="Data\version.py" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\Test.accdb" />
+    <Content Include="Data\Test.mdb" />
+    <None Include="Resources\PythonOdbc.txt" />
+    <None Include="Images\Fail.png" />
+    <None Include="Images\Success.png" />
+    <Content Include="Images\Application.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>echo.
+echo.
+echo.
+echo -------------------------------------------------------------------------------------------------------------------------------
+echo EXECUTING post-build event FOR Boostrapper
+echo.
+echo.
+
+echo COMMAND cd "$(SolutionDir)"
+cd "$(SolutionDir)"
+echo.
+
+echo COMMAND if exist "Deploy\$(PlatformName)" rd "Deploy\$(PlatformName)" /S /Q
+if exist "Deploy\$(PlatformName)" rd "Deploy\$(PlatformName)" /S /Q
+echo.
+
+echo COMMAND if not exist "Deploy" md "Deploy"
+if not exist "Deploy" md "Deploy"
+echo.
+
+echo COMMAND md "Deploy\$(PlatformName)"
+md "Deploy\$(PlatformName)"
+echo COMMAND md "Deploy\$(PlatformName)\Data"
+md "Deploy\$(PlatformName)\Data"
+echo COMMAND md "Deploy\$(PlatformName)\SQL"
+md "Deploy\$(PlatformName)\SQL"
+
+
+echo COMMAND copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\RegScoreCalc.exe" "Deploy\$(PlatformName)\RegScoreCalc.exe"
+copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\RegScoreCalc.exe" "Deploy\$(PlatformName)\RegScoreCalc.exe"
+echo.
+
+echo COMMAND copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\ExternalSort.exe" "Deploy\$(PlatformName)\ExternalSort.exe"
+copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\ExternalSort.exe" "Deploy\$(PlatformName)\ExternalSort.exe"
+echo.
+
+echo COMMAND copy "Application\RegScoreCalc\Data\RegScoreCalc.cfg" "Deploy\$(PlatformName)\RegScoreCalc.cfg"
+copy "Application\RegScoreCalc\Data\RegScoreCalc.cfg" "Deploy\$(PlatformName)\RegScoreCalc.cfg"
+echo COMMAND copy "Application\RegScoreCalc\Data\Test_data.mdb" "Deploy\$(PlatformName)\Data\Test_data.mdb"
+copy "Application\RegScoreCalc\Data\Test_data.mdb" "Deploy\$(PlatformName)\Data\Test_data.mdb"
+echo.
+
+
+echo COMMAND copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\System.Windows.Forms.Ribbon.dll" "Deploy\$(PlatformName)\System.Windows.Forms.Ribbon.dll"
+copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\System.Windows.Forms.Ribbon.dll" "Deploy\$(PlatformName)\System.Windows.Forms.Ribbon.dll"
+
+echo COMMAND copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\Helpers.dll" "Deploy\$(PlatformName)\Helpers.dll"
+copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\Helpers.dll" "Deploy\$(PlatformName)\Helpers.dll"
+
+echo COMMAND copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\System.Drawing.Html.dll" "Deploy\$(PlatformName)\System.Drawing.Html.dll"
+copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\System.Drawing.Html.dll" "Deploy\$(PlatformName)\System.Drawing.Html.dll"
+
+echo.
+
+echo COMMAND copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\CustomTreeView.dll" "Deploy\$(PlatformName)\CustomTreeView.dll"
+copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\CustomTreeView.dll" "Deploy\$(PlatformName)\CustomTreeView.dll"
+echo COMMAND copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\FastColoredTextBox.dll" "Deploy\$(PlatformName)\FastColoredTextBox.dll"
+copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\FastColoredTextBox.dll" "Deploy\$(PlatformName)\FastColoredTextBox.dll"
+echo.
+
+echo COMMAND copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\RegExpLib.dll" "Deploy\$(PlatformName)\RegExpLib.dll"
+copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\RegExpLib.dll" "Deploy\$(PlatformName)\RegExpLib.dll"
+echo COMMAND copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\RegExpProcessor.exe" "Deploy\$(PlatformName)\RegExpProcessor.exe"
+copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\RegExpProcessor.exe" "Deploy\$(PlatformName)\RegExpProcessor.exe"
+echo.
+
+echo COMMAND copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\DocumentsServiceInterfaceLib.dll" "Deploy\$(PlatformName)\DocumentsServiceInterfaceLib.dll"
+copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\DocumentsServiceInterfaceLib.dll" "Deploy\$(PlatformName)\DocumentsServiceInterfaceLib.dll"
+echo COMMAND copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\LocalDocumentsServiceLib.dll" "Deploy\$(PlatformName)\LocalDocumentsServiceLib.dll"
+copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\LocalDocumentsServiceLib.dll" "Deploy\$(PlatformName)\LocalDocumentsServiceLib.dll"
+echo COMMAND copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\LocalDocumentsServiceTypes.dll" "Deploy\$(PlatformName)\LocalDocumentsServiceTypes.dll"
+copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\LocalDocumentsServiceTypes.dll" "Deploy\$(PlatformName)\LocalDocumentsServiceTypes.dll"
+echo COMMAND copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\LocalDocumentsServiceProcess.exe" "Deploy\$(PlatformName)\LocalDocumentsServiceProcess.exe"
+copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\LocalDocumentsServiceProcess.exe" "Deploy\$(PlatformName)\LocalDocumentsServiceProcess.exe"
+echo.
+
+echo COMMAND copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\Newtonsoft.Json.dll" "Deploy\$(PlatformName)\Newtonsoft.Json.dll"
+copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\Newtonsoft.Json.dll" "Deploy\$(PlatformName)\Newtonsoft.Json.dll"
+echo COMMAND copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\CefSharp.dll" "Deploy\$(PlatformName)\CefSharp.dll"
+copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\CefSharp.dll" "Deploy\$(PlatformName)\CefSharp.dll"
+echo COMMAND copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\CefSharp.Core.dll" "Deploy\$(PlatformName)\CefSharp.Core.dll"
+copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\CefSharp.Core.dll" "Deploy\$(PlatformName)\CefSharp.Core.dll"
+echo COMMAND copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\CefSharp.WinForms.dll" "Deploy\$(PlatformName)\CefSharp.WinForms.dll"
+copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\CefSharp.WinForms.dll" "Deploy\$(PlatformName)\CefSharp.WinForms.dll"
+echo COMMAND copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\CefSharp.BrowserSubprocess.Core.dll" "Deploy\$(PlatformName)\CefSharp.BrowserSubprocess.Core.dll"
+copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\CefSharp.BrowserSubprocess.Core.dll" "Deploy\$(PlatformName)\CefSharp.BrowserSubprocess.Core.dll"
+echo COMMAND copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\CefSharp.BrowserSubprocess.exe" "Deploy\$(PlatformName)\CefSharp.BrowserSubprocess.exe"
+copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\CefSharp.BrowserSubprocess.exe" "Deploy\$(PlatformName)\CefSharp.BrowserSubprocess.exe"
+echo.
+
+echo COMMAND copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\Microsoft.Office.Interop.Excel.dll" "Deploy\$(PlatformName)\Microsoft.Office.Interop.Excel.dll"
+copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\Microsoft.Office.Interop.Excel.dll" "Deploy\$(PlatformName)\Microsoft.Office.Interop.Excel.dll"
+echo.
+
+echo COMMAND xcopy "Application\RegScoreCalc\bin\$(PlatformName)\Release\Views" "Deploy\$(PlatformName)\Views\*.*" /E
+xcopy "Application\RegScoreCalc\bin\$(PlatformName)\Release\Views" "Deploy\$(PlatformName)\Views\*.*" /E
+echo.
+
+echo COMMAND copy "CefSharp\$(PlatformName)\*.*" "Deploy\$(PlatformName)\*.*"
+copy "CefSharp\$(PlatformName)\*.*" "Deploy\$(PlatformName)\*.*"
+echo.
+
+echo COMMAND copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\plumbing.exe" "Deploy\$(PlatformName)\plumbing.exe"
+copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\plumbing.exe" "Deploy\$(PlatformName)\plumbing.exe"
+echo COMMAND copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\sqlite3.dll" "Deploy\$(PlatformName)\sqlite3.dll"
+copy "Application\RegScoreCalc\bin\$(PlatformName)\Release\sqlite3.dll" "Deploy\$(PlatformName)\sqlite3.dll"
+echo.
+
+echo COMMAND xcopy "Application\RegScoreCalc\bin\$(PlatformName)\Release\BinaryClassifier\*.*" "Deploy\$(PlatformName)\BinaryClassifier\*.*" /s /y
+xcopy "Application\RegScoreCalc\bin\$(PlatformName)\Release\BinaryClassifier\*.*" "Deploy\$(PlatformName)\BinaryClassifier\*.*" /s /y
+echo.
+
+echo COMMAND copy "DRTAccessFileSetup\bin\$(PlatformName)\Release\DRTAccessFileSetup.exe" "Deploy\$(PlatformName)\DRTAccessFileSetup.exe"
+copy "DRTAccessFileSetup\bin\$(PlatformName)\Release\DRTAccessFileSetup.exe" "Deploy\$(PlatformName)\DRTAccessFileSetup.exe"
+echo.
+
+echo COMMAND copy "DRTAccessFileSetup\SQL\*.*" "Deploy\$(PlatformName)\SQL\*.*"
+copy "DRTAccessFileSetup\SQL\*.*" "Deploy\$(PlatformName)\SQL\*.*"
+echo.
+
+echo COMMAND mkdir "Deploy\$(PlatformName)\Notebooks"
+mkdir "Deploy\$(PlatformName)\Notebooks"
+echo.
+
+echo COMMAND copy "ML\Notebooks\*.ipynb" "Deploy\$(PlatformName)\Notebooks\*.*"
+copy "ML\Notebooks\*.ipynb" "Deploy\$(PlatformName)\Notebooks\*.*" /Y
+echo.
+
+echo COMMAND copy "Bootstrapper\bin\$(PlatformName)\Release\Bootstrapper.exe" "Deploy\Bootstrapper.exe" /Y
+copy "Bootstrapper\bin\$(PlatformName)\Release\Bootstrapper.exe" "Deploy\Bootstrapper.exe" /Y
+echo.
+
+echo COMMAND copy "Bootstrapper\bin\$(PlatformName)\Release\Bootstrapper.exe" "Deploy\Bootstrapper.exe" /Y
+copy "Bootstrapper\bin\$(PlatformName)\Release\Bootstrapper.exe" "Deploy\Bootstrapper.exe" /Y
+echo.
+
+echo COMMAND cd "Deploy"
+cd "Deploy"
+echo.
+
+
+
+if $(PlatformName) == x86 (
+    echo COMMAND if exist 32Bit rd 32Bit /S /Q
+    if exist 32Bit rd 32Bit /S /Q
+    echo COMMAND rename $(PlatformName) 32Bit
+    rename $(PlatformName) 32Bit
+) else (
+    echo COMMAND if exist 64Bit rd 64Bit /S /Q
+    if exist 64Bit rd 64Bit /S /Q
+    echo COMMAND rename $(PlatformName) 64Bit
+    rename $(PlatformName) 64Bit
+)
+
+echo.
+echo.
+echo FINISHED post-build event FOR Bootstrapper
+echo -------------------------------------------------------------------------------------------------------------------------------
+echo.
+echo.
+echo.</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

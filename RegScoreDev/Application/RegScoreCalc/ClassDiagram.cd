@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access">
+  <Class Name="RegScoreCalc.Pane">
+    <Position X="11.75" Y="6.5" Width="2" />
+    <Members>
+      <Field Name="_views" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAACEBAQAAAAKCAAEgAAAAA=</HashCode>
+      <FileName>Code\Pane.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegScoreCalc.PaneCommands">
+    <Position X="15.25" Y="6.5" Width="2" />
+    <Members>
+      <Field Name="_views" Hidden="true" />
+      <Method Name="PaneCommands" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAQAAAAAAAAAAAAAACCAAAAAAAAA=</HashCode>
+      <FileName>Code\PaneCommands.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegScoreCalc.View">
+    <Position X="3.75" Y="4.75" Width="1.5" />
+    <Members>
+      <Field Name="_views" Hidden="true" />
+      <Field Name="_viewtype" Hidden="true" />
+      <Method Name="View" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAABAAAAQAIAAAAAAAAAAQBASAAAAgAAAA=</HashCode>
+      <FileName>Code\View.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegScoreCalc.ViewsManager">
+    <Position X="7.75" Y="1" Width="2.25" />
+    <Members>
+      <Field Name="_arrViews" Hidden="true" />
+      <Field Name="_arrViewTypes" Hidden="true" />
+      <Field Name="_fFontSize" Hidden="true" />
+      <Field Name="_form" Hidden="true" />
+      <Field Name="_nLineSpacing" Hidden="true" />
+      <Field Name="_ribbon" Hidden="true" />
+      <Field Name="_strActiveView" Hidden="true" />
+      <Field Name="_strAutoOpenViews" Hidden="true" />
+      <Field Name="_strAvailableViews" Hidden="true" />
+      <Field Name="_strConfigFileName" Hidden="true" />
+      <Field Name="_strFontFamily" Hidden="true" />
+      <Field Name="_styleFont" Hidden="true" />
+      <Method Name="FindViewType" Hidden="true" />
+      <Property Name="FontFamily" Hidden="true" />
+      <Property Name="FontSize" Hidden="true" />
+      <Property Name="FontStyle" Hidden="true" />
+      <Method Name="FormatViewTitle" Hidden="true" />
+      <Method Name="GetTypesComboBox" Hidden="true" />
+      <Method Name="GetViewTypesList" Hidden="true" />
+      <Method Name="IsViewTypeActive" Hidden="true" />
+      <Method Name="IsViewTypeAutoOpen" Hidden="true" />
+      <Method Name="IsViewTypeAvailable" Hidden="true" />
+      <Property Name="LineSpacing" Hidden="true" />
+      <Method Name="LoadConfig" Hidden="true" />
+      <Method Name="OnActiveTabChanged" Hidden="true" />
+      <Method Name="OnCloseView_Clicked" Hidden="true" />
+      <Method Name="OnComboBoxButtonClick" Hidden="true" />
+      <Method Name="SaveConfig" Hidden="true" />
+      <Method Name="ViewsManager" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AIKBARAAACwLAiUAABEAlgKAEAAoAANBAgQBAgkAhAo=</HashCode>
+      <FileName>Code\ViewsManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegScoreCalc.ViewType">
+    <Position X="5.25" Y="4.75" Width="1.5" />
+    <Members>
+      <Field Name="_strName" Hidden="true" />
+      <Field Name="_type" Hidden="true" />
+      <Method Name="ViewType" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Protected" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAIgAAAAQBAQAAAAAAAQABAACAAAAAQAQAAAAAAA=</HashCode>
+      <FileName>Code\ViewsManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegScoreCalc.MainForm">
+    <Position X="0.5" Y="0.5" Width="2.25" />
+    <Members>
+      <Field Name="_arrRecentFiles" Hidden="true" />
+      <Field Name="_clrBackground" Hidden="true" />
+      <Field Name="_strAppName" Hidden="true" />
+      <Field Name="_strHistoryFilePath" Hidden="true" />
+      <Field Name="_views" Hidden="true" />
+      <Method Name="AddFileToHistory" Hidden="true" />
+      <Property Name="AppName" Hidden="true" />
+      <Field Name="btnOpenView" Hidden="true" />
+      <Method Name="btnOpenView_Click" Hidden="true" />
+      <Field Name="cmbViews" Hidden="true" />
+      <Property Name="ColorBackground" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="FillHistoryButtons" Hidden="true" />
+      <Method Name="GetCompactPath" Hidden="true" />
+      <Method Name="GetConnectionString" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Method Name="LoadHistory" Hidden="true" />
+      <Method Name="MainForm" Hidden="true" />
+      <Method Name="MainForm_FormClosing" Hidden="true" />
+      <Method Name="MainForm_Load" Hidden="true" />
+      <Method Name="OnRecentFile_Click" Hidden="true" />
+      <Method Name="OpenDatabase" Hidden="true" />
+      <Field Name="orbitemClearHistory" Hidden="true" />
+      <Method Name="orbitemClearHistory_Click" Hidden="true" />
+      <Field Name="orbitemExit" Hidden="true" />
+      <Method Name="orbitemExit_Click" Hidden="true" />
+      <Field Name="panelViews" Hidden="true" />
+      <Method Name="PathCompactPathEx" Hidden="true" />
+      <Field Name="ribbon" Hidden="true" />
+      <Method Name="SaveDatabaseAs" Hidden="true" />
+      <Method Name="SaveHistory" Hidden="true" />
+      <Field Name="tabHome" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+      <Compartment Name="Protected" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>JC4GkQKaAyIKCAAZKwSAWDg2gYBAQGlwKfAGoCQWwow=</HashCode>
+      <FileName>Forms\MainForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegScoreCalc.PaneNotes">
+    <Position X="13" Y="10" Width="1.75" />
+    <Members>
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Method Name="OnCurrentDocumentChanged" Hidden="true" />
+      <Method Name="OnWriteNotes_Clicked" Hidden="true" />
+      <Method Name="PaneNotes" Hidden="true" />
+      <Field Name="richTextBox" Hidden="true" />
+      <Method Name="UpdateText" Hidden="true" />
+      <Method Name="WriteNote" Hidden="true" />
+      <Method Name="WriteNotes" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAACgAAAAAAACAAAACEACQAAAAIAEQEBAAAAA=</HashCode>
+      <FileName>Panes\PaneNotes\PaneNotes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegScoreCalc.PaneNotesCommands">
+    <Position X="15.25" Y="9" Width="2" />
+    <Members>
+      <Field Name="EM_SETPARAFORMAT" Hidden="true" />
+      <Method Name="PaneNotesCommands" Hidden="true" />
+      <Field Name="PFM_LINESPACING" Hidden="true" />
+      <Field Name="PFM_SPACEAFTER" Hidden="true" />
+      <Field Name="PFM_SPACEBEFORE" Hidden="true" />
+      <Field Name="SCF_SELECTION" Hidden="true" />
+      <Method Name="SendMessage" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Struct Name="RegScoreCalc.PaneNotesCommands.PARAFORMAT">
+        <TypeIdentifier>
+          <NewMemberFileName>Panes\PaneNotes\PaneNotesCommands.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAQQAAIAASQACAAAAAQACggAAAAAAAAABTg=</HashCode>
+      <FileName>Panes\PaneNotes\PaneNotesCommands.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegScoreCalc.PaneRegExp">
+    <Position X="10.75" Y="10" Width="1.75" />
+    <Members>
+      <Field Name="arithmeticFactorDataGridViewTextBoxColumn" Hidden="true" />
+      <Field Name="backgroundWorker" Hidden="true" />
+      <Method Name="backgroundWorker_DoWork" Hidden="true" />
+      <Method Name="backgroundWorker_ProgressChanged" Hidden="true" />
+      <Method Name="backgroundWorker_RunWorkerCompleted" Hidden="true" />
+      <Method Name="CalcScores" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Method Name="InitializeGridColumns" Hidden="true" />
+      <Field Name="lookaheadDataGridViewTextBoxColumn" Hidden="true" />
+      <Field Name="lookbehindDataGridViewTextBoxColumn" Hidden="true" />
+      <Field Name="negLookaheadDataGridViewTextBoxColumn" Hidden="true" />
+      <Field Name="negLookbehindDataGridViewTextBoxColumn" Hidden="true" />
+      <Method Name="OnCalcScores_Click" Hidden="true" />
+      <Method Name="PaneRegExp" Hidden="true" />
+      <Field Name="prefixMatchDataGridViewTextBoxColumn" Hidden="true" />
+      <Field Name="regExpColorDataGridViewTextBoxColumn" Hidden="true" />
+      <Field Name="regExpDataGridView" Hidden="true" />
+      <Method Name="regExpDataGridView_CellClick" Hidden="true" />
+      <Method Name="regExpDataGridView_CellFormatting" Hidden="true" />
+      <Method Name="regExpDataGridView_CellValidated" Hidden="true" />
+      <Field Name="regExpDataGridViewTextBoxColumn" Hidden="true" />
+      <Field Name="scoreDataGridViewTextBoxColumn" Hidden="true" />
+      <Field Name="suffixMatchDataGridViewTextBoxColumn" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAQEIABECAgAAYQAACMCoEiEAAgACQAAAAAUAIAAJo=</HashCode>
+      <FileName>Panes\PaneRegExp\PaneRegExp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegScoreCalc.ViewAdvanced">
+    <Position X="4.75" Y="8.25" Width="2" />
+    <Members>
+      <Method Name="ViewAdvanced" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AEAAAQAQAVgAAAAAAAAJAAAgABACAAAAAAAABAgAAAA=</HashCode>
+      <FileName>Views\ViewAdvanced.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegScoreCalc.ViewTemplate">
+    <Position X="2.25" Y="8.25" Width="2" />
+    <Members>
+      <Method Name="ViewTemplate" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAQAQAAAAAAAAAAAJAAAAABACABAAAAAAEAgAAAA=</HashCode>
+      <FileName>Views\ViewTemplate.cs</FileName>
+      <NewMemberFileName>Views\ViewDefault.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Microsoft Sans Serif" Size="8.25" />
+</ClassDiagram>
